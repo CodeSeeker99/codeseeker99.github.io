@@ -27,4 +27,4 @@ DATABASES = {
 
 #### Work still happening on the project. More to add later..
 
-#### Code can be found at https://github.com/CodeSeeker99/PS2_repo/tree/main/Django
+#### Code can be found at [https://github.com/CodeSeeker99/PS2_repo/tree/main/Django]( "this Repo link")
