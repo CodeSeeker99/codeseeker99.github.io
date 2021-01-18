@@ -103,10 +103,22 @@ This should bring up the text as shown above and you should be able to see a deb
 
 5. Now we make the actual API. This will be an app, as a part of the project. Each project can contain multiple apps. For example, on Facebook, Newsfeed can be a separate app, while settings menu can be a separate app. To make a new app, do
 ```bash
-(django): /project$ python3 manage.py
+(django): /project$ python3 manage.py startapp api_module
+(django): /project$ ls
+api_module  db.sqlite3  dummyproject  manage.py
+(django): /project$ tree ./api_module/
+./api_module/
+├── admin.py
+├── apps.py
+├── __init__.py
+├── migrations
+│   └── __init__.py
+├── models.py
+├── tests.py
+└── views.py
 ```
-
-5. The cool thing about django is that, even while the server is running, any changes you make to the view functions
+As we can see, it creates a new directory with the app name, containing a bunch of files that will be used to handle the app. 
+6. The cool thing about django is that, even while the server is running, any changes you make to the view functions
 
 
 ## Learnings
