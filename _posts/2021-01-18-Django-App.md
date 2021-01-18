@@ -29,20 +29,19 @@ A virtual environment is a tool that helps keep your dependencies from multiple 
 ## Tutorial
 
 1. Install python3 on your machine. The steps are different for different distributions, so its best to refer the internet for this. Once you have it installed, verify the installation using.
-```
+```bash
 $ python3 --version
 ```
 This should return the version of python installed.
 
 
 2. Python comes with its own virtual environment command called venv. On linux and Mac distributions this will suffice. On windows, you might have to download virtualenvwrapper. To make a new virtual environment, type:
-```
+```bash
 $ python3 -m venv /path/to/new/virtual/environment/name_of_env
 ```
-This will create a new folder with the given name at the given location. I'm going to place mine in a new folder called tutorial:
-``` $ python3 -m venv ./tutorial/django ```
-Now, we will activate this virtual environment using the following command
-``` 
+This will create a new folder with the given name at the given location. I'm going to place mine in a new folder called tutorial. Then run the activate script using the source command. 
+```bash
+$ python3 -m venv ./tutorial/django
 $ source ./tutorial/django/activate
 (django):$ 
 ```
@@ -50,13 +49,13 @@ This should bring up the name of your virtual environment in brackets before you
 
 
 3. Now, we need to install the dependencies for this project. Install all of them using:
-```
+```bash
 (django):$ python3 -m pip install django
 (django):$ python3 -m pip install djangorestframework
 (django):$ python3 -m pip install psycopg2
 ```
 This will install Django, Django REST framework, and psycopg2 libraries. psycopg2 is required to interact with the postgres database that we will need later. In case you run into an issue with psycopg2 installation. Try installing the following libraries first:
-```
+```bash
 (django):$ sudo apt install libpq-dev python3-dev
 ```
 These dev libraries will help with the installation steps on psycopg2
@@ -74,17 +73,15 @@ django  project
 │   ├── asgi.py
 │   ├── __init__.py
 │   ├── __pycache__
-│   │   ├── __init__.cpython-36.pyc
-│   │   ├── settings.cpython-36.pyc
-│   │   ├── urls.cpython-36.pyc
-│   │   └── wsgi.cpython-36.pyc
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
 └── manage.py
-
 ```
-As we can see, this command created a new directory called project in our current directory. This directory contains basic django code, and a lightweight server for development and testing locally. You can verify if everything is alright by going inside this new directory and typing
+
+As we can see, this command created a new directory called project in our current directory. There are a few simple components here that need to be understood.
+__wsgi.py__ : This is the python file that helps in deployment on a production server, we will ignore this right now.
+__urls.py__ : This This directory contains basic django code, and a lightweight server for development and testing locally. You can verify if everything is alright by going inside this new directory and typing
 ```
 (django): /project$ python3 manage.py runserver
 
