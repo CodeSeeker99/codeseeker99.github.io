@@ -106,7 +106,7 @@ Django version 3.1.5, using settings 'dummyproject.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 ```
-This should bring up the text as shown above and you should be able to see a debug webpage on the given link. This is your website, hosted locally.
+This should start your server on localhost, and bring up the text as shown above. You should be able to see a debug webpage on the given link. This is your website API, hosted locally.
 
 Now, since we are making a REST API and we will be using Django REST framework as well. Go ahead and add 'rest_framework' in the list of **INSTALLED_APPS** in the **settings.py** file. It should now look something like this:
 ```python
@@ -149,11 +149,20 @@ After this, you should also register your app inside your project. Please add th
 INSTALLED_APPS = [
     'firstApi.apps.FirstapiConfig',
     'rest_framework',
-    ...#other apps
+    #...other apps
 ]
 ```
+Also, go **project/urls.py** and adding the import statement ```from django.conf.urls import url, include``` along with an entry in the **urlpatterns** list so it looks like
+```python
+urlpatterns = [
+    url(r'^', include('api_module.urls')),
+    path('admin/', admin.site.urls),
+]
+```
+This will redirect all requests to the api_module's url router first. There we can manage it separately. Ideally, we should keep a keyword like "api" in the path, but our service is completely an API, so this is not necessary.
 
-6. The cool thing about django is that, while development the server is running, any changes you save to any .py file will be automatically detected, and updated on the hosted website. You don't have to manually restart the server each time. Now, we're defining our databse to contain a very simple model, where each entry contains a name, a description and a date attribute of the last updated date. There is also an ID attribute for each entry to function as primary key. Go ahead and make your model something like this.
+
+6. The cool thing about django is that, while development the server is running, any changes you save to any .py file will be automatically detected, and updated on the hosted website. So you can keep the server running in the background and don't have to manually restart the server each time. Now, we're defining our databse to contain a very simple model, where each entry contains a name, a description and a date attribute of the last updated date. There is also an ID attribute for each entry to function as primary key. Go ahead and make your model something like this.
 ```python
 from django.db import models
 
@@ -163,9 +172,9 @@ class PytorchModel(models.Model):
     desc = models.CharField(max_length=100, blank=False)
     last_updated = models.DateField(auto_now_add=True)
 ```
-Notice how I used the auto_now_add attribute of the _DateField_ object. This way, we don't have to specify the date while maing an entry, that gets fetched automatically.
+Notice how I used the auto_now_add attribute of the _DateField_ object. This way, we don't have to specify the date while maing an entry, that gets fetched automatically. I've named my model as PytorchModel because I intend to change this model to eventually save actual serialised model weights in the database. But you can keep it anything for now.
 
-7. Now its time to plug in the Postgres database. First, go to your **settings.py** and change the DATABASES dictionary to the following
+7. Now its time to plug in the Postgres database. First, go to your **settings.py** and change the DATABASES dictionary to the following. When you make multiple apps in the same project, you can even append more databases to this list to use as backups or otherwise according to your requirements.
 ```python
 DATABASES = {
     'default': {
@@ -178,6 +187,7 @@ DATABASES = {
     }
 }
 ```
+You can get rid of the db.sqlite3 file in your project folder as it is no longer required. We are using our own db in this project.
 
 8. Lets run our Postgres server using PGadmin. Go to the PG admin server, and create a new database with the name db1, as mentioned in your **settings.py** file.
 
@@ -186,31 +196,85 @@ this will make a **migrations** directory in your app directory which contains i
 
 After this, run ```$ python3 manage.py migrate```. This command will migrate all your models to the database. That is, this will set up all your tables accodring to the model types. Those tables ofcourse, will be empty.
 
-9.
-
-
-
-
-
-## Learnings
-
-### Setting up a local database connection to Postgres
-
-This turned out to be more simple that I thought it would be. Django provides the option of using multiple databases in the project by simply extending the DATABASES dictionary in the settings.py file of the project and writing a router for the requests. This project only uses a single db, so I simply changed the sqlite3 backend to postgresql like shown below. 
-
-_NOTE: Django does not set up your postgres database like it does for sqlite3. You have to manually make one using any tool like Pg admin._
-
+9. Now lets add fill the serializer file with code to transform our models to JSON. The Django REST framework makes this very simple by already having created a class called **rest_frameworks.serializers.ModelSerializer**. Simply make a subclass of this class and add your fields to a Meta class inside this class as follows:
 ```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'quredb1',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+from rest_framework import serializers
+from firstApi.models import PytorchModel
+
+class PytorchModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PytorchModel
+        fields = ('id', 'name', 'desc', 'last_updated')
+```
+
+10. We're almost done! Now all that is left is to route the request to a view, and implement the view itself. First lets handle the routing, in the **api_module/urls.py**, write the following:
+```python
+from django.conf.urls import url 
+from api_module import views
+
+urlpatterns = [
+    url(r'^api/list', views.model_list),
+]
+```
+This defines that, if any request has "api/list" after the domain name, it will be handled by the model_list function in the views file. But we haven't implemented anything yet, so lets do that. Go to **views.py** in api_module folder and implement the request handling something like this
+```python
+from django.shortcuts import render
+from django.http.response import JsonResponse
+
+from api_module.models import PytorchModel
+from api_module.serializers import PytorchModelSerializer
+
+from rest_framework.decorators import api_view
+from rest_framework.parsers import JSONParser 
+from rest_framework import status
+
+# Create your views here.
+# pk = primary key = id
+
+@api_view(['GET', 'POST', 'DELETE'])
+def pytorchModel_list(request):
+    if request.method == 'GET':
+        req_id = request.GET.get('id', None)
+        if req_id is not None:
+            try:
+                db_row = PytorchModel.objects.get(pk=req_id)
+                serialized_row = PytorchModelSerializer(db_row)
+                return JsonResponse(serialized_row.data)
+            except PytorchModel.DoesNotExist:
+                return JsonResponse({'message': 'The Model does not exist'}, status=status.HTTP_404_NOT_FOUND)
+        else:
+            db_row = PytorchModel.objects.all()
+            serialized_row = PytorchModelSerializer(db_row,many=True)
+            return JsonResponse(serialized_row.data, safe=False)
+
+    elif request.method == 'POST':
+        data = JSONParser().parse(request)
+        instance = PytorchModelSerializer(data=data)
+        if instance.is_valid():
+            instance.save()
+            return JsonResponse(instance.data, status=status.HTTP_201_CREATED)
+        return JsonResponse(instance.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        req_id = request.GET.get('id', None)
+        if req_id is not None:
+            try:
+                db_row = PytorchModel.objects.get(pk=req_id)
+                db_row.delete()
+                return JsonResponse({'message': 'Model deleted successfully'}, status=status.HTTP_200_OK)
+            except PytorchModel.DoesNotExist:
+                return JsonResponse({'message': 'The Model does not exist'}, status=status.HTTP_404_NOT_FOUND)
+        else:
+            req_name = request.GET.get('name', None)
+            if req_name is not None:
+                try:
+                    db_row = PytorchModel.objects.get(name=req_name)
+                    db_row.delete()
+                    return JsonResponse({'message': 'Model with name {} deleted successfully'.format(req_name)}, status=status.HTTP_200_OK)
+                except PytorchModel.DoesNotExist:
+                    return JsonResponse({'message': 'The Model does not exist'}, status=status.HTTP_404_NOT_FOUND)
+        return JsonResponse({'message': 'BAD REQUEST'}, status=status.HTTP_400_BAD_REQUEST)
+
 ```
 
 #### Work still happening on the project. More to add later..
