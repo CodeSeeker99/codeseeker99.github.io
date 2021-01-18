@@ -5,7 +5,9 @@ permalink: /about/
 published: true
 ---
 
-I'm Rishabh Bajpai. Completing my Bachelors of Engineering in Computer Science at BITS-Pilani, K. K. Birla Goa Campus. Have previously worked as a research intern at Central Electrical Engineering Research Institute of India (CEERI), where I helped in multiple AI-based healthcare projects. I have also interned at Amazon India over the summer for Software Development role. Currently interning at https://qure.ai/
+#### Hi, I'm
+### Rishabh Bajpai
+I'm completing my Bachelors of Engineering in Computer Science at BITS-Pilani, K. K. Birla Goa Campus. I have previously worked as a research intern at Central Electrical Engineering Research Institute of India (CEERI), where I helped in multiple AI-based healthcare projects. I have also interned at Amazon India over the summer for Software Development role. Currently interning at https://qure.ai/
 
 Interested in any kind of AI application and research, with a slight inclination towards signal processing. 
 Hobbies include Ultimate frisbee, video production, and competitive online gaming. For more info check out my Linkedin profile mentioned in the footer. 
