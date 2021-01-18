@@ -144,7 +144,14 @@ As we can see, it creates a new directory with the app name, containing a bunch 
   - __serializers.py__ : We will use this file to define serializers for our models. Because each model has to be converted into JSON/XML (due to RESTfulness) before being sent out.
   - __urls.py__ : We will use this file to define the URL mapping within the API. Basically, this file will map the last part of the url to a function in views.py file
 
-After this, you should also register your app inside your project. Please add the name of the function in **apps.py**, which is **ApiModuleConfig** in my case, to your list in **project/settings.py**.
+After this, you should also register your app inside your project. Please add the name of the function in **apps.py**, which is **ApiModuleConfig** in my case, to your list in **project/settings.py**. So your list should look like
+```python
+INSTALLED_APPS = [
+    'firstApi.apps.FirstapiConfig',
+    'rest_framework',
+    ...#other apps
+]
+```
 
 6. The cool thing about django is that, while development the server is running, any changes you save to any .py file will be automatically detected, and updated on the hosted website. You don't have to manually restart the server each time. Now, we're defining our databse to contain a very simple model, where each entry contains a name, a description and a date attribute of the last updated date. There is also an ID attribute for each entry to function as primary key. Go ahead and make your model something like this.
 ```python
@@ -163,7 +170,7 @@ Notice how I used the auto_now_add attribute of the _DateField_ object. This way
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'quredb1',
+        'NAME': 'db1',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',
@@ -172,8 +179,14 @@ DATABASES = {
 }
 ```
 
-8. After creating this model you can run a utility script ```$ python3 manage.py makemigrations```
-this will make a **migrations** directory in your app directory which contains instructions to make the databse changes. After this, run ```$ python3 manage.py migrate```. This command will migrate all your models to the database. That is, this will set up all your tables accodring to the model types. Those tables ofcourse, will be empty.
+8. Lets run our Postgres server using PGadmin. Go to the PG admin server, and create a new database with the name db1, as mentioned in your **settings.py** file.
+
+After creating this model you can run a utility script ```$ python3 manage.py makemigrations```
+this will make a **migrations** directory in your app directory which contains instructions to make the databse changes. 
+
+After this, run ```$ python3 manage.py migrate```. This command will migrate all your models to the database. That is, this will set up all your tables accodring to the model types. Those tables ofcourse, will be empty.
+
+9.
 
 
 
