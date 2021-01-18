@@ -9,7 +9,7 @@ name: Rishabh's Blog
 author: Rishabh Bajpai
 
 # Short bio or description (displayed in the header)
-description: ...
+description: Somewhere between SDE and AIE
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: /images/reverie.png
@@ -96,4 +96,3 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
-
