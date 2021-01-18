@@ -78,11 +78,13 @@ django  project
 │   └── wsgi.py
 └── manage.py
 ```
-
-As we can see, this command created a new directory called project in our current directory. There are a few simple components here that need to be understood.
-__wsgi.py__ : This is the python file that helps in deployment on a production server, we will ignore this right now.
-__urls.py__ : This This directory contains basic django code, and a lightweight server for development and testing locally. You can verify if everything is alright by going inside this new directory and typing
-```
+As we can see, this command created a new directory called project in our current directory. This directory contains basic django code, and a lightweight server for development and testing locally. There are a few simple components here that need to be understood.
+__wsgi.py__ : This is the python file that helps in deployment on different types of production servers (these are called Web Server Gateway Interface (WSGI) compatible servers). We will ignore this right now.
+More info [here](https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/).
+__urls.py__ : This file helps in managing routing the request to different components inside your project (called apps). More info [here](https://docs.djangoproject.com/en/1.8/topics/http/urls/).
+__settings.py__ : This file defines a lot of environment variables and settings for the project. Including database and allowed hosts. More info [here](https://docs.djangoproject.com/en/1.8/topics/settings/).
+__manage.py__ : This file helps you run command line utilities on your django project. This functions similar to django-admin, but with your project's environment variables. You can verify if everything is alright by going inside this new directory and typing:
+```bash
 (django): /project$ python3 manage.py runserver
 
 Watching for file changes with StatReloader
@@ -99,8 +101,12 @@ Quit the server with CONTROL-C.
 ```
 This should bring up the text as shown above and you should be able to see a debug webpage on the given link. This is your website, hosted locally.
 
+5. Now we make the actual API. This will be an app, as a part of the project. Each project can contain multiple apps. For example, on Facebook, Newsfeed can be a separate app, while settings menu can be a separate app. To make a new app, do
+```bash
+(django): /project$ python3 manage.py
+```
 
-5. 
+5. The cool thing about django is that, even while the server is running, any changes you make to the view functions
 
 
 ## Learnings
