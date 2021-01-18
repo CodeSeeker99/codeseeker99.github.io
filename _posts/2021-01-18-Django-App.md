@@ -67,6 +67,22 @@ These dev libraries will help with the installation steps on psycopg2
 (django):$ django-admin startproject project
 (django):$ ls
 django  project
+(django):$ tree ./dummyproject
+./dummyproject/
+├── db.sqlite3
+├── dummyproject
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-36.pyc
+│   │   ├── settings.cpython-36.pyc
+│   │   ├── urls.cpython-36.pyc
+│   │   └── wsgi.cpython-36.pyc
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── manage.py
+
 ```
 As we can see, this command created a new directory called project in our current directory. This directory contains basic django code, and a lightweight server for development and testing locally. You can verify if everything is alright by going inside this new directory and typing
 ```
