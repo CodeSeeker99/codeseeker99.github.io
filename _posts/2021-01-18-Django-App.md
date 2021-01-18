@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 
 _Project meant to help ramp myself up on technologies like Django, Docker, Nginx and Postgres. Used Django backend to create a REST API with a simple CRUD functionality on a local postgres database instance._
@@ -28,14 +28,3 @@ DATABASES = {
 #### Work still happening on the project. More to add later..
 
 #### Code can be found at https://github.com/CodeSeeker99/PS2_repo/tree/main/Django
-
-
-
-
-
-
-
-
-
-
-
