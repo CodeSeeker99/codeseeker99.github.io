@@ -18,7 +18,7 @@ __Create, Read, Update, and Delete__ or __CRUD__ are a set of basic functions wh
 
 ### Django
 
-Django is a web framework based on python. It promotes fast development by pushing a lot of general details such as security and scaling into the framework backend, hence giving the programmer more time to focus on useful code and business logic. It also ships with a default light-weight server, which helps in beginners with quick learning and adoption. Since Django is based on python it also enjoys the huge amount of support in terms of libraries that the python community provides. The developers claim that > Django was designed to help developers take applications from concept to completion as quickly as possible.
+Django is a web framework based on python. It promotes fast development by pushing a lot of general details such as security and scaling into the framework backend, hence giving the programmer more time to focus on useful code and business logic. It also ships with a default light-weight server, which helps in beginners with quick learning and adoption. Since Django is based on python it also enjoys the huge amount of support in terms of libraries that the python community provides. Django follows the Dont Repeat Yourself (DRY) philosophy, which means, it maximises the reusability of code. The developers claim that > Django was designed to help developers take applications from concept to completion as quickly as possible.
 
 __Django REST framework__ allows you to use the same backend of django for RESTful services as well. A good feature of this framework is how easy it is to return web-browsable reponses using the standard Django template, which helps in easy debugging. 
 
@@ -26,7 +26,7 @@ __Django REST framework__ allows you to use the same backend of django for RESTf
 
 A virtual environment is a tool that helps keep your dependencies from multiple projects well separated and documented. This is extremely helpful when you need to export your project and require a list of project-specific dependencies.
 
-## Tutorial
+ ## Tutorial
 
 1. Install python3 on your machine. The steps are different for different distributions, so its best to refer the internet for this. Once you have it installed, verify the installation using.
 ```bash
@@ -79,11 +79,15 @@ django  project
 └── manage.py
 ```
 As we can see, this command created a new directory called project in our current directory. This directory contains basic django code, and a lightweight server for development and testing locally. There are a few simple components here that need to be understood.
-__wsgi.py__ : This is the python file that helps in deployment on different types of production servers (these are called Web Server Gateway Interface (WSGI) compatible servers). We will ignore this right now.
+  - __wsgi.py__ : This is the python file that helps in deployment on different types of production servers (these are called Web Server Gateway Interface (WSGI) compatible servers). We will ignore this right now.
 More info [here](https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/).
-__urls.py__ : This file helps in managing routing the request to different components inside your project (called apps). More info [here](https://docs.djangoproject.com/en/1.8/topics/http/urls/).
-__settings.py__ : This file defines a lot of environment variables and settings for the project. Including database and allowed hosts. More info [here](https://docs.djangoproject.com/en/1.8/topics/settings/).
-__manage.py__ : This file helps you run command line utilities on your django project. This functions similar to django-admin, but with your project's environment variables. You can verify if everything is alright by going inside this new directory and typing:
+
+  - __urls.py__ : This file helps in managing routing the request to different components inside your project (called apps). More info [here](https://docs.djangoproject.com/en/1.8/topics/http/urls/).
+
+  - __settings.py__ : This file defines a lot of environment variables and settings for the project. Including database and allowed hosts. More info [here](https://docs.djangoproject.com/en/1.8/topics/settings/).
+
+  - __manage.py__ : This file helps you run command line utilities on your django project. This functions similar to django-admin, but with your project's environment variables. You can verify if everything is alright by going inside this new directory and typing:
+
 ```bash
 (django): /project$ python3 manage.py runserver
 
@@ -117,8 +121,17 @@ api_module  db.sqlite3  dummyproject  manage.py
 ├── tests.py
 └── views.py
 ```
-As we can see, it creates a new directory with the app name, containing a bunch of files that will be used to handle the app. 
-6. The cool thing about django is that, even while the server is running, any changes you make to the view functions
+As we can see, it creates a new directory with the app name, containing a bunch of files that will be used to handle the app. Now there are many files here that we do not need to focus on for now. We will focus on
+  - __models.py__ : This file helps you define the schema for your database. The framework automatically writes the required database description commands for you using this file.
+  - __views.py__ : This is where all the processing functions will be defined. Each request will be processed using functions from this file.
+ Now go ahead and create 2 more files:
+  - __serializers.py__ : We will use this file to define serializers for our models. Because each model has to be converted into JSON/XML (due to RESTfulness) before being sent out.
+  - __urls.py__ : We will use this file to define the URL mapping within the API. Basically, this file will map the last part of the url to a function in views.py file
+
+
+6. The cool thing about django is that, while development the server is running, any changes you save to any .py file will be automatically detected, and updated on the hosted website. You don't have to manually restart the server each time.
+
+
 
 
 ## Learnings
