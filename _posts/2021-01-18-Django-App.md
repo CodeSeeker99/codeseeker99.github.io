@@ -6,7 +6,7 @@ _Short tutorial on using technologies like Django, Docker, Nginx and Postgres. U
 
 ---
 
-## The basics
+## BASIC THEORY
 
 ### REST API and CRUD
 
@@ -18,15 +18,17 @@ __Create, Read, Update, and Delete__ or __CRUD__ are a set of basic functions wh
 
 ### Django
 
-Django is a web framework based on python. It promotes fast development by pushing a lot of general details such as security and scaling into the framework backend, hence giving the programmer more time to focus on useful code and business logic. It also ships with a default light-weight server, which helps in beginners with quick learning and adoption. Since Django is based on python it also enjoys the huge amount of support in terms of libraries that the python community provides. Django follows the Dont Repeat Yourself (DRY) philosophy, which means, it maximises the reusability of code. The developers claim that > Django was designed to help developers take applications from concept to completion as quickly as possible.
+Django is a web framework based on python. It promotes fast development by pushing a lot of general details such as security and scaling into the framework backend, hence giving the programmer more time to focus on useful code and business logic. It also ships with a default light-weight server, which helps in beginners with quick learning and adoption. Since Django is based on python it also enjoys the huge amount of support in terms of libraries that the python community provides. Django follows the Dont Repeat Yourself (DRY) philosophy, which means, it maximises the reusability of code. The developers claim that 
 
-__Django REST framework__ allows you to use the same backend of django for RESTful services as well. A good feature of this framework is how easy it is to return web-browsable reponses using the standard Django template, which helps in easy debugging. 
+> Django was designed to help developers take applications from concept to completion as quickly as possible.
+
+**Django REST framework** allows you to use the same backend of django for RESTful services as well. A good feature of this framework is how easy it is to return web-browsable reponses using the standard Django template, which helps in easy debugging. 
 
 ### Virtual Environment
 
 A virtual environment is a tool that helps keep your dependencies from multiple projects well separated and documented. This is extremely helpful when you need to export your project and require a list of project-specific dependencies.
 
- ## Tutorial
+## TUTORIAL
 
 1. Install python3 on your machine. The steps are different for different distributions, so its best to refer the internet for this. Once you have it installed, verify the installation using.
 ```bash
@@ -61,7 +63,7 @@ This will install Django, Django REST framework, and psycopg2 libraries. psycopg
 These dev libraries will help with the installation steps on psycopg2
 
 
-4. We can now finally start with the app. Create a django app using:
+4. We can now finally start with the project. Create a django project using:
 ```bash
 (django):$ django-admin startproject project
 (django):$ ls
@@ -79,6 +81,7 @@ django  project
 └── manage.py
 ```
 As we can see, this command created a new directory called project in our current directory. This directory contains basic django code, and a lightweight server for development and testing locally. There are a few simple components here that need to be understood.
+
   - __wsgi.py__ : This is the python file that helps in deployment on different types of production servers (these are called Web Server Gateway Interface (WSGI) compatible servers). We will ignore this right now.
 More info [here](https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/).
 
@@ -105,11 +108,24 @@ Quit the server with CONTROL-C.
 ```
 This should bring up the text as shown above and you should be able to see a debug webpage on the given link. This is your website, hosted locally.
 
+Now, since we are making a REST API and we will be using Django REST framework as well. Go ahead and add 'rest_framework' in the list of **INSTALLED_APPS** in the **settings.py** file. It should now look something like this:
+```python
+INSTALLED_APPS = [
+    'rest_framework',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+```
+
 5. Now we make the actual API. This will be an app, as a part of the project. Each project can contain multiple apps. For example, on Facebook, Newsfeed can be a separate app, while settings menu can be a separate app. To make a new app, do
 ```bash
 (django): /project$ python3 manage.py startapp api_module
 (django): /project$ ls
-api_module  db.sqlite3  dummyproject  manage.py
+api_module  db.sqlite3  project  manage.py
 (django): /project$ tree ./api_module/
 ./api_module/
 ├── admin.py
@@ -128,8 +144,37 @@ As we can see, it creates a new directory with the app name, containing a bunch 
   - __serializers.py__ : We will use this file to define serializers for our models. Because each model has to be converted into JSON/XML (due to RESTfulness) before being sent out.
   - __urls.py__ : We will use this file to define the URL mapping within the API. Basically, this file will map the last part of the url to a function in views.py file
 
+After this, you should also register your app inside your project. Please add the name of the function in **apps.py**, which is **ApiModuleConfig** in my case, to your list in **project/settings.py**.
 
-6. The cool thing about django is that, while development the server is running, any changes you save to any .py file will be automatically detected, and updated on the hosted website. You don't have to manually restart the server each time.
+6. The cool thing about django is that, while development the server is running, any changes you save to any .py file will be automatically detected, and updated on the hosted website. You don't have to manually restart the server each time. Now, we're defining our databse to contain a very simple model, where each entry contains a name, a description and a date attribute of the last updated date. There is also an ID attribute for each entry to function as primary key. Go ahead and make your model something like this.
+```python
+from django.db import models
+
+# Create your models here.
+class PytorchModel(models.Model):
+    name = models.CharField(max_length=40, blank=False, unique=True)
+    desc = models.CharField(max_length=100, blank=False)
+    last_updated = models.DateField(auto_now_add=True)
+```
+Notice how I used the auto_now_add attribute of the _DateField_ object. This way, we don't have to specify the date while maing an entry, that gets fetched automatically.
+
+7. Now its time to plug in the Postgres database. First, go to your **settings.py** and change the DATABASES dictionary to the following
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'quredb1',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+```
+
+8. After creating this model you can run a utility script ```$ python3 manage.py makemigrations```
+this will make a **migrations** directory in your app directory which contains instructions to make the databse changes. After this, run ```$ python3 manage.py migrate```. This command will migrate all your models to the database. That is, this will set up all your tables accodring to the model types. Those tables ofcourse, will be empty.
+
 
 
 
