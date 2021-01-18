@@ -2,7 +2,7 @@
 published: true
 ---
 
-_Short tutorial on using technologies like Django, Docker, Nginx and Postgres. Used Django backend to create a REST API with a simple CRUD functionality on a local postgres database instance._
+_Short tutorial on using technologies like Django, Docker, Nginx and Postgres. Used Django backend to create a REST API with a simple CRUD functionality on a local postgres database instance. This tutorial requires you to have basic knowledge of python_
 
 ## The basics
 
@@ -16,13 +16,17 @@ __Create, Read, Update, and Delete__ or __CRUD__ are a set of basic functions wh
 
 ### Django
 
-Django is a web framework based on python. It promotes fast development by pushing a lot of general details such as security and scaling into the framework backend, hence giving the programmer more time to focus on useful code and business logic. It also ships with a default light-weight server, which helps in beginners with quick learning and adoption. Since Django is based on python it also enjoys the huge amount of support in terms of libraries that the python community provides. The developers claim that Django was designed to help developers take applications from concept to completion as quickly as possible.
+Django is a web framework based on python. It promotes fast development by pushing a lot of general details such as security and scaling into the framework backend, hence giving the programmer more time to focus on useful code and business logic. It also ships with a default light-weight server, which helps in beginners with quick learning and adoption. Since Django is based on python it also enjoys the huge amount of support in terms of libraries that the python community provides. The developers claim that > Django was designed to help developers take applications from concept to completion as quickly as possible.
 
-{% include pullquote.html quote="Django was designed to help developers take applications from concept to completion as quickly as possible." %}
+__Django REST framework__ allows you to use the same backend of django for RESTful services as well. A good feature of this framework is how easy it is to return web-browsable reponses using the standard Django template, which helps in easy debugging. 
+
+### Virtual Environment
+
+A virtual environment is a tool that helps keep your dependencies from multiple projects well separated and documented. This is extremely helpful when you need to export your project and require a list of project-specific dependencies.
+
+## Tutorial
 
 
-
-#### Django REST framework
 
 ## Learnings
 
