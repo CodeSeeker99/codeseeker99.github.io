@@ -2,12 +2,12 @@
 published: true
 ---
 
-_Short tutorial on using technologies like Django, Docker, Nginx and Postgres. Used Django backend to create a REST API with a simple CRUD functionality on a local postgres database instance. 
+_Short tutorial on using technologies like Django, Docker, Nginx and Postgres. Used Django backend to create a REST API with a simple CRUD functionality on a local postgres database instance._
 **Note**: This tutorial requires you to have basic knowledge of python and linux commands.
 
 ---
 
-## BASIC THEORY
+## BACKGROUND
 
 ![Theory image]({{site.baseurl}}/images/Screenshot from 2021-01-18 20-10-37.png)
 <p style="color:gray;">Lorem ipsum...</p>
@@ -16,7 +16,7 @@ _Short tutorial on using technologies like Django, Docker, Nginx and Postgres. U
 
 An __API__ or __Application Programming Interface__, in simple terms is a bunch of code that helps interact with a lot of backend code. It provides definite input, output, and error pathways to the backend code.You can write a basic API using functions in Python.  
 
-A __REST__ API or a __REpresentational State Transfer__ API is an API that follows constraints and operating standards called REST. This standard is popularly used in web services. To list the tenets of a REST API is worth an entire article. To summarize them, they standardise service responses so that reading them becomes device/platform independent. This includes, giving responses in JSON/XML, and using only a few HTTP headers (POST, PUT, GET, DELETE). In this project we're going to create a REST API using Django REST framework. A framework is a set of libraries that do most of the heavy lifting for us, and allow us to focus on the functionality of the API rather than thinking about its low-level details.
+A __REST__ API or a __REpresentational State Transfer__ API is an API that follows constraints and operating standards called REST. This standard is popularly used in web services. To list the tenets of a REST API is worth an entire article. Lets just say they standardise service responses so that reading them becomes device/platform independent. This includes, giving responses in JSON/XML, and using only a few HTTP headers (POST, PUT, GET, DELETE). In this project we're going to create a REST API using Django REST framework. A framework is a set of libraries that do most of the heavy lifting for us, and allow us to focus on the functionality of the API rather than thinking about its low-level details.
 
 __Create, Read, Update, and Delete__ or __CRUD__ are a set of basic functions which any service that interacts with a persistent storage (i.e Database) requires. In this project, we will be making an app which does CRUD operations on a Postgres database.
 
@@ -32,16 +32,23 @@ Django is a web framework based on python. It promotes fast development by pushi
 
 A virtual environment is a tool that helps keep your dependencies from multiple projects well separated and documented. This is extremely helpful when you need to export your project and require a list of project-specific dependencies.
 
-## TUTORIAL
+---
 
-1. Install python3 on your machine. The steps are different for different distributions, so its best to refer the internet for this. Once you have it installed, verify the installation using.
+## TUTORIAL
+_Follow along with these instructions to create your own Django app!_
+
+### Installation
+Let's begin by installation some necessary packages.
+
+#### Python
+
+Install python3 on your machine. The steps are different for different distributions, so its best to refer the internet for this. Once you have it installed, verify the installation using.
 ```bash
 $ python3 --version
 ```
 This should return the version of python installed.
 
-
-2. Python comes with its own virtual environment command called venv. On linux and Mac distributions this will suffice. On windows, you might have to download virtualenvwrapper. To make a new virtual environment, type:
+Python comes with its own virtual environment command called venv. On linux and Mac distributions this will suffice. On windows, you might have to download virtualenvwrapper. To make a new virtual environment, type:
 ```bash
 $ python3 -m venv /path/to/new/virtual/environment/name_of_env
 ```
@@ -54,6 +61,7 @@ $ source ./tutorial/django/activate
 This should bring up the name of your virtual environment in brackets before your current working directory in the terminal. 
 
 
+#### Dependencies
 3. Now, we need to install the dependencies for this project. Install all of them using:
 ```bash
 (django):$ python3 -m pip install django
