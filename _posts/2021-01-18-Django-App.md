@@ -2,7 +2,9 @@
 published: true
 ---
 
-_Short tutorial on using technologies like Django, Docker, Nginx and Postgres. Used Django backend to create a REST API with a simple CRUD functionality on a local postgres database instance. This tutorial requires you to have basic knowledge of python_
+_Short tutorial on using technologies like Django, Docker, Nginx and Postgres. Used Django backend to create a REST API with a simple CRUD functionality on a local postgres database instance. This tutorial requires you to have basic knowledge of python. This tutorial follows linux commands._
+
+---
 
 ## The basics
 
@@ -26,6 +28,66 @@ A virtual environment is a tool that helps keep your dependencies from multiple 
 
 ## Tutorial
 
+1. Install python3 on your machine. The steps are different for different distributions, so its best to refer the internet for this. Once you have it installed, verify the installation using.
+```
+$ python3 --version
+```
+This should return the version of python installed.
+
+
+2. Python comes with its own virtual environment command called venv. On linux and Mac distributions this will suffice. On windows, you might have to download virtualenvwrapper. To make a new virtual environment, type:
+```
+$ python3 -m venv /path/to/new/virtual/environment/name_of_env
+```
+This will create a new folder with the given name at the given location. I'm going to place mine in a new folder called tutorial:
+``` $ python3 -m venv ./tutorial/django ```
+Now, we will activate this virtual environment using the following command
+``` 
+$ source ./tutorial/django/activate
+(django):$ 
+```
+This should bring up the name of your virtual environment in brackets before your current working directory in the terminal. 
+
+
+3. Now, we need to install the dependencies for this project. Install all of them using:
+```
+(django):$ python3 -m pip install django
+(django):$ python3 -m pip install djangorestframework
+(django):$ python3 -m pip install psycopg2
+```
+This will install Django, Django REST framework, and psycopg2 libraries. psycopg2 is required to interact with the postgres database that we will need later. In case you run into an issue with psycopg2 installation. Try installing the following libraries first:
+```
+(django):$ sudo apt install libpq-dev python3-dev
+```
+These dev libraries will help with the installation steps on psycopg2
+
+
+4. We can now finally start with the app. Create a django app using:
+```bash
+(django):$ django-admin startproject project
+(django):$ ls
+django  project
+```
+As we can see, this command created a new directory called project in our current directory. This directory contains basic django code, and a lightweight server for development and testing locally. You can verify if everything is alright by going inside this new directory and typing
+```
+(django): /project$ python3 manage.py runserver
+
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+January 18, 2021 - 10:20:25
+Django version 3.1.5, using settings 'dummyproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+```
+This should bring up the text as shown above and you should be able to see a debug webpage on the given link. This is your website, hosted locally.
+
+
+5. 
 
 
 ## Learnings
