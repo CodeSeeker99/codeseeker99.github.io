@@ -3,14 +3,13 @@ published: true
 ---
 
 _Short tutorial on using technologies like Django, Docker, Nginx and Postgres. Used Django backend to create a REST API with a simple CRUD functionality on a local postgres database instance._
+
 **Note**: This tutorial requires you to have basic knowledge of python and linux commands.
 
 ---
 
-## BACKGROUND
-
+<h2 style="background-color:Gray; color:white">BACKGROUND</h2>
 ![Theory image]({{site.baseurl}}/images/Screenshot from 2021-01-18 20-10-37.png)
-<p style="color:gray;">Lorem ipsum...</p>
 
 ### REST API and CRUD
 
