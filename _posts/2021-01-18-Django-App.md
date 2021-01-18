@@ -80,7 +80,7 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-
 sudo apt-get update
 sudo apt-get -y install postgresql
 ```
-This will install the Postgres engine on your machine. This comes along with a database query program called psql. Type ```sudo service postgresql status```. The first command checks the status of the postgresql engine on your machine. If the server is up, it will show active status, if it is down, you can start is using ``` sudo servuce postgresql start```. Now use the following to create a new database.
+This will install the Postgres engine on your machine. This comes along with a database query program called **psql**. Type ```sudo service postgresql status```. This command checks the status of the postgresql engine on your machine. If the server is up, it will show active status, if it is down, you can start is using ``` sudo servuce postgresql start```. Now use the following to create a new database.
 ```bash
 $ sudo -i -u postgres
 postgres@R1shabh-d3ll:~$ psql
@@ -107,6 +107,7 @@ Then, we set a password for the user postgres using **\password**, so that it is
 #### We are now ready to start actually coding the app! 
 
 ### Tutorial
+
 1. We can now finally start with the project. Create a django project using:
 ```bash
 (django):$ django-admin startproject project
