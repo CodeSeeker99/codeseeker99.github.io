@@ -33,13 +33,13 @@ A virtual environment is a tool that helps keep your dependencies from multiple 
 
 ---
 
-## TUTORIAL
+<h2 style="background-color:black; color:white">TUTORIAL</h2>
 _Follow along with these instructions to create your own Django app!_
 
 ### Installation
 Let's begin by installation some necessary packages.
 
-#### Python
+<h4 style="text-align:left">TUTORIAL</h4>
 
 Install python3 on your machine. The steps are different for different distributions, so its best to refer the internet for this. Once you have it installed, verify the installation using.
 ```bash
