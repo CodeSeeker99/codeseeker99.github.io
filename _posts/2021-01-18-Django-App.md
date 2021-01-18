@@ -2,7 +2,7 @@
 published: true
 ---
 
-_Short tutorial on using technologies like Django, Docker, Nginx and Postgres. Used Django backend to create a REST API with a simple CRUD functionality on a local postgres database instance._
+_Short tutorial on using technologies like Django, Docker, Nginx and Postgres. In this part, we used Django backend to create a REST API with a simple CRUD functionality on a local postgres database instance._
 
 **Note**: This tutorial requires you to have basic knowledge of python and linux commands.
 
@@ -39,8 +39,7 @@ _Follow along with these instructions to create your own Django app!_
 ### Installation
 Let's begin by installation some necessary packages.
 
-<h4 style="text-align:left">TUTORIAL</h4>
-
+<h4 style="text-align:left">Python</h4>
 Install python3 on your machine. The steps are different for different distributions, so its best to refer the internet for this. Once you have it installed, verify the installation using.
 ```bash
 $ python3 --version
@@ -60,8 +59,8 @@ $ source ./tutorial/django/activate
 This should bring up the name of your virtual environment in brackets before your current working directory in the terminal. 
 
 
-#### Dependencies
-3. Now, we need to install the dependencies for this project. Install all of them using:
+<h4 style="text-align:left">Python Dependencies</h4>
+Now, we need to install the dependencies for this project. Install all of them using:
 ```bash
 (django):$ python3 -m pip install django
 (django):$ python3 -m pip install djangorestframework
@@ -73,8 +72,42 @@ This will install Django, Django REST framework, and psycopg2 libraries. psycopg
 ```
 These dev libraries will help with the installation steps on psycopg2
 
+<h4 style="text-align:left">Postgres</h4>
+Follow these steps to install Postgres on Ubuntu. For windows and other operating systems, install using the instructions given on [the postgres website](https://www.postgresql.org/download/)
+```bash
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get -y install postgresql
+```
+This will install the Postgres engine on your machine. This comes along with an database query program called psql. Type ```sudo service postgresql status```. The first command checks the status of the postgresql engine on your machine. If the server is up, it will show active status, if it is down, you can start is using ``` sudo servuce postgresql start```. Now use the following to create a new database.
+```bash
+$ sudo -i -u postgres
+postgres@R1shabh-d3ll:~$ psql
+postgres-# \l
+                             List of databases
+   Name    |  Owner   | Encoding | Collate | Ctype |   Access privileges   
+-----------+----------+----------+---------+-------+-----------------------
+ postgres  | postgres | UTF8     | en_IN   | en_IN | 
+ template0 | postgres | UTF8     | en_IN   | en_IN | =c/postgres          +
+           |          |          |         |       | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_IN   | en_IN | =c/postgres          +
+           |          |          |         |       | postgres=CTc/postgres
+postgres-# \password postgres
+Enter new password: 
+Enter it again: 
+postgres-# \q
+```
+So there is a lot to unpack here. First, we ascend to the super user postgres on our machine which was created during the installation. Now, as this user, we start the database engine query program called **psql**. This brings us to the psql terminal (as shown by the change in prefix). 
 
-4. We can now finally start with the project. Create a django project using:
+Now, at this point, we can create new databases, and change any settings that we need to change on the engine. I have first listed all the databases hosted on the machine. We see a postgres database and 2 template databses that are set up by default during the installation. For the purpose of our program, these will suffice. 
+
+Then, we set a password for the user postgres using **\password**, so that it is not accessible by everyone. If you already set a password during the installation, you can skip this. Finally, we quit using the **\q** command. In my case, I have stuck to the default user postgres, with the default databases and a password of "1234". 
+
+#### We are now ready to start actually coding the app! 
+
+### Tutorial
+1. We can now finally start with the project. Create a django project using:
 ```bash
 (django):$ django-admin startproject project
 (django):$ ls
@@ -132,7 +165,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-5. Now we make the actual API. This will be an app, as a part of the project. Each project can contain multiple apps. For example, on Facebook, Newsfeed can be a separate app, while settings menu can be a separate app. To make a new app, do
+2. Now we make the actual API. This will be an app, as a part of the project. Each project can contain multiple apps. For example, on Facebook, Newsfeed can be a separate app, while settings menu can be a separate app. To make a new app, do
 ```bash
 (django): /project$ python3 manage.py startapp api_module
 (django): /project$ ls
@@ -173,7 +206,7 @@ urlpatterns = [
 This will redirect all requests to the api_module's url router first. There we can manage it separately. Ideally, we should keep a keyword like "api" in the path, but our service is completely an API, so this is not necessary.
 
 
-6. The cool thing about django is that, while development the server is running, any changes you save to any .py file will be automatically detected, and updated on the hosted website. So you can keep the server running in the background and don't have to manually restart the server each time. Now, we're defining our databse to contain a very simple model, where each entry contains a name, a description and a date attribute of the last updated date. There is also an ID attribute for each entry to function as primary key. Go ahead and make your model something like this.
+3. The cool thing about django is that, while development the server is running, any changes you save to any .py file will be automatically detected, and updated on the hosted website. So you can keep the server running in the background and don't have to manually restart the server each time. Now, we're defining our databse to contain a very simple model, where each entry contains a name, a description and a date attribute of the last updated date. There is also an ID attribute for each entry to function as primary key. Go ahead and make your model something like this.
 ```python
 from django.db import models
 
@@ -185,12 +218,12 @@ class PytorchModel(models.Model):
 ```
 Notice how I used the auto_now_add attribute of the _DateField_ object. This way, we don't have to specify the date while maing an entry, that gets fetched automatically. I've named my model as PytorchModel because I intend to change this model to eventually save actual serialised model weights in the database. But you can keep it anything for now.
 
-7. Now its time to plug in the Postgres database. First, go to your **settings.py** and change the DATABASES dictionary to the following. When you make multiple apps in the same project, you can even append more databases to this list to use as backups or otherwise according to your requirements.
+4. Now its time to plug in the Postgres database. First, go to your **settings.py** and change the DATABASES dictionary to the following. When you make multiple apps in the same project, you can even append more databases to this list to use as backups or otherwise according to your requirements.
 ```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db1',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',
@@ -200,14 +233,12 @@ DATABASES = {
 ```
 You can get rid of the db.sqlite3 file in your project folder as it is no longer required. We are using our own db in this project.
 
-8. Lets run our Postgres server using PGadmin. Go to the PG admin server, and create a new database with the name db1, as mentioned in your **settings.py** file.
-
-After creating this model you can run a utility script ```$ python3 manage.py makemigrations```
+5. After creating this model you can run a utility script ```$ python3 manage.py makemigrations```
 this will make a **migrations** directory in your app directory which contains instructions to make the databse changes. 
 
 After this, run ```$ python3 manage.py migrate```. This command will migrate all your models to the database. That is, this will set up all your tables accodring to the model types. Those tables ofcourse, will be empty.
 
-9. Now lets add fill the serializer file with code to transform our models to JSON. The Django REST framework makes this very simple by already having created a class called **rest_frameworks.serializers.ModelSerializer**. Simply make a subclass of this class and add your fields to a Meta class inside this class as follows:
+6. Now lets add fill the serializer file with code to transform our models to JSON. The Django REST framework makes this very simple by already having created a class called **rest_frameworks.serializers.ModelSerializer**. Simply make a subclass of this class and add your fields to a Meta class inside this class as follows:
 ```python
 from rest_framework import serializers
 from firstApi.models import PytorchModel
@@ -218,7 +249,7 @@ class PytorchModelSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'desc', 'last_updated')
 ```
 
-10. We're almost done! Now all that is left is to route the request to a view, and implement the view itself. First lets handle the routing, in the **api_module/urls.py**, write the following:
+7. We're almost done! Now all that is left is to route the request to a view, and implement the view itself. First lets handle the routing, in the **api_module/urls.py**, write the following:
 ```python
 from django.conf.urls import url 
 from api_module import views
@@ -288,6 +319,6 @@ def pytorchModel_list(request):
 
 ```
 
-#### Work still happening on the project. More to add later..
+#### Work still happening on the project. Will add more parts on the blog, Keep checking!
 
 #### Code can be found at [the repository link](https://github.com/CodeSeeker99/PS2_repo/tree/main/Django)
