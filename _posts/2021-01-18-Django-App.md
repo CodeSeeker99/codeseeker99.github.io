@@ -10,7 +10,7 @@ _Short tutorial on using technologies like Django, Docker, Nginx and Postgres. U
 ## BASIC THEORY
 
 ![Theory image]({{site.baseurl}}/images/Screenshot from 2021-01-18 20-10-37.png)
-
+<p style="color:gray;">Lorem ipsum...</p>
 
 ### REST API and CRUD
 
