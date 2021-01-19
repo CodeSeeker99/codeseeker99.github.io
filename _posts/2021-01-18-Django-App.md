@@ -34,7 +34,6 @@ A virtual environment is a tool that helps keep your dependencies from multiple 
 ---
 
 <h2 style="background-color:black; color:white">TUTORIAL</h2>
-<p style="text-align:center">_Follow along with these instructions to create your own Django app!_</p>
 
 ### Installation
 <p style="text-align:center">Let's begin by installing some necessary packages.</p>
