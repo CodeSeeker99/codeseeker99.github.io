@@ -106,6 +106,8 @@ Then, we set a password for the user postgres using **\password**, so that it is
 
 #### We are now ready to start actually coding the app! 
 
+
+
 ### Setting up the Django app
 
 <h4 style="text-align:left">Project</h4>
