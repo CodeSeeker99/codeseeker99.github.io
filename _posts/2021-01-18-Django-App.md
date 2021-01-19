@@ -332,6 +332,8 @@ def model_list(request):
 
 ```
 
+Notice how getting objects from the database is as simple as accessing the class **PytorchModel's** attributes. This is the power of the **Django Orbject Relational Mapper (ORM)**. The code above implements only the **CREATE, READ and DELETE** functionality. You can add the UPDATE functionality using a **PUT** header request in the same function.
+
 #### Work still happening on the project. Will add more parts on the blog, Keep checking!
 
 #### Code can be found at [the repository link](https://github.com/CodeSeeker99/PS2_repo/tree/main/Django)
