@@ -196,7 +196,7 @@ As we can see, it creates a new directory with the app name, containing a bunch 
 After this, you should also register your app inside your project. Please add the name of the function in **apps.py**, which is **ApiModuleConfig** in my case, to your list in **project/settings.py**. So your list should look like
 ```python
 INSTALLED_APPS = [
-    'firstApi.apps.FirstapiConfig',
+    'api_module.apps.ApiModuleConfig',
     'rest_framework',
     #...other apps
 ]
@@ -246,11 +246,11 @@ this will make a **migrations** directory in your app directory which contains i
 After this, run ```$ python3 manage.py migrate```. This command will migrate all your models to the database. That is, this will set up all your tables accodring to the model types. Those tables ofcourse, will be empty.
 
 <h4 style="text-align:left">Serialization</h4>
-Now lets add fill the serializer file with code to transform our models to JSON. The Django REST framework makes this very simple by already having created a class called **rest_frameworks.serializers.ModelSerializer**. Simply make a subclass of this class and add your fields to a Meta class inside this class as follows:
+Now lets fill the serializer file with code to transform our models to JSON. The Django REST framework makes this very simple by already having created a class called **rest_frameworks.serializers.ModelSerializer**. Simply make a subclass of this class and add your fields to a Meta class inside this class as follows:
 
 ```python
 from rest_framework import serializers
-from firstApi.models import PytorchModel
+from api_module.models import PytorchModel
 
 class PytorchModelSerializer(serializers.ModelSerializer):
     class Meta:
@@ -287,7 +287,7 @@ from rest_framework import status
 # pk = primary key = id
 
 @api_view(['GET', 'POST', 'DELETE'])
-def pytorchModel_list(request):
+def model_list(request):
     if request.method == 'GET':
         req_id = request.GET.get('id', None)
         if req_id is not None:
