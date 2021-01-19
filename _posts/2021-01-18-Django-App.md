@@ -34,10 +34,10 @@ A virtual environment is a tool that helps keep your dependencies from multiple 
 ---
 
 <h2 style="background-color:black; color:white">TUTORIAL</h2>
-_Follow along with these instructions to create your own Django app!_
+<p style="text-align:center">_Follow along with these instructions to create your own Django app!_</p>
 
 ### Installation
-Let's begin by installation some necessary packages.
+<p style="text-align:center">Let's begin by installing some necessary packages.</p>
 
 <h4 style="text-align:left">Python</h4>
 Install python3 on your machine. The steps are different for different distributions, so its best to refer the internet for this. Once you have it installed, verify the installation using.
@@ -46,7 +46,7 @@ $ python3 --version
 ```
 This should return the version of python installed.
 
-Python comes with its own virtual environment command called venv. On linux and Mac distributions this will suffice. On windows, you might have to download virtualenvwrapper. To make a new virtual environment, type:
+Python comes with its own virtual environment command called **venv**. On linux and Mac distributions this will suffice. On windows, you might have to download **virtualenvwrapper**. To make a new virtual environment, type:
 ```bash
 $ python3 -m venv /path/to/new/virtual/environment/name_of_env
 ```
@@ -80,7 +80,7 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-
 sudo apt-get update
 sudo apt-get -y install postgresql
 ```
-This will install the Postgres engine on your machine. This comes along with a database query program called **psql**. Type ```sudo service postgresql status```. This command checks the status of the postgresql engine on your machine. If the server is up, it will show active status, if it is down, you can start is using ``` sudo servuce postgresql start```. Now use the following to create a new database.
+This will install the Postgres engine on your machine. This comes along with a database query program called **psql**. Type ```sudo service postgresql status```. This command checks the status of the postgresql engine on your machine. If the server is up, it will show active status, if it is down, you can start is using ``` sudo service postgresql start```. Now use the following to create a new database.
 ```bash
 $ sudo -i -u postgres
 postgres@R1shabh-d3ll:~$ psql
@@ -114,16 +114,16 @@ We can now finally start with the project. Create a django project using:
 (django):$ django-admin startproject project
 (django):$ ls
 django  project
-(django):$ tree ./dummyproject
-./dummyproject/
+(django):$ tree ./project
+./project/
 ├── db.sqlite3
-├── dummyproject
-│   ├── asgi.py
-│   ├── __init__.py
-│   ├── __pycache__
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
+├── project
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
 └── manage.py
 ```
 As we can see, this command created a new directory called project in our current directory. This directory contains basic django code, and a lightweight server for development and testing locally. There are a few simple components here that need to be understood.
@@ -137,22 +137,22 @@ More info [here](https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/).
 
   - __manage.py__ : This file helps you run command line utilities on your django project. This functions similar to django-admin, but with your project's environment variables. You can verify if everything is alright by going inside this new directory and typing:
 
-```bash
-(django): /project$ python3 manage.py runserver
+  ```bash
+  (django): /project$ python3 manage.py runserver
 
-Watching for file changes with StatReloader
-Performing system checks...
+  Watching for file changes with StatReloader
+  Performing system checks...
 
-System check identified no issues (0 silenced).
+  System check identified no issues (0 silenced).
 
-You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
-Run 'python manage.py migrate' to apply them.
-January 18, 2021 - 10:20:25
-Django version 3.1.5, using settings 'dummyproject.settings'
-Starting development server at http://127.0.0.1:8000/
-Quit the server with CONTROL-C.
-```
-This should start your server on localhost, and bring up the text as shown above. You should be able to see a debug webpage on the given link. This is your website API, hosted locally.
+  You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+  Run 'python manage.py migrate' to apply them.
+  January 18, 2021 - 10:20:25
+  Django version 3.1.5, using settings 'project.settings'
+  Starting development server at http://127.0.0.1:8000/
+  Quit the server with CONTROL-C.
+  ```
+  This should start your server on localhost, and bring up the text as shown above. You should be able to see a debug webpage on the given link. This is your website API, hosted locally.
 
 Now, since we are making a REST API and we will be using Django REST framework as well. Go ahead and add 'rest_framework' in the list of **INSTALLED_APPS** in the **settings.py** file. It should now look something like this:
 ```python
@@ -179,7 +179,7 @@ api_module  db.sqlite3  project  manage.py
 ├── apps.py
 ├── __init__.py
 ├── migrations
-│   └── __init__.py
+│   └── __init__.py
 ├── models.py
 ├── tests.py
 └── views.py
@@ -187,7 +187,9 @@ api_module  db.sqlite3  project  manage.py
 As we can see, it creates a new directory with the app name, containing a bunch of files that will be used to handle the app. Now there are many files here that we do not need to focus on for now. We will focus on
   - __models.py__ : This file helps you define the schema for your database. The framework automatically writes the required database description commands for you using this file.
   - __views.py__ : This is where all the processing functions will be defined. Each request will be processed using functions from this file.
+  
  Now go ahead and create 2 more files:
+ 
   - __serializers.py__ : We will use this file to define serializers for our models. Because each model has to be converted into JSON/XML (due to RESTfulness) before being sent out.
   - __urls.py__ : We will use this file to define the URL mapping within the API. Basically, this file will map the last part of the url to a function in views.py file
 
