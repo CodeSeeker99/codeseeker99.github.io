@@ -20,7 +20,7 @@ A __REST__ API or a __REpresentational State Transfer__ API is an API that follo
 __Create, Read, Update, and Delete__ or __CRUD__ are a set of basic functions which any service that interacts with a persistent storage (i.e Database) requires. In this project, we will be making an app which does CRUD operations on a Postgres database.
 
 ### Django
-![Django image]({{site.baseurl}}/images/django.png)
+![Django image]({{site.baseurl}}/images/djangobanner.png)
 
 Django is a web framework based on python. It promotes fast development by pushing a lot of general details such as security and scaling into the framework backend, hence giving the programmer more time to focus on useful code and business logic. It also ships with a default light-weight server, which helps in beginners with quick learning and adoption. Since Django is based on python it also enjoys the huge amount of support in terms of libraries that the python community provides. Django follows the Dont Repeat Yourself (DRY) philosophy, which means, it maximises the reusability of code. The developers claim that 
 
