@@ -4,6 +4,7 @@ published: false
 ---
 published: false
 ---
+
 _Short tutorial on using technologies like Django, Docker, Nginx and Postgres. In this part, we use docker-compose to run up containers of an Nginx webserver, a Gunicorn application server, a Django app, and a postgres database. This is a continuation of Django Build 1, and focuses on the deployment aspect of the application._
 
 _**Note**: This tutorial requires you to have basic knowledge of python and linux commands._
