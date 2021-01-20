@@ -1,0 +1,22 @@
+---
+published: false
+---
+_Short tutorial on using technologies like Django, Docker, Nginx and Postgres. In this part, we use docker-compose to run up containers of an Nginx webserver, a Gunicorn application server, a Django app, and a postgres database. This is a continuation of Django Build 1, and focuses on the deployment aspect of the application._
+
+_**Note**: This tutorial requires you to have basic knowledge of python and linux commands._
+
+---
+
+<h2 style="background-color:black; color:white">BACKGROUND</h2>
+![Theory image]({{site.baseurl}}/images/webserverdiagram.png)
+
+## Background
+
+In the previous tutorial, we made a django application and connected it to a local postgres database instance. Now, how do we deploy this application? Should we just simply take a computer and run the default server on it, and open its ports? Well, then who will handle the load balancing? Who will handle security? What if we want this application to run on multiple servers? This is why we called the given server in django "light weight". It cannot handle production level load.
+
+So now, we need a proper production level server
+
+
+
+
+
