@@ -319,5 +319,21 @@ server {
 }
 ```
 
+Here we first define our application server's port number in the **upstream** part. Notice this is the exposed port 8000 of the gunicorn container. This way, we can forward our parsed http requests to the port 8000 of the server. 
+
+Next, we make a port for listening to incoming connections, we're putting this on port 80, which is usually used by web servers. ...//
+
+#### That's it!
+
+Now we can run up our full system using the following commands
+
+```bash
+#For shutting down older conatiners
+:Django-Docker$ sudo docker-compose down -v
+:Django-Docker$ sudo docker-compose up -d --build
+```
+
+Now, go to http://localhost:1337 to test your REST API just like in tutorial 1. 
+
   
 
