@@ -218,6 +218,45 @@ This file will define the 2 containers we need for running our application from 
   Please make sure the variable names match here exactly, since that is crucial for postgres to identify it with.
   
   
+At this point, our database and our django app are prepared to run. Let's add one quick command in our django project's Dockerfile however
+
+```docker
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+```
+
+And create a file called **entrypoint.sh** in the ```Django-Docker/project/``` directory
+
+```bash
+#!/bin/sh
+
+if [ "$DATABASE" = "postgres" ]
+then
+    echo "Waiting for postgres..."
+
+    while ! nc -z $SQL_HOST $SQL_PORT; do
+      sleep 0.1
+    done
+
+    echo "PostgreSQL started"
+fi
+
+python manage.py flush --no-input
+python manage.py migrate
+
+exec "$@"
+```
+
+This is a small bash script that checks if the database is up before proceeding to flush it and do any migrations required (basically, what we did manually in tutorial 1 after creating the database).
+
+Now our Django-Postgres application is ready to be run on the default server. Run it in the ```Django-Docker/``` directory using:
+```bash
+:Django-Docker$ sudo docker-compose build
+:Django-Docker$ sudo docker-compose up -d
+```
+This should run your application on localhost:8000 as planned. If it does not run, you can check for errors on ```:Django-Docker$ sudo docker-compose logs -f```
+
+
+
 
 
 
