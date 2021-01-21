@@ -127,9 +127,35 @@ Using ```--detach```, we run the command in a separate fork, so our terminal is 
 
 But if you run this command right now, you might be getting a database connection error. This is simply because, _there is no Postgres database instance in that container!_. **So can we install postgres in this container too?** Sure!, but that is not a good practice. Ideally, each component should run on separate containers. That would allow us to run the database server on a different machine as well. 
 
-<h3 style="text-align:left">Setting up database container</h3>
+<h3 style="text-align:left">Setting up Database and Docker-compose</h3>
 
-This is where we need **Docker-compose**. This tool will help run the ```docker run``` command for us for multiple containers, and then allow us to network between them. Let's start by creating a **docker-compose.yml** file in the ```Django-Docker``` directory.
+This is where we need **Docker-compose**. This tool will help run the ```docker run``` command for us for multiple containers, and then allow us to network between them. Let's start by creating a **docker-compose.yml** file in the ```Django-Docker``` directory. Inside that, write this:
+```docker
+version: '3.7'
+
+services:
+  web:
+    build: ./project1
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./project1/:/usr/src/app/
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env.web.dev
+    depends_on:
+      - db
+      
+  db:
+    image: postgres:12.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env.db.dev
+
+volumes:
+  postgres_data:
+```
 
 
 
