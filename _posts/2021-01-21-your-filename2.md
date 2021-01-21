@@ -49,12 +49,13 @@ So, to make our application more portable, and to make sure it runs exactly the 
 
 <h2 style="background-color:black; color:white">TUTORIAL</h2>
 
-<h3 style="text-align:left">Installation</h3>
+<h3 style="text-align:left">Installation and set up</h3>
 
 Before we move on to the steps, lets first install docker on our machine. You can find steps for your machine on [Docker's installation page](https://docs.docker.com/engine/install/). 
 
 Furthermore, we will also require installation of **Docker Compose**, which is a software required to run multiple dockerised containers. Find the instructions [here](https://docs.docker.com/compose/install/).
 
+Also, since we will be running multiple containers, Its best to put your Django ```project/``` directory in a new directory. Let's called it ```Django-Docker/```
 <h3 style="text-align:left">Dockerizing the Django application</h3>
 
 Let's first dockerize the existing application from the last tutorial. 
