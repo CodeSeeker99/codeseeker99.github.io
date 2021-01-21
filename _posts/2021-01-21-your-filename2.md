@@ -40,3 +40,24 @@ Gunicorn is an application server written to work with any WSGI compatible frame
 #### So, finally, our stack looks something like this
 
 ![Stack image]({{site.baseurl}}/images/webserverdiagram.png)
+
+<h3 style="text-align:left">Docker</h3>
+
+We have our application, database server, application server, and web server ready. So, how do we deploy this REST API? We could buy a server machine, install the same OS as ours on it, install the dependencies, and run all the servers on it (since its a small app). Sure. Is that portable though? What if you need to run it on multiple machines? What if you bought a machine with a different OS? You'll have to reinstall the OS on that. 
+
+So, to make our application more portable, and to make sure it runs exactly the same as it does on our machine. We use **Docker**. Docker creates **containers** that are basically packages containing, our application, its dependecies and a small OS image consisting of only user-space funcionalities. Basically, a container becomes a fully independent package capable of running on any Docker compatible machine. So, you don't have to worry about installing different operating systems or writing multiple sets of instructions. The explanation here is kept short for the purpose of the tutorial, refer [this link](https://www.infoworld.com/article/3310941/why-you-should-use-docker-and-containers.html) to find out more. Also read [this article](https://devopscon.io/blog/docker/docker-vs-virtual-machine-where-are-the-differences/) to know about another technology called **Virtual Machines** that can be used for the same purpose, but is less efficient for our use. 
+
+<h2 style="background-color:black; color:white">TUTORIAL</h2>
+
+<h3 style="text-align:left">Installation</h3>
+
+Before we move on to the steps, lets first install docker on our machine. You can find steps for your machine on [Docker's installation page](https://docs.docker.com/engine/install/). 
+
+Furthermore, we will also require installation of **Docker Compose**, which is a software required to run multiple dockerised containers. Find the instructions [here](https://docs.docker.com/compose/install/).
+
+<h3 style="text-align:left">Dockerizing the Django application</h3>
+
+Let's first dockerize the existing application from the last tutorial. 
+
+Now, each docker container is instantiated from a **Docker image**. A Docker image is a read-only template that contains a set of instructions for creating a container that can run on the Docker platform. Now, the docker container we are going to make, will require some dependencies, and installed software. We get this by using a **parent image**. These are available for the most common types of software on [Dockerhub](https://hub.docker.com/).
+
