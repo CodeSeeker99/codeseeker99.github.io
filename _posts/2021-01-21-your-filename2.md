@@ -215,12 +215,15 @@ This file will define the 2 containers we need for running our application from 
   POSTGRES_DB=postgres
   ```
   
-  Please make sure the variable names match here exactly, since that is crucial for postgres to identify it with.
+  Please make sure the variable names match here exactly, since that is crucial for postgres to identify it with. Also, if you're wondering what the **volume** tag is for. It is to create a separate drive and mount it in the postgres database storage, so that we have a place for persistent storage of data after the container stops. It should be available in the ```/var/lib/docker/volumes``` folder on the host.
   
-  
-At this point, our database and our django app are prepared to run. Let's add one quick command in our django project's Dockerfile however
+At this point, our database and our django app are prepared to run. Let's add one quick command at the end of our django project's Dockerfile:
 
 ```docker
+...rest of the code
+
+USER app
+
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
 ```
 
@@ -246,7 +249,11 @@ python manage.py migrate
 exec "$@"
 ```
 
-This is a small bash script that checks if the database is up before proceeding to flush it and do any migrations required (basically, what we did manually in tutorial 1 after creating the database).
+This is a small bash script that checks if the database is up before proceeding to flush it and do any migrations required (basically, what we did manually in tutorial 1 after creating the database). You also need to give it execute permissions using
+
+```bash
+$ chmod +x project/entrypoint.sh
+```
 
 Now our Django-Postgres application is ready to be run on the default server. Run it in the ```Django-Docker/``` directory using:
 ```bash
@@ -255,7 +262,25 @@ Now our Django-Postgres application is ready to be run on the default server. Ru
 ```
 This should run your application on localhost:8000 as planned. If it does not run, you can check for errors on ```:Django-Docker$ sudo docker-compose logs -f```
 
+#### Almost done !
 
+Now all that is left is to connect it to an Gunicorn and Nginx server.
+
+<h3 style="text-align:left">Gunicorn</h3>
+
+This part is really simple. Since gunicorn is a python based application server there is no need for a new container with a different image. Simply add ```gunicorn==20.0.4``` to your **requirements.txt** file, then change command tag for the **web** container in the **docker-compose.yml** to the following
+
+```docker
+command: gunicorn project.wsgi:application --bind 0.0.0.0:8000
+```
+
+Also add another tag to the same container
+
+```docker
+expose:
+      - 8000
+```
+This line will connect gunicorn to the django app through the **wsgi.py** file in your django project directory (remember? we ignored this in tutorial 1). This will also bind gunicorn to the port 8000. The expose tag we added will then expose this port to other containers within the same docker-compose. 
 
 
 
