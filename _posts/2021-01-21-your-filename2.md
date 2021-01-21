@@ -120,8 +120,8 @@ Now our Django application is dockerized. So, now we can create an image of this
 ```
 This will create an image called app from the current folder's Dockerfile (If we had named the file something else, we could still use it by mentioning it in the command). Now, we use this umage to spin up a container using: (written in 2 lines for easy reading)
 ```bash
-:Django-Docker/project$ sudo docker run --detach --expose 8000 \
--p 8000:8000 -t app python manage.py runserver 0.0.0.0:8000
+:Django-Docker/project$ sudo docker run --detach -p 8000:8000 \
+-t app python manage.py runserver 0.0.0.0:8000
 ```
 Using ```--detach```, we run the command in a separate fork, so our terminal is not binded to the container (this is optional). Using ```--expose```, we expose the port 8000 of the container to listen to requests, and with ```-p 8000:8000``` we bind our computer's port 8000 to the container's port 8000. So if we send a request to our computer's port 8000, it will go to the container, and then to the application, since we are hosting on 0.0.0.0:8000.
 
@@ -135,10 +135,10 @@ version: '3.7'
 
 services:
   web:
-    build: ./project1
+    build: ./project
     command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./project1/:/usr/src/app/
+      - ./project/:/usr/src/app/
     ports:
       - 8000:8000
     env_file:
@@ -156,7 +156,56 @@ services:
 volumes:
   postgres_data:
 ```
+This file will define the 2 containers we need for running our application from tutorial 1, on the default django server.
 
+  - **web** : This basically replaces our previous ```docker run``` command. It performs all the same functions, except for 2 things. Here, we have set a dependency of this contained on the **db** container using **depends_on**. This way, the web container is only run if the db container is up. Secondly, we created an environment variable file for our application. While, for our applciation its not exactly necessary, its a _very good  programming practice_. 
+  
+  Let's say we had to upload our project on git, then our ```Django-Docker/project/project/settings.py``` would also get uploaded on it, and that file contains our **SECRET KEY!**. So its a common practice to store such values in an environment variable. Other information that may need to be switched without rebuilding the entire application is also stored in such places, so that a simple restart can make the change. So, in you ```Django-Docker/``` directory, create a file **.env.web.dev**. 
+  
+  ```
+  DEBUG=1
+  SECRET_KEY=<your key here>
+  DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+  SQL_ENGINE=django.db.backends.postgresql
+  SQL_DATABASE=postgres
+  SQL_USER=postgres
+  SQL_PASSWORD=1234
+  SQL_HOST=db
+  SQL_PORT=5432
+  DATABASE=postgres
+  ```
+ 
+   And to compliment this change, change your settings.py as follows
+   
+  ```python
+  
+  import os
+  #.. other imports
+  
+  #..code
+  
+  SECRET_KEY = os.environ.get("SECRET_KEY")
+  DEBUG = int(os.environ.get("DEBUG", default=0))
+  ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+  
+  #..code
+  
+  DATABASES = {
+      'default': {
+          "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
+          "NAME": os.environ.get("SQL_DATABASE", os.path.join(BASE_DIR, "db.sqlite3")),
+          "USER": os.environ.get("SQL_USER", "user"),
+          "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
+          "HOST": os.environ.get("SQL_HOST", "localhost"),
+          "PORT": os.environ.get("SQL_PORT", "5432"),
+      }
+  }
+
+  #....code
+  ```
+  
+  As it is very apparent from the code, our settings.py will now import all the values from the environment variables instead of hardcoded values.
+  - **db**
 
 
 
