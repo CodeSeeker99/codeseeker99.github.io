@@ -106,7 +106,7 @@ USER app
 
 Basically what we're doing here is, writing instructions for the container (which you can imagine as a new server/terminal) to install things for our application and then run.
 
-  - **Docker Image** : Now, each docker container is instantiated from a **Docker image**. A Docker image is a read-only template that contains a set of instructions for creating a container that can run on the Docker platform. Now, the docker container we are going to make, will require some dependencies, and installed python engine on it. We get this by using a **parent image python-3.9.1-alpine**. This contains instructions for an alpine distribution of LINUX with python-3.9.1 installed on it. Images are available for the most common types of software on [Dockerhub](https://hub.docker.com/). 
+  - **Docker Image** : Now, each docker container is instantiated from a **Docker image**. A Docker image is a read-only template that contains a set of instructions for creating a container that can run on the Docker platform. Now, the docker container we are going to make, will require some dependencies, and installed python engine on it. We get this by using a parent image of **python-3.9.1-alpine**. This contains instructions for an alpine distribution of LINUX with python-3.9.1 installed on it. Images are available for the most common types of software on [Dockerhub](https://hub.docker.com/). 
   
   - **User creation and ownership** : While we need the root user to create and install things in the beginning. It is a good deployment practice to change the user to a non-superuser after creation. Because a super-user on the container, can gain access to the host system as a root user in case they manage to break the container. At the end of the script, you can see that we copy our entire project to the $APP_HOME directory and give the new user ownership of the $APP directory. We then change our user to the new user.
   
@@ -158,7 +158,7 @@ volumes:
 ```
 This file will define the 2 containers we need for running our application from tutorial 1, on the default django server.
 
-  - **web** : This basically replaces our previous ```docker run``` command. It performs all the same functions, except for 2 things. Here, we have set a dependency of this contained on the **db** container using **depends_on**. This way, the web container is only run if the db container is up. Secondly, we created an environment variable file for our application. While, for our applciation its not exactly necessary, its a _very good  programming practice_. 
+  - **web**: This basically replaces our previous ```docker run``` command. It performs all the same functions, except for 2 things. Here, we have set a dependency of this contained on the **db** container using **depends_on**. This way, the web container is only run if the db container is up. Secondly, we created an environment variable file for our application. While, for our applciation its not exactly necessary, its a _very good  programming practice_. 
   
   Let's say we had to upload our project on git, then our ```Django-Docker/project/project/settings.py``` would also get uploaded on it, and that file contains our **SECRET KEY!**. So its a common practice to store such values in an environment variable. Other information that may need to be switched without rebuilding the entire application is also stored in such places, so that a simple restart can make the change. So, in you ```Django-Docker/``` directory, create a file **.env.web.dev**. 
   
@@ -205,7 +205,20 @@ This file will define the 2 containers we need for running our application from 
   ```
   
   As it is very apparent from the code, our settings.py will now import all the values from the environment variables instead of hardcoded values.
-  - **db**
+  
+  
+  - **db**: This part creates a new container with the parent image of **postgres:12.0-alpine**. Which is another alpine linux installation, with only postgres installed in it. A cool thing about this image is that it creates the default user according to the environment variables set (for reference, see [here](https://hub.docker.com/_/postgres)). So, by setting a different environment variables file like **.env.db.dev**, we can set the USER, PASSWORD and PORT of our postgres installation. So create this file:
+  
+  ```
+  POSTGRES_USER=postgres
+  POSTGRES_PASSWORD=1234
+  POSTGRES_DB=postgres
+  ```
+  
+  Please make sure the variable names match here exactly, since that is crucial for postgres to identify it with.
+  
+  
+
 
 
 
