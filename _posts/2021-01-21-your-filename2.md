@@ -217,6 +217,8 @@ This file will define the 2 containers we need for running our application from 
   
   Please make sure the variable names match here exactly, since that is crucial for postgres to identify it with. Also, if you're wondering what the **volume** tag is for. It is to create a separate drive and mount it in the postgres database storage, so that we have a place for persistent storage of data after the container stops. It should be available in the ```/var/lib/docker/volumes``` folder on the host.
   
+  Also do notice that we're not making a new Dockerfile for this container, because there no specific commands to run in this case. We're using the parent image straight out of the box.
+  
 At this point, our database and our django app are prepared to run. Let's add one quick command at the end of our django project's Dockerfile:
 
 ```docker
@@ -285,8 +287,37 @@ This line will connect gunicorn to the django app through the **wsgi.py** file i
 
 <h3 style="text-align:left">Nginx</h3>
 
+This requires a little bit of configuration, so make a new directory in the ```Django-Docker/``` directory. Let's call it ```Nginx/```. Inside this, create a **Dockerfile** and a **nginx.conf** file.
 
+The **Dockerfile** should contain
 
+```docker
+FROM nginx:1.19.0-alpine
+
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d
+```
+
+Basically, we're loading a parent imagine with Nginx installed on alpine, then replacing its default config with our own configuration file. Now in **nginx.conf** file
+
+```
+upstream project {
+    server web:8000;
+}
+
+server {
+
+    listen 80;
+
+    location / {
+        proxy_pass http://project;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_redirect off;
+    }
+
+}
+```
 
   
 
