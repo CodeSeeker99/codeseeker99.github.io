@@ -336,4 +336,6 @@ Now we can run up our full system using the following commands
 Now, go to http://localhost:1337 to test your REST API just like in tutorial 1. 
 
   
+#### Code can be found at [the repository link](https://github.com/CodeSeeker99/PS2_repo/tree/main/Django)
+_The code on the repository is slightly modified. If you're trying to run that, use the "prod" workflow wherever possible, to match the results in this tutorial._
 
