@@ -280,8 +280,10 @@ Also add another tag to the same container
 expose:
       - 8000
 ```
-This line will connect gunicorn to the django app through the **wsgi.py** file in your django project directory (remember? we ignored this in tutorial 1). This will also bind gunicorn to the port 8000. The expose tag we added will then expose this port to other containers within the same docker-compose. 
+This line will connect gunicorn to the django app through the **wsgi.py** file in your django project directory (remember? we ignored this in tutorial 1). This will also bind gunicorn to the port 8000. The expose tag we added will then expose this port to other containers within the same docker-compose. But we can't run it just yet, gunicorn will not accept http requests rn, so let's connect the nginx web server.
 
+
+<h3 style="text-align:left">Nginx</h3>
 
 
 
