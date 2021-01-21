@@ -12,7 +12,6 @@ _**Note**: This tutorial requires you to have basic knowledge of python and linu
 ---
 
 <h2 style="background-color:black; color:white">BACKGROUND</h2>
-![Theory image]({{site.baseurl}}/images/webserverdiagram.png)
 
 In the previous tutorial, we made a django application and connected it to a local postgres database instance. 
 
@@ -23,6 +22,7 @@ Should we just simply take a computer, run the default django server on it and o
 A web server is an entirely different class of software, which requires a lot of customization, so Django cannot possibly ship with a one-size-fits-all production server out of the box. This is where we bring in **Nginx**. 
 
 <h3 style="text-align:left">Nginx</h3>
+![nginx image]({{site.baseurl}}/images/NGINXLOGO.png)
 
 Pronounced Engine-x, is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. We will be using Nginx as a reverse proxy, and will ignore the other functions for this tutorial. As a reverse proxy, Nginx server will read all the incoming traffic, and then forward it to our application. Basically, it will handle request traffic, but it does no sort of processing.
 
@@ -33,5 +33,10 @@ _Great, so now we'll just connect Nginx to Django right?_
 The issue is, Nginx is written to be a very fast http web server but it has no way of handling different types of applications. It does not know how to talk to different frameworks like Django, Flask etc. So for running our django application, we need what is called a **Application server**. This is where we will use **Gunicorn**.
 
 <h3 style="text-align:left">Gunircorn</h3>
+![gunicorn image]({{site.baseurl}}/images/gunicornLogo.jpeg)
 
-Gunicorn is an application server written to work with any WSGI compatible framework. This application server is what 
+Gunicorn is an application server written to work with any WSGI compatible framework. Web Server Gateway Interface (WSGI) is a standardised way of receiving requests inside an application. It stardardizes the recieving method's arguments, outputs etc. Now, the Gunicorn server is what will host our django code, and help it communicate with Nginx.
+
+#### So, finally, our stack looks something like this
+
+![Stack image]({{site.baseurl}}/images/webserverdiagram.png)
