@@ -1,0 +1,9 @@
+---
+published: false
+---
+## Pytorch Build 1: Basic classification tasks
+
+_In this tutorial we're going to go through the basics of transfer learning while training 2 models, one on blur detection and one on exposure detection_
+
+
+Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
