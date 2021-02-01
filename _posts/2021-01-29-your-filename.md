@@ -1,12 +1,10 @@
 ---
 published: true
 layout: post
+title: 'Pytorch: Basic classification tasks'
 categories:
-  - beginner
-  - builds
-  - django
+  - pytorch
 ---
-## Pytorch Build 1: Basic classification tasks
 
 _In this tutorial we're going to go through the basics of transfer learning while training 2 models, one on blur detection and one on exposure detection_
 
