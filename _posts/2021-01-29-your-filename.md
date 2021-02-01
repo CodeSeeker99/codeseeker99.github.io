@@ -40,8 +40,232 @@ As the name suggests, the method of transfer learning uses a model's knowledge g
 
 For the blur detection task. We will be using the [CERTH Image Blur dataset] (https://pgram.com/dataset/certh-image-blur-dataset/). Originally, this dataset contained more classes, but we will stick to the classfication between natural blur and non-blurred images. This is a good sized dataset with over a 1000 images in total.
 
-For the exposure task. We would be using a dataset of my own. This is simply a collection of clips from college fests that have been sorted manually. [Drive link to dataset](#) (TODO: Add link here)
+For the exposure task. We would be using a dataset of my own. This is simply a collection of clips from college fests that have been sorted manually. [Drive link to dataset](#) (TODO: Add link here). I have extracted about 1200 images from these videos to create a dataset with 3 classes. Underexposed, Overexposed, and Good frames.
 
 <h2 style="background-color:black; color:white"> Tutorial </h2>
 
-.
+### Exposure Task
+
+Let's start by setting some general variables and imports. The full code is available in this [notebook](https://colab.research.google.com/drive/1LwConWP6bZypGM95uQu3GxwFnhvEiDy-#scrollTo=3PU5Q_OLiPCp).
+
+```python
+import torch
+
+DATA_DIR = '/content/drive/MyDrive/ExposureDataset'
+SAVE_PATH = DATA_DIR+'/Exposure_model.pth'
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+```
+
+The last line connected the GPU to the variables device. This variable can be used to put calculations in our GPU, which will speed up training. Next, we need a DataLoader. This is how we will be loading every image of our dataset. My dataset directory contains 2 folders (Train/Test) which further contain one folder per image class. So I've implemented the following DataLoader which returns an (image,label) where label is understood from the image's path.
+
+```python
+import os
+import glob
+from skimage import io
+from torch.utils.data import Dataset 
+from torchvision import transforms
+import pandas as pd    
+    
+class ImageFolderDataset(Dataset):
+    def __init__(self, root_dir, transform=None):
+        self.root_dir  = root_dir
+        self.file_list = glob.glob(self.root_dir+'/**_images/*')
+        self.transform = transform
+
+    def __len__(self):
+        return len(self.file_list)
+
+    def __getitem__(self, idx):
+        if torch.is_tensor(idx):
+            idx = idx.tolist()
+        
+        # Get file
+        filename = self.file_list[idx]
+
+        # Assign label
+        if "Overexposed" in filename:
+            label = 2
+        elif "Underexposed" in filename: 
+            label = 1
+        else:
+            label = 0
+    
+        # Read image
+        sample = io.imread(filename)
+        
+
+        # Transforamtion | Augmentation
+        if self.transform:
+            sample = self.transform(sample)
+        
+        return (sample, label)
+```
+
+Now let's initialise the DataLoaders. 
+
+```python
+import PIL
+
+img_res = transforms.Compose([
+        transforms.ToPILImage(),
+        transforms.RandomHorizontalFlip(),
+        transforms.RandomVerticalFlip(),
+        transforms.RandomCrop(224),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.5,0.5,0.5], std=[0.5, 0.5, 0.5])])
+
+
+dataset = ImageFolderDataset(DATA_DIR+'/Train', img_res)
+trainloader = torch.utils.data.DataLoader(dataset, batch_size=4,shuffle=True)
+
+test_dataset = ImageFolderDataset(DATA_DIR+'/Test', img_res)
+testloader = torch.utils.data.DataLoader(test_dataset, batch_size=4,shuffle=True)
+```
+
+For our Image Augmentation, we will be adding a random flips, and we'll take a random crop of the image to train our model. This will virtually increase the size of our dataset by many folds. The cropping will not affect the decision making since an Overexposed image usually leaks exposure all around the frame. 
+
+Now we move on to defining our model:
+
+```python
+import torchvision.models as models
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+
+from torch.optim.lr_scheduler import MultiplicativeLR
+
+model = models.resnext50_32x4d(pretrained=True)
+modelname = model.__class__.__name__
+model = nn.Sequential(model, nn.Linear(1000,500), nn.ReLU(), nn.Dropout(), nn.Linear(500,3))
+model = model.to(device)
+
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.SGD(model.parameters(), lr=0.002, momentum=0.9)
+scheduler = MultiplicativeLR(optimizer, lr_lambda=lambda epoch: 0.99)
+```
+
+Here most lines are self explanatory. We use the ResNext50 model's smaller 32x4 pre-trained variant. We add a 500 neuron ReLu layer followed by a dropout and finally a decision layer. We use cross entropy loss, which is common for such classification tasks. Our optimizer is Stochastic Gradient Descent, but you may choose any optimizer. I've also used the Multplicative lr scheduler, but that is optional.
+
+Now, we move on to the training.
+
+```python
+import time
+
+acc = prev = 0
+
+with open(DATA_DIR+'/logs.txt','a') as log_file:
+    log_file.write("Training for "+modelname+" started at: "+str(time.time())+"s\n")
+
+st = time.time()
+for epoch in range(20):
+    train_loss = 0
+    total = 0
+    correct = 0
+
+    for i, data in enumerate(trainloader, 0):
+        model.train()
+        inputs, labels = data
+        inputs, labels = inputs.to(device), labels.to(device)
+
+        # zero the parameter gradients
+        optimizer.zero_grad()
+
+        # forward + backward + optimize
+        outputs = model(inputs)
+        loss = criterion(outputs, labels)
+        loss.backward()
+        optimizer.step()
+
+        # Stats
+        train_loss = loss.item()
+        _, out = torch.max(outputs.data, 1)
+        total += labels.size(0)
+        correct += (out  == labels).sum().item()
+
+        if i%50 == 0:
+            print('-',end="")
+    print("")
+
+    # Training accuracy for this epoch
+    train_acc = (100 * correct / total)
+
+    # Validation
+    model.eval()
+    correct = 0
+    total = 0
+    with torch.no_grad():
+        for data in testloader:
+            images, labels = data
+            images, labels = images.to(device), labels.to(device)
+            outputs = model(images)
+
+            _, predicted = torch.max(outputs.data, 1)
+            total += labels.size(0)
+            correct += (predicted == labels).sum().item()
+
+    val_acc = (100 * correct / total)
+    if val_acc > prev:
+        torch.save(model.state_dict(), SAVE_PATH)
+        prev = val_acc
+
+    # LR SCHED
+    scheduler.step()
+    
+    # Time
+    end = time.time()
+    interval = end-st
+    st = end
+
+    # All stats
+    stmnt = "Epoch {:.5f}: Acc={:5f}, Loss={:5f}, Val={:.5f} : {:.5f}s".format(epoch, train_acc, train_loss, val_acc, interval)
+    print(stmnt)
+    with open(DATA_DIR+'/logs.txt','a') as log_file:
+        log_file.write(stmnt+'\n')
+    
+print('Finished Training')
+```
+
+You may vary the number of epochs according to your needs. I ran the above code, and got upto 85% validation accuracy before the model started overfitting. This code automatically saves the best model. So now we simply have to pick up this model and use it.
+
+### Blur Task
+
+Almost the same as above, but instead of 3 classes, we have only 2. The model choice and other parameters can be different here. For example, my dataloader was different since CERTH dataset was provided differently.
+
+```python
+import os
+import glob
+from skimage import io
+from torch.utils.data import Dataset 
+from torchvision import transforms
+import pandas as pd    
+    
+class ImageFolderDataset(Dataset):
+    def __init__(self, csv_file, root_dir, transform=None):
+        self.root_dir  = root_dir
+        self.file_list = pd.read_csv(csv_file)
+        self.transform = transform
+
+    def __len__(self):
+        return len(self.file_list)
+
+    def __getitem__(self, idx):
+        if torch.is_tensor(idx):
+            idx = idx.tolist()
+
+        label = self.file_list.iloc[idx,1]
+        try:
+            img_path = os.path.join(self.root_dir,self.file_list.iloc[idx,0]+'.jpg')
+            image    = io.imread(img_path)
+        except:
+            img_path = os.path.join(self.root_dir,self.file_list.iloc[idx,0]+'.JPG')
+            image    = io.imread(img_path)
+        
+        sample = image
+        if self.transform:
+            sample = self.transform(image)
+        return (sample, label)
+```
+
+This loader utilizes the given .csv file to read the images and doesn't have to use glob for searching it itself. The rest of the code is very similar. So now we have both the models ready for Testing.
+
+## Evaluation
