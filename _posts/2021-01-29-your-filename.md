@@ -30,11 +30,18 @@ For this tutorial we would be using the Pytorch frameowrk to train and test our 
 
 - - add picture here pytorch - -
 
-Pytorch is one of the most popular libraries for implementing deep learning algorithms. It is based off of Facebook AI Research (FAIR) lab's library called Torch. Its doctrine is to be a staple equivalent of NumPy for general mathematical calculations in the area of Deep Learning (DL).
+Pytorch is one of the most popular libraries for implementing deep learning algorithms. It is based off of Facebook AI Research (FAIR) lab's library called Torch. Its doctrine is to be a staple equivalent of NumPy for general mathematical calculations in the area of Deep Learning (DL). Please install PyTorch on your machine according to the instructions from [here](https://pytorch.org/get-started/locally/).
 
 <h3 style="text-align:left">Transfer Learning</h3>
 
 As the name suggests, the method of transfer learning uses a model's knowledge gained from solving one task, in a different but related task. In our use-case, we use DL models trained on the [ImageNet](http://www.image-net.org/) database to classify pictures from a 1000 categories, for classification of blurred and overexposed images in a video. In this technique, we take the pre-trained model, and add only a few classification layers to the end before training it for a few epochs. The idea is to use the model's existing knowledge of edges and lighting to detect blurred images, or overexposed images. This technique is particularly useful when computation power and time for training are limited. 
 
+<h2 style="background-color:black; color:white">DATASET</h2>
 
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
+For the blur detection task. We will be using the [CERTH Image Blur dataset] (https://pgram.com/dataset/certh-image-blur-dataset/). Originally, this dataset contained more classes, but we will stick to the classfication between natural blur and non-blurred images. This is a good sized dataset with over a 1000 images in total.
+
+For the exposure task. We would be using a dataset of my own. This is simply a collection of clips from college fests that have been sorted manually. [Drive link to dataset](#) (TODO: Add link here)
+
+<h2 style="background-color:black; color:white"> Tutorial </h2>
+
+.
