@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'Pytorch: Sorting videos with AI !'
+title: 'PyTorch: Sorting videos by quality with AI'
 categories:
   - pytorch
 ---
