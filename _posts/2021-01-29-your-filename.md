@@ -269,3 +269,68 @@ class ImageFolderDataset(Dataset):
 This loader utilizes the given .csv file to read the images and doesn't have to use glob for searching it itself. The rest of the code is very similar. So now we have both the models ready for Testing.
 
 ## Evaluation
+
+To make use of our models in videos, I defined the following function
+
+```python
+from moviepy.editor import VideoFileClip
+from torchvision import transforms
+
+img_res = transforms.Compose([
+        transforms.ToPILImage(),
+        transforms.ColorJitter(saturation=0.2, hue=0.2),
+        transforms.RandomHorizontalFlip(),
+        transforms.RandomVerticalFlip(),
+        transforms.RandomCrop(224),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.5,0.5,0.5], std=[0.5, 0.5, 0.5])])
+
+def add_to_labels(labels, outputs):
+    _, out = torch.max(outputs.data, 1)
+    for values in out:
+        labels[values] += 1
+
+def evaluate_model_video(model, transform, filename, classes, input_size):
+    # Freeze 
+    model.to(device)
+    model.eval()
+
+    # Load video
+    clip = VideoFileClip(filename)
+    frames = clip.iter_frames()
+    num_frames = int(clip.fps*clip.duration)
+
+    # Input size of the form = (b, c, w, h)
+    batch_size = input_size[0]
+    curr_list = torch.empty(input_size, device=device)
+    labels = torch.zeros(len(classes), device=device)
+    counter = 1
+    for frame in frames:
+        # Add image to list
+        if transform:
+            frame = transform(frame)
+        curr_list[(counter-1) % batch_size] = torch.Tensor(frame)
+
+        # After a full batch
+        if counter % batch_size == 0:
+            outputs = model(curr_list)
+            add_to_labels(labels, outputs)
+        
+        # Count frames
+        counter += 1
+    
+    if (counter-1) % batch_size != 0:
+        outputs = model(curr_list)
+        add_to_labels(labels, outputs[:(counter-1) % batch_size])
+    
+    labels = labels*100/labels.sum()
+    print("Video Evaluated : {}".format(filename))
+    for i in range(0,len(classes)):
+        print("{s}: {:3.2f}%".format(classes[i], labels[i]), end=", ")
+    print("\n")
+    
+    return labels
+```
+
+Now we can simply call this function in a loop and pass it the appropriate model and parameters, to make the predictions.
+
