@@ -324,7 +324,6 @@ def evaluate_model_video(model, transform, filename, classes, input_size):
         add_to_labels(labels, outputs[:(counter-1) % batch_size])
     
     labels = labels*100/labels.sum()
-    print("Video Evaluated : {}".format(filename))
     for i in range(0,len(classes)):
         print("{s}: {:3.2f}%".format(classes[i], labels[i]), end=", ")
     print("\n")
@@ -334,3 +333,19 @@ def evaluate_model_video(model, transform, filename, classes, input_size):
 
 Now we can simply call this function in a loop and pass it the appropriate model and parameters, to make the predictions.
 
+## Results
+
+I was able to achieve an 81% validation accuracy on the blur dataset and 85% validation accuracy on the exposure dataset. Using these models, I tested it on some videos. Here are the results
+
+Example video 1: Here is a still from the video
+
+**Add Frame here**
+
+Our model's result : 
+
+```
+Video Evaluated : /content/drive/MyDrive/ExposureDataset/Test/Good/4 food stall.MOV
+Good: 86.32%, Underexposed: 5.78%, Overexposed: 7.90%
+```
+
+Which is very helpful! We could use a threshold on these values and rename/shift the files according to our standards. This would save some time while sorting through clips, and perhaps have a real impact on large scale video production. 
