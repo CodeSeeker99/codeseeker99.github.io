@@ -13,7 +13,9 @@ _**Note**: This tutorial requires you to have basic knowledge of machine learnin
 
 _Before embarking on any deep learning task. It is very important to clearly define the problem itself. If the programmer is not clear on the goals of the task, then decision making for the model parameters becomes difficult and vague._
 
-The video production team at any college fest faces an immense task when starting out to create promotional videos for it. This is, sorting through the entire footage collected over a span of many days, often collected by many people. In this pile of footage, there are a lot of videos which are objectively unusable because they're too shaky or too blurred. The problem I've chosen today is to make something that can ease this sorting process by flagging unusable footage. 
+The problem I've chosen for this tutorial is something I've personally experienced. This is a task faced by the video production team at any college fest. Whenever they need to create a promotional video for a huge event, they have to sort through the entire footage collected over a span of many days, often collected by many people to find good footage to use in the video. They usually rate these videos manually and use this rating later to search for good clips while editing it together.
+
+In this pile of footage, there are a lot of videos which are objectively unusable because they're too shaky or too blurred. The problem I've chosen today is to make something that can ease this sorting process by flagging unusable footage. 
 
 For the sake of simplicity, let's define unusable as footage that is too blurred, too bright, or too dim. To form this into a more solid problem statement. We now need an algorithm that classifies a video into these categories. Divide and Conquer is a very well known paradigm in Deep Learning. So we'll split this problem into 2 atomic sets. 
 **One, is to classify the blurriness of a frame**
@@ -27,8 +29,7 @@ Now that we have our problem statement. Let's begin with the tutorial.
 For this tutorial we would be using the Pytorch frameowrk to train and test our deep learning models. We are going to employ the transfer learning approach as the training set we have is pretty small.
 
 <h3 style="text-align:left">PyTorch</h3>
-
-- - add picture here pytorch - -
+![pytorch image]({{site.baseurl}}/images/Pytorch_logo.png)
 
 Pytorch is one of the most popular libraries for implementing deep learning algorithms. It is based off of Facebook AI Research (FAIR) lab's library called Torch. Its doctrine is to be a staple equivalent of NumPy for general mathematical calculations in the area of Deep Learning (DL). Please install PyTorch on your machine according to the instructions from [here](https://pytorch.org/get-started/locally/).
 
