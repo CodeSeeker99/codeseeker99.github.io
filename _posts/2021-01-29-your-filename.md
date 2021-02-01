@@ -42,7 +42,7 @@ As the name suggests, the method of transfer learning uses a model's knowledge g
 
 <h2 style="background-color:black; color:white">DATASET</h2>
 
-For the blur detection task. We will be using the [CERTH Image Blur dataset] (https://pgram.com/dataset/certh-image-blur-dataset/). Originally, this dataset contained more classes, but we will stick to the classfication between natural blur and non-blurred images. This is a good sized dataset with over a 1000 images in total.
+For the blur detection task. We will be using the [CERTH Image Blur dataset](https://pgram.com/dataset/certh-image-blur-dataset/). Originally, this dataset contained more classes, but we will stick to the classfication between natural blur and non-blurred images. This is a good sized dataset with over a 1000 images in total.
 
 For the exposure task. We would be using a dataset of my own. This is simply a collection of clips from college fests that have been sorted manually. [Drive link to dataset](#) (TODO: Add link here). I have extracted about 1200 images from these videos to create a dataset with 3 classes. Underexposed, Overexposed, and Good frames.
 
@@ -50,7 +50,7 @@ For the exposure task. We would be using a dataset of my own. This is simply a c
 
 ### Exposure Task
 
-Let's start by setting some general variables and imports. The full code is available in this [notebook](https://colab.research.google.com/drive/1LwConWP6bZypGM95uQu3GxwFnhvEiDy-#scrollTo=3PU5Q_OLiPCp).
+Let's start by setting some general variables and imports. The full code is available in this [colab notebook](https://colab.research.google.com/drive/1LwConWP6bZypGM95uQu3GxwFnhvEiDy-?usp=sharing).
 
 ```python
 import torch
@@ -233,7 +233,7 @@ You may vary the number of epochs according to your needs. I ran the above code,
 
 ### Blur Task
 
-Almost the same as above, but instead of 3 classes, we have only 2. The model choice and other parameters can be different here. For example, my dataloader was different since CERTH dataset was provided differently.
+Almost the same as above, but instead of 3 classes, we have only 2. The model choice and other parameters can be different here. For example, my dataloader was different since CERTH dataset was provided differently. The code for this task is [here](https://colab.research.google.com/drive/1n5MkLXLBJBxnAEJWz1jRStVQQq8tIgCS?usp=sharing)
 
 ```python
 import os
@@ -339,7 +339,7 @@ Now we can simply call this function in a loop and pass it the appropriate model
 
 ## Results
 
-I was able to achieve an 81% validation accuracy on the blur dataset and 85% validation accuracy on the exposure dataset. Using these models, I tested it on some videos. The notebook can be found [here](https://colab.research.google.com/drive/1PQhQfTlq_NXWSnfKPfT42mWbWVz1NTeX#scrollTo=K0FlPYp3gfZ-). Here are the results
+I was able to achieve an 81% validation accuracy on the blur dataset and 85% validation accuracy on the exposure dataset. Using these models, I tested it on some videos. The notebook can be found [here](https://colab.research.google.com/drive/1PQhQfTlq_NXWSnfKPfT42mWbWVz1NTeX?usp=sharing) . Here are the results
 
 **Example video 1:**
 Here is a still from the video of a bike stuntman doing stunts in front of a crowd. The image is very well lit and exposed properly to the frame. There is a bit of motion blur because of how fast the bike is moving, but not the shaky type that we saw in our dataset, which is caused due to lack of focus or hand jitter. So, this is expected to be a well exposed image with slightly blurry.
@@ -363,4 +363,4 @@ Video Evaluated : /content/drive/MyDrive/ExposureDataset/Test/Overexposed/3-the 
 Good: 0.07%, Underexposed: 0.00%, Overexposed: 99.93%, 
 ```
 
-Again, the prediction was on point! Now, we could use a threshold on these values and rename/shift the files according to our needs. This would save some serious time while sorting through clips, and perhaps have a real impact on large scale video production. 
+Again, the prediction was on point! Now, we could use a threshold on these values and rename/shift the files according to our needs. This would save some serious time while sorting through clips, and perhaps have a real impact on large scale video production.
