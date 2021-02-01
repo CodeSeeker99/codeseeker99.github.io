@@ -1,5 +1,10 @@
 ---
-published: false
+published: true
+layout: post
+categories:
+  - beginner
+  - builds
+  - django
 ---
 ## Pytorch Build 1: Basic classification tasks
 
