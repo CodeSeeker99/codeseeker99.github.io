@@ -336,17 +336,28 @@ Now we can simply call this function in a loop and pass it the appropriate model
 
 ## Results
 
-I was able to achieve an 81% validation accuracy on the blur dataset and 85% validation accuracy on the exposure dataset. Using these models, I tested it on some videos. Here are the results
+I was able to achieve an 81% validation accuracy on the blur dataset and 85% validation accuracy on the exposure dataset. Using these models, I tested it on some videos. The notebook can be found [here](https://colab.research.google.com/drive/1PQhQfTlq_NXWSnfKPfT42mWbWVz1NTeX#scrollTo=K0FlPYp3gfZ-). Here are the results
 
-Example video 1: Here is a still from the video
+**Example video 1:**
+Here is a still from the video of a bike stuntman doing stunts in front of a crowd. The image is very well lit and exposed properly to the frame. There is a bit of motion blur because of how fast the bike is moving, but not the shaky type that we saw in our dataset, which is caused due to lack of focus or hand jitter. So, this is expected to be a well exposed image with slightly blurry.
 
-**Add Frame here**
-
-Our model's result : 
+![Bike stunt]({{site.baseurl}}/images/Wheelie.png)
 
 ```
-Video Evaluated : /content/drive/MyDrive/ExposureDataset/Test/Good/4 food stall.MOV
-Good: 86.32%, Underexposed: 5.78%, Overexposed: 7.90%
+Video Evaluated : /content/drive/MyDrive/ExposureDataset/Test/Good/3 wheelie.MOV
+Good: 90.87%, Underexposed: 4.56%, Overexposed: 4.56%, 
 ```
 
-Which is very helpful! We could use a threshold on these values and rename/shift the files according to our standards. This would save some time while sorting through clips, and perhaps have a real impact on large scale video production. 
+Which is as we expected. Do note that this score is for the overall video and not just this frame I am showing above.
+
+**Example video 2:**
+Here is another still. This one is from a dance video. From the very first look, you can tell that the image is terribly overexposed. This sometimes happens when the camera man does not remember to change their camera settings while the sun grows brighter during the day. 
+
+![Dance]({{site.baseurl}}/images/Dance_over.png)
+
+```
+Video Evaluated : /content/drive/MyDrive/ExposureDataset/Test/Overexposed/3-the guys in the mime clothes, nice moves, expression and sync, overexposed.MOV
+Good: 0.07%, Underexposed: 0.00%, Overexposed: 99.93%, 
+```
+
+Again, the prediction was on point! Now, we could use a threshold on these values and rename/shift the files according to our needs. This would save some serious time while sorting through clips, and perhaps have a real impact on large scale video production. 
