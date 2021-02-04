@@ -63,15 +63,15 @@ Here, you can appreciate why knowing the etiology of the stroke is very importan
   
   - **MERCI Retriever**: This is a sheathed wire that is inserted into the blood vessel. Usually insterd through a completely different area (eg. through groin arteries), it is eventually brought to the blocked vessel. The wire is pushed in from behind and brought in front of the clot. Then sheath is pulled back so that the end of the wire is revealed. The wire itself has a tendency to coil, hence forming a net to catch the clot. The wire is now pulled out and it brings the clot out with it. This method was the first of its kind mechanical procedure to be approved by the FDA.
   
-  **IMAGE**
+  ![Clip]({{site.baseurl}}/images/MERCI.png)
   
   - **Aspiration catheter**: This is a suction based method. A tube is inserted into the vessel and brought near the clot. The clot is then poked with a wire while the tube sucks in all the plaque.
   
-  **aspiration**
+  ![Clip]({{site.baseurl}}/images/suction.png)
   
-  - **Stent retriever**: This wire is used to push the cloth to the periphery of the vessel, allowing blood to flow from the middle and clean up all the pieces.
+  - **Stents**: This wire is used to push the cloth to the periphery of the vessel, allowing blood to flow from the middle and clean up all the pieces.
   
-  **stent**
+  ![Clip]({{site.baseurl}}/images/STENT.png)
 
 <h3 style="text-align:left">Haemorrhagic</h3>
 
@@ -94,8 +94,8 @@ Here, you can appreciate why knowing the etiology of the stroke is very importan
 
   - **Clipping**: For haemorrhages caused due bursting of aneurysms (a balloned area of the vessel which is weakened). Clipping is a surgical method where, the base of the aneurysm is shut using a clip, so the blood stops flowing in that direction. 
   
-  **Image here**
+  ![Clip]({{site.baseurl}}/images/clipping.png)
   
   - **Coil embolization**: The aneurysm can also be blocked off using a special wire. This is a wire similar to that used in the MERCI retriever. It is placed inside the aneurysm and then its sheath is removed. It is allowed to keep coiling inside the aneurysm till the entire bubble is filled with coil, moreover, blood clots form on this coil, making a tight seal, allowing normal circulation of blood to the brain. 
   
-  **Image here**
+  ![Embolization]({{site.baseurl}}/images/embolization.png)
