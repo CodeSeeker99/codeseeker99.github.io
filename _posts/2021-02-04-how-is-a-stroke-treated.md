@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 
 _A quick guide to clinical pathways that go into diagnosing and treating a stroke_
