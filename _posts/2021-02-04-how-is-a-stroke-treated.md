@@ -55,7 +55,7 @@ Finally, an MRI scan shows tissues of the brain in very high resolution. While t
 
 <h3 style="text-align:left">Ischemic</h3>
 
-**Thrombolytics**: These are a drugs that are targeted to destroy blood clots (thrombus) in the blood stream. For Ischemic strokes these are often the first choice of treatment. However these are only effective if administered quickly after symptoms present themselves. A window of 4.5 hours is defined by the National Institutes of Health, USA [[6](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6707502/)]. The most commonly administered thrombolytic is called **Tissue Plasminogen Activator (tPA)** [[7](https://www.ncbi.nlm.nih.gov/books/NBK507917/)]. Aspirin generally follows thrombolytic therapy, as it is an anticoagulant, and helps in keeping the blood from clotting again.
+**Thrombolytics**: These are a drugs that are targeted to destroy blood clots (thrombus) in the blood stream. For Ischemic strokes these are often the first choice of treatment and require no further work to destroy the clot. However these are only effective if administered quickly after symptoms present themselves. A window of 4.5 hours is defined by the National Institutes of Health, USA [[6](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6707502/)]. The most commonly administered thrombolytic is called **Tissue Plasminogen Activator (tPA)** [[7](https://www.ncbi.nlm.nih.gov/books/NBK507917/)]. Aspirin generally follows thrombolytic therapy, as it is an anticoagulant, and helps in keeping the blood from clotting again.
 
 Here, you can appreciate why knowing the etiology of the stroke is very important. If an anticoagulant or thrombolytic is administered in a haemorrhagic stroke case, that will make the situation much worse as the ruptured artery would not be able to stop bleeding through clotting!
 
@@ -75,4 +75,27 @@ Here, you can appreciate why knowing the etiology of the stroke is very importan
 
 <h3 style="text-align:left">Haemorrhagic</h3>
 
-	
+**Intra-cranial Pressure management**: While this is not a solution to the problem, this is one of the most important parts of the treatment. The greatest risk in a haemorrhagic patient is damage to the brain due to increasing intra-cranial pressure. The intracranial pressure is recommended to be kept below 20mm Hg [[8](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2291314/)]. While general medication is administered to keep this low, there are mechanical methods to do this as well. Some of these are mentioned below:
+
+  - **Ventricular drains**: Ventricles are cavities in the brain which produces Cerebro Spinal Fluid (CSF) which is an important fuild for the nervous system. Drains are attached to these areas because during a haemorrhage, blood starts filling up these cavities. Drugs are also used to separate blood from the CSF.
+  
+  - **Blurr hole**: If necessary, a surgeon will cut the skull bone (with a small drilled hole called a "burr hole") to decrease the compression of the brain tissue.
+
+**General Medication**: Unlike in Ischemic strokes, there is no common drug based treatment of haemhorragic strokes. So, medication only caters to manage the patient before surgery can be performed [[8](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2291314/)].
+
+  - **Anti-hypertensive**:Due to the rupture in artery, the heart tries to pump more blood to get it to reach the brain, which increases the blood pressure. This can increase the pressure inside the skull, which can cause a lot of complications as menioned earlier.  Therefore, these drugs are administered to prevent very high blood pressure. Moreover, ventricular drains are attached to the back of the patient to keep the pressure low.
+  
+  - **Homeostatic Therapy**: This is given to counter the effects of any older medication, eg. Aspirin/Warfarin (which are anti-coagulanting in nature, and might prevent the rupture from natually healing).
+  
+  - **Anti-convulsive**: When blood leaks into the brain, the pressure it exerts can cause problems with the normal electrical signals inside, and end up causing seizures. These drugs are administered to prevent seizures from occuring.
+  
+
+**Mechanical procedures**: There are many mechanical ways of treating haemorrhagic strokes. 
+
+  - **Clipping**: For haemorrhages caused due bursting of aneurysms (a balloned area of the vessel which is weakened). Clipping is a surgical method where, the base of the aneurysm is shut using a clip, so the blood stops flowing in that direction. 
+  
+  **Image here**
+  
+  - **Coil embolization**: The aneurysm can also be blocked off using a special wire. This is a wire similar to that used in the MERCI retriever. It is placed inside the aneurysm and then its sheath is removed. It is allowed to keep coiling inside the aneurysm till the entire bubble is filled with coil, moreover, blood clots form on this coil, making a tight seal, allowing normal circulation of blood to the brain. 
+  
+  **Image here**
