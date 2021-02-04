@@ -29,7 +29,15 @@ The symptoms on mentioned above happen when the part of the brain controlling th
 
 ## Diagnosis
 
-<h3 style="text-align:left">From symptom detection to the hospital</h3>
+**IMAGE OF FLOWCHART HERE**
+
+<h3 style="text-align:left">From symptom detection to the hospital ER</h3>
+
+Once the symptoms are detected, the patient is rushed to the hospital. The patient is taken to an emergency room and rushed for imaging after drawing blood [2](https://youtu.be/n1qL12UGJt0?t=658). If the patient is conscious and the symptoms are mild, then physical examination is done by a neurologist to better determine where to look for the bleed in imaging [3](https://youtu.be/yTMZsxSBv_0?t=145). Other risk factors such as existing conditions are also considered. These include but are not limited to Hypertension, Cholestrol, smoking habits, and heart conditions. Basically, any condition that may affect the blood pressure (as high blood pressure is often the cause of haemorrhages).
+
+Blood tests are also done parallely to determine if the cause of weakness/unconsciousness is due to low haemoglobin. The **Complete Blood Count (CBC)** is used to check for blood conditions. These may also help determine the Etiology of the stroke (i.e cause of the stroke). For example, if the platelet count is low, then there is a higher chance of it being a haemorrhagic stroke. **Electrolytes** and **Blood Sugar** imbalance may also cause stroke-like symptoms. For eg. a low amount of Sodium in blood, can cause impaired electrical activity in the brain, which gives the same symptoms as a stroke. Similarly, Hypoglycemia, or low blood sugar can also cause stroke-like symptoms.
+
+<h3 style="text-align:left">Imaging</h3>
 
 
 
