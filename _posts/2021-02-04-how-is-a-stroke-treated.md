@@ -71,15 +71,18 @@ Here, you can appreciate why knowing the etiology of the stroke is very importan
   - **MERCI Retriever**: This is a sheathed wire that is inserted into the blood vessel. Usually inserted through a completely different area (eg. through groin arteries), it is eventually brought to the blocked vessel. The wire is pushed in from behind and brought in front of the clot. Then sheath is pulled back so that the end of the wire is revealed. The wire itself tends to coil, hence forming a net to catch the clot. The wire is now pulled out and it brings the clot out with it. This method was the first of its kind mechanical procedure to be approved by the FDA.
   
   ![Clip]({{site.baseurl}}/images/MERCI.png)
+  <p style="text-align:center"> Image authors: <a href="https://brainchemist.wordpress.com/tag/concentric-merci-retriever/">here</a> </p>
   
   - **Aspiration catheter**: This is a suction-based method. A tube is inserted into the vessel and brought near the clot. The clot is then poked with a wire while the tube sucks in all the plaque.
   
   ![Clip]({{site.baseurl}}/images/suction.png)
+  <p style="text-align:center"> Image authors: <a href="https://www.cirse.org/patients/ir-procedures/thrombectomy/">here</a> </p>
   
   - **Stents**: This wire is used to push the cloth to the periphery of the vessel, allowing blood to flow from the middle and clean up all the pieces.
   
   ![Clip]({{site.baseurl}}/images/STENT.png)
-
+  <p style="text-align:center"> Image authors: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5089075/">here</a> </p>
+  
 <h3 style="text-align:left">Haemorrhagic</h3>
 
 **Intra-cranial Pressure management**: While this is not a solution to the problem, this is one of the most important parts of the treatment. The greatest risk in a haemorrhagic patient is damage to the brain due to increased intracranial pressure. The intracranial pressure is recommended to be kept below 20mm Hg [[8](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2291314/)]. While general medication is administered to keep this low, there are mechanical methods to do this as well. Some of these are mentioned below:
@@ -102,8 +105,21 @@ Here, you can appreciate why knowing the etiology of the stroke is very importan
   - **Clipping**: For haemorrhages caused due to bursting of aneurysms (a ballooned area of the vessel which is weakened). Clipping is a surgical method where, the base of the aneurysm is shut using a clip, so the blood stops flowing in that direction. 
   
   ![Clip]({{site.baseurl}}/images/clipping.png)
+  <p style="text-align:center"> Image authors: <a href="https://youtu.be/BYE5lxTzNVM?t=343">here</a> </p>
   
   - **Coil embolization**: The aneurysm can also be blocked off using a special wire. This is a wire similar to that used in the MERCI retriever. It is placed inside the aneurysm and then its sheath is removed. It is allowed to keep coiling inside the aneurysm till the entire bubble is filled with the coil, moreover, blood clots form on this coil, making a tight seal, allowing normal circulation of blood to the brain. 
   
   ![Embolization]({{site.baseurl}}/images/embolization.png)
+  <p style="text-align:center"> Image authors: <a href="https://www.researchgate.net/figure/Techniques-of-Endosaccular-Coil-Embolization-Therapy-Standard-Coiling-for-Narrow-Neck_fig1_259890159">here</a> </p>
   
+---
+
+_The most important thing about stroke treatment is the time between symptoms and treatment. Here is a graph showing the chances of survival with amount of delay in treatment. This picture is from a UCLA presentation available online. The title of this slide was **Time is brain**_
+
+![Time-Brain graph]({{site.baseurl}}/images/timebrain.png)
+<p style="text-align:center"> Image authors: <a href="https://youtu.be/n1qL12UGJt0?t=486">here</a> </p>
+
+---
+
+## REFERENCES
+
