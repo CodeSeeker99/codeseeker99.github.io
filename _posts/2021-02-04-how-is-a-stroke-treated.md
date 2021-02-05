@@ -46,17 +46,17 @@ Blood tests are also done parallelly to determine if the cause of weakness / unc
 Imaging is one of the important confirmation tests done when a stroke is suspected. This is where the etiology of the stroke is determined. Primarily, there are 3 ways in which the brain can be imaged. The fastest method is a simple head CT scan as shown below. While the resolution of this image is less, haemorrhagic strokes can be easily identified in this scan as blood is visible as bright white (since it is denser than the surrounding tissue) on this scan. Any area that should not have blood, but is showing up white on the scan can immediately be identified as an area of haemorrhage. Ischemic strokes are not that easy to identify with just a simple CT scan as the areas deprived of blood can seem just as dense as the other regions for quite a long time. After some time, however, the deprived region starts to appear darker in the CT scan as the cells keep dying. 
 
 ![CT scan of brain]({{site.baseurl}}/images/ctbrain.png)
-<p style="text-align:center"><i> (left) CT of an ischemic stroke. left side of the image is dark, showing that the density of parenchyma there has decreased due to dead cells. In general, it takes time to detect ischemic stroke as the difference in density is not very apparent in early stages of the stroke. (right) CT of a haemorrhagic stroke. the bright pool of blood visible on the left is a haemorrhage. Image authors: <a href="https://ysjournal.com/can-artificial-intelligence-tell-the-difference-between-ischemic-and-hemorrhagic-stroke/">here</a></i></p>
+<p style="text-align:center"><i> (left) CT of an ischemic stroke. Left side of the image is dark, showing that the density of parenchyma there has decreased due to dead cells. In general, it takes time to detect ischemic stroke as the difference in density is not very apparent in early stages of the stroke. (right) CT of a haemorrhagic stroke. the bright pool of blood visible on the left is a haemorrhage. Image authors: <a href="https://ysjournal.com/can-artificial-intelligence-tell-the-difference-between-ischemic-and-hemorrhagic-stroke/">here</a></i></p>
 
 For ischemic stroke detection, a CT angiogram is created to picture the blood vessels in the brain. This is a normal CT scan, but the patient is injected with a fluid that lights up in their bloodstream on the CT images. These images are then cleared off of any tissue, and only the vessels are highlighted. This can show if an artery has a sudden breaking off point, which may indicate a blockage.
 
 ![CT Angiogram of brain]({{site.baseurl}}/images/angiobrain.jpg)
-<p style="text-align:center"> Image authors: <a href="http://www.ajnr.org/content/36/10/1834">here</a> </p>
+<p style="text-align:center"><i> Typical CT angriogram. In image A, you can see one of the vessels splits into 2, but one of the splits is not as bright as the other. This indicates some kind of blockage. The gradient of density change is also very sudden at that spot. You may also notice that the folds of the brain, and other tissues are not visible in this image. Image authors: <a href="http://www.ajnr.org/content/36/10/1834">here</a> </i></p>
 
 Finally, an MRI scan shows tissues of the brain in very high resolution. While this scan takes quite a bit of time, it provides a very high-quality image, from which blood circulation can be judged easily. CT scans are recommended to be performed if the patient is present in the ER within 6 hours of symptoms [[6](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6707502/)], whereas MRI scans are preferred for post-treatment uses. 
 
 ![Difference between MRI and CT scans]({{site.baseurl}}/images/mri.png)
-<p style="text-align:center"> Image authors: <a href="https://healthcareplex.com/mri-vs-ct-scan/">here</a> </p>
+<p style="text-align:center"><i> CT scan on the left as compared to different kinds of MRI on the right. Notice how basically none of the brain folds are visible on the CT while in the MRI, most tissues are distinguishable. Image authors: <a href="https://healthcareplex.com/mri-vs-ct-scan/">here</a></i></p>
 
 <h2 style="background-color:black; color:white">Treatment</h2>
 
