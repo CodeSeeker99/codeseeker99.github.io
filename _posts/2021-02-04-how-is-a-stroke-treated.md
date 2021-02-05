@@ -35,13 +35,13 @@ The symptoms mentioned above happen when the part of the brain controlling them 
 ![flowchart]({{site.baseurl}}/images/flow.png)
 <p style="text-align:center"> Image authors: <a href="https://www.karger.com/Article/Pdf/479518">here</a> </p>
 
-### From symptom detection to the hospital ER
+## From symptom detection to the hospital ER
 
 Once the symptoms are detected, the patient is rushed to the hospital. The patient is taken to an emergency room and rushed for imaging after drawing blood [[2](https://youtu.be/n1qL12UGJt0?t=658)]. If the patient is conscious and the symptoms are mild, then physical examination is done by a neurologist to better determine where to look for the bleed in imaging [[3](https://youtu.be/yTMZsxSBv_0?t=145)]. Other risk factors such as existing conditions are also considered. These include but are not limited to Hypertension, Cholesterol, smoking habits, and heart conditions. Basically, any condition that may affect the blood pressure (as high blood pressure is often the cause of haemorrhages).
 
 Blood tests are also done parallelly to determine if the cause of weakness / unconsciousness is due to low haemoglobin [[4](https://evtoday.com/articles/2019-feb/stroke-patient-workflow-optimization)]. The **Complete Blood Count (CBC)** is used to check for blood conditions. These may also help determine the Etiology of the stroke (i.e cause of the stroke). For example, if the platelet count is low, then there is a higher chance of it being a haemorrhagic stroke. **Electrolytes** and **Blood Sugar** imbalance may also cause stroke-like symptoms. For eg., a low amount of Sodium in the blood can cause impaired electrical activity in the brain, which gives the same symptoms as a stroke. Similarly, Hypoglycemia or low blood sugar can also cause stroke-like symptoms. There are certain **proteins** in the blood that can cause excessive coagulation, this is checked for as well. Finally, a toxicology report is also created to check for substances which mimic stroke symptoms [[5](https://youtu.be/AgPpM4jqkxU)].
 
-### Imaging
+## Imaging
 
 Imaging is one of the important confirmation tests done when a stroke is suspected. This is where the etiology of the stroke is determined. Primarily, there are 3 ways in which the brain can be imaged. The fastest method is a simple head CT scan as shown below. While the resolution of this image is less, haemorrhagic strokes can be easily identified in this scan as blood is visible as bright white (since it is denser than the surrounding tissue) on this scan. Any area that should not have blood, but is showing up white on the scan can immediately be identified as an area of haemorrhage. Ischemic strokes are not that easy to identify with just a simple CT scan as the areas deprived of blood can seem just as dense as the other regions for quite a long time. After some time, however, the deprived region starts to appear darker in the CT scan as the cells keep dying. 
 
