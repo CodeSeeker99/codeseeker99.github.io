@@ -70,7 +70,7 @@ Here, you can appreciate why knowing the etiology of the stroke is very importan
   
   - **MERCI Retriever**: This is a sheathed wire that is inserted into the blood vessel. Usually inserted through a completely different area (eg. through groin arteries), it is eventually brought to the blocked vessel. The wire is pushed in from behind and brought in front of the clot. Then sheath is pulled back so that the end of the wire is revealed. The wire itself tends to coil, hence forming a net to catch the clot. The wire is now pulled out and it brings the clot out with it. This method was the first of its kind mechanical procedure to be approved by the FDA.
   
-  ![MERCI_Image]({{site.baseurl}}/images/MERCI.png)
+  ![MERCI_Image]({{site.baseurl}}/images/MERCI.jpg)
   <p style="text-align:center"> Image authors: <a href="https://brainchemist.wordpress.com/tag/concentric-merci-retriever/">here</a> </p>
   
   - **Aspiration catheter**: This is a suction-based method. A tube is inserted into the vessel and brought near the clot. The clot is then poked with a wire while the tube sucks in all the plaque.
