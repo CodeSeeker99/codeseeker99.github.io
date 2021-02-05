@@ -70,17 +70,17 @@ Here, you can appreciate why knowing the etiology of the stroke is very importan
   
   - **MERCI Retriever**: This is a sheathed wire that is inserted into the blood vessel. Usually inserted through a completely different area (eg. through groin arteries), it is eventually brought to the blocked vessel. The wire is pushed in from behind and brought in front of the clot. Then sheath is pulled back so that the end of the wire is revealed. The wire itself tends to coil, hence forming a net to catch the clot. The wire is now pulled out and it brings the clot out with it. This method was the first of its kind mechanical procedure to be approved by the FDA.
   
-  ![Clip]({{site.baseurl}}/images/MERCI.png)
+  ![MERCI_Image]({{site.baseurl}}/images/MERCI.png)
   <p style="text-align:center"> Image authors: <a href="https://brainchemist.wordpress.com/tag/concentric-merci-retriever/">here</a> </p>
   
   - **Aspiration catheter**: This is a suction-based method. A tube is inserted into the vessel and brought near the clot. The clot is then poked with a wire while the tube sucks in all the plaque.
   
-  ![Clip]({{site.baseurl}}/images/suction.png)
+  ![suction_image]({{site.baseurl}}/images/suction.png)
   <p style="text-align:center"> Image authors: <a href="https://www.cirse.org/patients/ir-procedures/thrombectomy/">here</a> </p>
   
   - **Stents**: This wire is used to push the cloth to the periphery of the vessel, allowing blood to flow from the middle and clean up all the pieces.
   
-  ![Clip]({{site.baseurl}}/images/STENT.png)
+  ![Stent_image]({{site.baseurl}}/images/STENT.jpg)
   <p style="text-align:center"> Image authors: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5089075/">here</a> </p>
   
 <h3 style="text-align:left">Haemorrhagic</h3>
@@ -123,6 +123,8 @@ _The most important thing about stroke treatment is the time between symptoms an
 
 ## REFERENCES
 
+<h3 style="text-align:left">Video sources</h3>
+
 1. Khan academy's series on stroke:
 	1. Physical exam: https://www.youtube.com/watch?v=yTMZsxSBv_0
     2. Lab test: https://www.youtube.com/watch?v=AgPpM4jqkxU
@@ -131,4 +133,4 @@ _The most important thing about stroke treatment is the time between symptoms an
     5. Operations: https://www.youtube.com/watch?v=BYE5lxTzNVM
     6. Prevention: https://www.youtube.com/watch?v=FVedgkn0o70
    
-2. 
+2. UCLA Interventional Radiology :  
