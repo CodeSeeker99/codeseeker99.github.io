@@ -143,4 +143,4 @@ _The most important thing about stroke treatment is the time between symptoms an
 4. Acute Ischemic stroke guidlelnes by NIH: [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6707502/)
 5. Intracranial Haemorrhage management by NIH: [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2291314/)
 
-_If you want to hear nice music by the strokes instead, go [here](https://www.youtube.com/watch?v=b8-tXG8KrWs)_
+_If you want to hear nice music by **The Strokes** instead, go [here](https://www.youtube.com/watch?v=b8-tXG8KrWs)_
