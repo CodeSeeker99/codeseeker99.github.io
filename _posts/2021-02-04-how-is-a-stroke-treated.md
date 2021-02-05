@@ -4,16 +4,18 @@ published: true
 
 _A quick summary of the clinical processes that go into diagnosing a stroke and the general forms of treatment offered._
 
+---
+
 ## What is a stroke?
 
 A stroke is a type of medical emergency that occurs when blood supply to the brain gets interrupted due to some reason. Worldwide, it is the second leading cause of death and the third leading cause of disability [[1](https://www.who.int/healthinfo/global_burden_disease/en/)]. The property that makes strokes so deadly is the amount of time the patient has, to get treatment before the problem advances to a serious stage. Since cells in the brain require a constant supply of blood, even the smallest of delays can lead to the death of brain cells, most of which can not be regenerated. Typically, patients have a great chance of full recovery if they get treatment hours of the first symptoms. Even in the best scenarios, there can be some irreversible damage to the brain.
 
 Strokes or cerebrovascular accidents are primarily due to either of 2 reasons; **Ischemia** or **Haemorrhage**. 
 
-<h3 style="text-align:left">Ischemic</h3>
+<h3 style="text-align:left">Ischemic:</h3>
 Ischemic strokes are caused when a blood vessel gets blocked off due to some kind of obstruction in it. This is usually due to plaque buildup in the blood, or a clot in the bloodstream. **Transient Ischemic Attacks (ministrokes)** is a type of stroke that happens due to Ischemia in the brain arteries but they usually clear up on their own after some time, hence lasting only for a short period. 
 
-<h3 style="text-align:left">Haemorrhagic</h3>
+<h3 style="text-align:left">Haemorrhagic:</h3>
 Haemorrhagic strokes happen when a blood artery ruptures and begins leaking blood inside the brain. As a result, blood does not reach where it was supposed to, and some parts of the brain are deprived of Oxygen and nutrients. These strokes are usually more deadly as compares to Ischemic strokes as the increased blood volume inside the brain applies pressure to the rest of the brain and results in more damage. 
 
 ### How does one recognise a stroke?
@@ -30,6 +32,7 @@ The symptoms mentioned above happen when the part of the brain controlling them 
 ## Diagnosis
 
 ![flowchart]({{site.baseurl}}/images/flow.png)
+<p style="text-align:center"> Image authors: <a href="https://www.karger.com/Article/Pdf/479518">here</a> </p>
 
 <h3 style="text-align:left">From symptom detection to the hospital ER</h3>
 
@@ -52,7 +55,7 @@ For ischemic stroke detection, a CT angiogram is created to picture the blood ve
 Finally, an MRI scan shows tissues of the brain in very high resolution. While this scan takes quite a bit of time, it provides a very high-quality image, from which blood circulation can be judged easily. Both CT scans are recommended to be performed if the patient is present in the ER within 6 hours of symptoms [[6](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6707502/)]
 
 ![Difference between MRI and CT scans]({{site.baseurl}}/images/mri.png)
-<p style="text-align:center"> Image authors: <a href="http://www.ajnr.org/content/36/10/1834">here</a> </p>
+<p style="text-align:center"> Image authors: <a href="https://healthcareplex.com/mri-vs-ct-scan/">here</a> </p>
 
 ## Treatment
 
@@ -102,3 +105,4 @@ Here, you can appreciate why knowing the etiology of the stroke is very importan
   - **Coil embolization**: The aneurysm can also be blocked off using a special wire. This is a wire similar to that used in the MERCI retriever. It is placed inside the aneurysm and then its sheath is removed. It is allowed to keep coiling inside the aneurysm till the entire bubble is filled with the coil, moreover, blood clots form on this coil, making a tight seal, allowing normal circulation of blood to the brain. 
   
   ![Embolization]({{site.baseurl}}/images/embolization.png)
+  
