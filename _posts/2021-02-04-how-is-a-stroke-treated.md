@@ -123,3 +123,12 @@ _The most important thing about stroke treatment is the time between symptoms an
 
 ## REFERENCES
 
+1. Khan academy's series on stroke:
+	1. Physical exam: https://www.youtube.com/watch?v=yTMZsxSBv_0
+    2. Lab test: https://www.youtube.com/watch?v=AgPpM4jqkxU
+    3. Imaging: https://www.youtube.com/watch?v=xC55TgPmfZ0
+    4. Medication: https://www.youtube.com/watch?v=LvoONWiXJ5I
+    5. Operations: https://www.youtube.com/watch?v=BYE5lxTzNVM
+    6. Prevention: https://www.youtube.com/watch?v=FVedgkn0o70
+   
+2. 
