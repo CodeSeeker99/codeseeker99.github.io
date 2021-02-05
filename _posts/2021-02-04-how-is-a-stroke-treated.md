@@ -18,7 +18,7 @@ Ischemic strokes are caused when a blood vessel gets blocked off due to some kin
 <h3 style="text-align:left">Haemorrhagic:</h3>
 Haemorrhagic strokes happen when a blood artery ruptures and begins leaking blood inside the brain. As a result, blood does not reach where it was supposed to, and some parts of the brain are deprived of Oxygen and nutrients. These strokes are usually more deadly as compares to Ischemic strokes as the increased blood volume inside the brain applies pressure to the rest of the brain and results in more damage. 
 
-### How does one recognise a stroke?
+## How does one recognise a stroke?
 
 To recognise stroke symptoms, the general heuristic is to look at the **Face**, **Arms**, and **Speech** of a person. An easy way to remember this is to remember the acronym **FAST**. 
   - **Face**:   If the patient's face is drooping on any side
