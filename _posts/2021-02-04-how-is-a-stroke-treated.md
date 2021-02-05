@@ -30,7 +30,7 @@ The symptoms mentioned above happen when the part of the brain controlling them 
 
 
 
-## Diagnosis
+<h2 style="background-color:black; color:white">Diagnosis</h2>
 
 ![flowchart]({{site.baseurl}}/images/flow.png)
 <p style="text-align:center"> Image authors: <a href="https://www.karger.com/Article/Pdf/479518">here</a> </p>
@@ -58,7 +58,7 @@ Finally, an MRI scan shows tissues of the brain in very high resolution. While t
 ![Difference between MRI and CT scans]({{site.baseurl}}/images/mri.png)
 <p style="text-align:center"> Image authors: <a href="https://healthcareplex.com/mri-vs-ct-scan/">here</a> </p>
 
-## Treatment
+<h2 style="background-color:black; color:white">Treatment</h2>
 
 <h3 style="text-align:left">Ischemic</h3>
 
