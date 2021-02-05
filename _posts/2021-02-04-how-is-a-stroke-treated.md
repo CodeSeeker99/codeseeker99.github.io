@@ -53,7 +53,7 @@ For ischemic stroke detection, a CT angiogram is created to picture the blood ve
 ![CT Angiogram of brain]({{site.baseurl}}/images/angiobrain.jpg)
 <p style="text-align:center"> Image authors: <a href="http://www.ajnr.org/content/36/10/1834">here</a> </p>
 
-Finally, an MRI scan shows tissues of the brain in very high resolution. While this scan takes quite a bit of time, it provides a very high-quality image, from which blood circulation can be judged easily. Both CT scans are recommended to be performed if the patient is present in the ER within 6 hours of symptoms [[6](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6707502/)]
+Finally, an MRI scan shows tissues of the brain in very high resolution. While this scan takes quite a bit of time, it provides a very high-quality image, from which blood circulation can be judged easily. CT scans are recommended to be performed if the patient is present in the ER within 6 hours of symptoms [[6](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6707502/)], whereas MRI scans are preferred for post-treatment uses. 
 
 ![Difference between MRI and CT scans]({{site.baseurl}}/images/mri.png)
 <p style="text-align:center"> Image authors: <a href="https://healthcareplex.com/mri-vs-ct-scan/">here</a> </p>
