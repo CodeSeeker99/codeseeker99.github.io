@@ -138,4 +138,7 @@ _The most important thing about stroke treatment is the time between symptoms an
 <h3 style="text-align:left">Other sources</h3>
 
 1. WHO report on stroke statistics: [here](https://www.who.int/healthinfo/global_burden_disease/en/))
-2. 
+2. Typical issues with stroke treatment (literature survey) : [here]("https://www.karger.com/Article/Pdf/479518)
+3. Article on patient workflow optimization: [here](https://evtoday.com/articles/2019-feb/stroke-patient-workflow-optimization)
+4. Acute Ischemic stroke guidlelnes by NIH: [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6707502/)
+5. Intracranial Haemorrhage management by NIH: [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2291314/)
