@@ -123,7 +123,7 @@ _The most important thing about stroke treatment is the time between symptoms an
 
 ---
 
-<h2 style="background-color:black; color:white">REFERENCES</h2>
+<h2 style="background-color:black; color:white">BIBLIOGRAPHY</h2>
 
 <h3 style="text-align:left">Video sources</h3>
 
