@@ -40,11 +40,36 @@ Continuation of damage to the brain as a result of physiological effecits of pri
 
 <h2 style="background-color:black; color:white">Diagnosis</h2>
 
-### Glasgow coma scale
+### Preliminary tests
 
-The Glasgow Coma Score (GCS) is a 15-point test used to grade a patient's level of consciousness. Doctors assess the patient's ability to 1) open his or her eyes, 2) ability to respond appropriately to orientation questions, (“What is your name? What is the date today?”), and 3) ability to follow commands (“Hold up two fingers, or give a thumbs up”). If unconscious or unable to follow commands, his or her response to painful stimulation is checked. A number is taken from each category and added together to get the total GCS score.
+When the patient first arrives. Blood pressure is assessed. Pupils are checked. If the intracranial pressure (ICP) is high, one or both pupils may be very wide. Brainstem reflexes including gag and corneal (blink) may also be tested [3](https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Traumatic-Brain-Injury)
+
+**The Glasgow Coma Score (GCS)** is assessed. It is a 15-point test used to grade a patient's level of consciousness. Doctors assess the patient's ability to 1) open his or her eyes, 2) ability to respond appropriately to orientation questions, (“What is your name? What is the date today?”), and 3) ability to follow commands (“Hold up two fingers, or give a thumbs up”). If unconscious or unable to follow commands, his or her response to painful stimulation is checked. A number is taken from each category and added together to get the total GCS score.
 The score ranges from 3 to 15 and helps doctors classify an injury as mild, moderate, or severe. Mild TBI has a score of 13-15. Moderate TBI has a score of 9-12, and severe TBI has a score of 8 and below.
 
+### Imaging
+
+Diagnostic imaging tests are done in the same way as they are done for Strokes. That is, CT scans, CT angiograms and MRI images are taken. Refer to [my post on stroke treatment](https://codeseeker99.github.io/how-is-a-stroke-treated/) for an overview of these. 
+
+Since most TBIs include a fracture, CT scans are an excellent test of diagnosis. Magnetic resonance imaging (MRI) is not commonly used for acute head injury since it takes longer to perform a MRI than a CT. Because it is difficult to transport an acutely-injured patient from the emergency room to a MRI scanner, the use of MRI is impractical. However, once a patient is stabilized, MRI may demonstrate the existence of lesions that were not detected on the CT scan. [3](https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Traumatic-Brain-Injury)
+
+<h2 style="background-color:black; color:white">Treatment</h2>
+
+<h3 style="text-align:left">Surgical methods</h3>
+Emergency surgery is often required to decompress the injured brain and minimise damage. The following are surgical treatments done on the brain to either fix the injury or allow diagnosis and further treatment.
+
+  1. **Craniotomy**: Surgery to remove the haematoma and thus reduce pressure on brain tissue. This involves cutting a hole in the skull to remove a bone flap so that the surgeon can access the brain. The surgeon then repairs the damage (e.g., skull fracture, bleeding vessel, remove large blood clots). The bone flap is replaced in its normal position and secured to the skull with plates and screws.
+  
+  2. **Decompressive craniectomy**: This involves removing a large section of bone so that the brain can swell and expand. This is typically performed when extremely high intracranial pressure becomes life threatening. At that time the patient is taken to the operating room where a large portion of the skull is removed to give the brain more room to swell. The bone flap is stored in a freezer. One to 3 months after the swelling has resolved and the patient has stabilized from the injury, the bone flap is replaced in another surgery, called **cranioplasty**.
+  
+  3. **Intracranial pressure (ICP) monitor**: A catheter is placed through a small hole in the skull and positioned inside the ventricle (fluid-filled area deep within the brain) to measure pressure inside the head (figure below). The ICP monitor allows the surgery team to intervene quickly if the pressure becomes too high. Typical intracranial pressure is less than 20 mmHg. However, there are times when a higher number is safe and acceptable.
+
+  ![icp_monitor_image]({{site.baseurl}}/images/icpmonitor.jpg)
+  <p style="text-align:center"><i> A brain oxygen and cerebral blood flow monitor is inserted into the brain tissue and secured to the skull with a bolt. A catheter is inserted into the ventricle of the brain to monitor intracranial pressure (ICP). If pressure is too high, the CSF fluid can be drained from the ventricles. Image authors: <a href="https://mayfieldclinic.com/pe-tbi.htm">here</a> </i></p>
+  
+  4. **Brain oxygen monitor (Licox)**: A catheter is placed through a small hole in the skull and positioned within the brain tissue. The Licox measures the oxygen level and temperature within the brain. Adjustments in the amount of oxygen given to the patient are often made to maximize the brain's oxygen level.
+
+<h3 style="text-align:left">Medical treatments</h3>
 
 
 <h2 style="background-color:black; color:white">REFERENCES</h2>
@@ -60,6 +85,6 @@ The score ranges from 3 to 15 and helps doctors classify an injury as mild, mode
 
 1. Short explanation by NIH: [here](https://www.ninds.nih.gov/Disorders/All-Disorders/Traumatic-Brain-Injury-Information-Page)
 2. Detailed explanation by Mayfield clinic: [here](https://mayfieldclinic.com/pe-tbi.htm)
-3. [here](https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Traumatic-Brain-Injury)
+3. Another overview on TBI: [here](https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Traumatic-Brain-Injury)
 4. Hematoma vs Haemorrhage: [here](https://www.emedicinehealth.com/hematoma_vs_hemorrhage/article_em.htm)
 5. Depolarization of axons: [here](https://en.wikipedia.org/wiki/Mechanism_of_anoxic_depolarization_in_the_brain)
