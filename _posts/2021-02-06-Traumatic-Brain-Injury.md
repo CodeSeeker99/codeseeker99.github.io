@@ -29,7 +29,16 @@ When the head is injured, the immidiate effect felt due to the mechanism of inju
   
   5. **Diffuse injury**: Injuries that produce microscopic changes that do not appear on CT scans and are scattered throughout the brain. A special type of this injury is called the **Diffuse axonal injury (DAI)**, which occurs due to shearing and stretching of the nerve cells at the cellular level. Axons are a part of the nerve cell which help in communication between cells. DAI can impair this ability to communicate between cells and severely impair the patient.
   
-Continuation of damage to the brain as a result of physiological effecits of primary injury. These include: Hypoximia, Hypotension, Anemia, increased Intra-cranial pressure, Impaired autoregulation. Hypo/Hypercapina, Hypo/Hyperglycemia, Biochemical changes and metabolic demand.
+Continuation of damage to the brain as a result of physiological effecits of primary injury is called the **secondary injury**. This can take from hours to days to occur. Most of the focus during the treatment of a TBI is to control the secondary injuries by balancing a variety of variables such as pressure, oxygen supply to the brain, preventing blockages, etc. [3](https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Traumatic-Brain-Injury). The factors that affect secondary injury are mainly:
+
+1. **Cerebral Profusion Pressure (CPP)**: This is the difference in pressure of the artery (**Mean arterial pressure (MAP)**) and the pressure already exisiting in the brain (**Intracranial pressure (ICP)**). The CPP dictates the amount of blood that goes into the brain, also called **Cerebral Blood Flow (CBF)**. Now, the brain has a fixed amount of space. This includes 80% of brain tissue, 10% of blood and 10% of CSF (stated in the famous **Monro-Kellie doctrine**). During a bleed, blood inside the skull can increase, and since the volumne is fixed, pressure inside it increases as well. The body does have regulatory methods to handle this by draining CSF elsewhere, but this can only work to some extent. After that, the ICP starts rapidly increasing, which can cause other parts of the brain to get crushed or damaged. Another effect of ICP increasing is lower CPP and therefore lower CBF. And with lower bloodflow, cells can start dying after sometime. Here is a graph that explains this effect:
+
+![flowchart]({{site.baseurl}}/images/ischemiagraph.png)
+<p style="text-align:center"><i> Graph showing the amount of time before cell death begins due to Ischemia (shortage of oxygen). You can see that if the brain gets a CBF of about 18 mL/100g/min for 4 hours, Infarction (or cell death) can begin. With decrease in CBF, this cell death becomes even faster. Image authors: <a href="https://youtu.be/2JNTJKaz-aM?t=616">here</a> </i></p>
+
+
+
+
 
 <h2 style="background-color:black; color:white">REFERENCES</h2>
 
@@ -38,6 +47,7 @@ Continuation of damage to the brain as a result of physiological effecits of pri
 1. **ICU Advantage** channel's videos on TBI:
 	1. Overview : [here](https://www.youtube.com/watch?v=i7GidKRUzrY)
     2. Secondary brain injury: [here]()
+2. Overview video by a peditrician: [here](https://www.youtube.com/watch?v=2JNTJKaz-aM)
 
 <h3 style="text-align:left">Other sources</h3>
 
