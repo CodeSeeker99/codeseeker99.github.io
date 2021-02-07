@@ -70,8 +70,17 @@ Emergency surgery is often required to decompress the injured brain and minimise
   4. **Brain oxygen monitor (Licox)**: A catheter is placed through a small hole in the skull and positioned within the brain tissue. The Licox measures the oxygen level and temperature within the brain. Adjustments in the amount of oxygen given to the patient are often made to maximize the brain's oxygen level.
 
 <h3 style="text-align:left">Medical treatments</h3>
+Medications can help treat symptoms of TBI and lower the risk of some conditions associated with it. These may primarily include:
+  
+  1. **Coma-inducing medication**: This may be given, as a brain in coma requires far less oxygen. This is therapeutic where oxygen and nutrient supply to the brain is restricted by compressed blood vessels and increased cerebral pressure. 
 
-
+  2. **Diuretics**: Medications designed to increase the amount of water and salt expelled from the body as urine. Given intravenously, can be used to reduce the amount of fluid in soft tissues and thus help reduce pressure on the brain. 
+  
+  3. **Anti-coagulants**: To prevent blood clots. This is particularly useful in avoiding blockage formation after certain deformations in the brain happen. 
+  
+  4. **Anti-convulsives**: The large amount of blood in the brain can interfere with the electrical activity and cause seizures and further damage. These medicines are given to prevent serziure like events.
+  
+  
 <h2 style="background-color:black; color:white">REFERENCES</h2>
 
 <h3 style="text-align:left">Video sources</h3>
@@ -88,3 +97,4 @@ Emergency surgery is often required to decompress the injured brain and minimise
 3. Another overview on TBI: [here](https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Traumatic-Brain-Injury)
 4. Hematoma vs Haemorrhage: [here](https://www.emedicinehealth.com/hematoma_vs_hemorrhage/article_em.htm)
 5. Depolarization of axons: [here](https://en.wikipedia.org/wiki/Mechanism_of_anoxic_depolarization_in_the_brain)
+6. Another summarizing overview: [here](https://www.physio-pedia.com/Overview_of_Traumatic_Brain_Injury)
