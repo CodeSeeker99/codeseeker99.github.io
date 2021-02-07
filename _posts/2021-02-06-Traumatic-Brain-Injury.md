@@ -15,8 +15,6 @@ Depending on the effect of the injury, it can be a **focal** if it is localised 
   2. **Moderate**: person is lethargic; eyes open to stimulation. Loss of consciousness lasting 20 minutes to 6 hours. Some brain swelling or bleeding causing sleepiness, but still arousable.
   3. **Severe**: person is unconscious; eyes do not open, even with stimulation. Loss of consciousness lasting more than 6 hours.
 
-**Glasgow coma scale**
-
 When the head is injured, the immidiate effect felt due to the mechanism of injury is called the **Primary injury**. These can be the following:
 
   1. **Concussion**: A mild injury to the brain. These can occur when the brain shifts rapidly and comes in contact with the skull but no profuse bleeding occurs. Can cause loss of consciousness. Typically heals without any permanent damage.
@@ -29,14 +27,23 @@ When the head is injured, the immidiate effect felt due to the mechanism of inju
   
   5. **Diffuse injury**: Injuries that produce microscopic changes that do not appear on CT scans and are scattered throughout the brain. A special type of this injury is called the **Diffuse axonal injury (DAI)**, which occurs due to shearing and stretching of the nerve cells at the cellular level. Axons are a part of the nerve cell which help in communication between cells. DAI can impair this ability to communicate between cells and severely impair the patient.
   
-Continuation of damage to the brain as a result of physiological effecits of primary injury is called the **secondary injury**. This can take from hours to days to occur. Most of the focus during the treatment of a TBI is to control the secondary injuries by balancing a variety of variables such as pressure, oxygen supply to the brain, preventing blockages, etc. [3](https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Traumatic-Brain-Injury). The factors that affect secondary injury are mainly:
+Continuation of damage to the brain as a result of physiological effecits of primary injury is called the **secondary injury**. This can take from hours to days to occur. Most of the focus during the treatment of a TBI is to control the secondary injuries by balancing a variety of variables such as pressure, oxygen supply to the brain, preventing blockages, etc. [3](https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Traumatic-Brain-Injury). The main factors that affect secondary injury are:
 
 1. **Cerebral Profusion Pressure (CPP)**: This is the difference in pressure of the artery (**Mean arterial pressure (MAP)**) and the pressure already exisiting in the brain (**Intracranial pressure (ICP)**). The CPP dictates the amount of blood that goes into the brain, also called **Cerebral Blood Flow (CBF)**. Now, the brain has a fixed amount of space. This includes 80% of brain tissue, 10% of blood and 10% of CSF (stated in the famous **Monro-Kellie doctrine**). During a bleed, blood inside the skull can increase, and since the volumne is fixed, pressure inside it increases as well. The body does have regulatory methods to handle this by draining CSF elsewhere, but this can only work to some extent. After that, the ICP starts rapidly increasing, which can cause other parts of the brain to get crushed or damaged. Another effect of ICP increasing is lower CPP and therefore lower CBF. And with lower bloodflow, cells can start dying after sometime. Here is a graph that explains this effect:
 
 ![flowchart]({{site.baseurl}}/images/ischemiagraph.png)
 <p style="text-align:center"><i> Graph showing the amount of time before cell death begins due to Ischemia (shortage of oxygen). You can see that if the brain gets a CBF of about 18 mL/100g/min for 4 hours, Infarction (or cell death) can begin. With decrease in CBF, this cell death becomes even faster. Image authors: <a href="https://youtu.be/2JNTJKaz-aM?t=616">here</a> </i></p>
 
+2. **Depolarization of axons**: The primary injury can cause localised regions of ischemia, which can cause depolarization of neurons in that area [4](https://youtu.be/dIBbSP9Q64c?t=220). Which leads to loss of potassium ions from the cells. This can ultimately lead to absorption of water into these cells and cause edema (or cell swelling). Furthermore, this lack of oxygen can also start anaerobic respiration cycles in the cells, which makes a byproduct of lactic acid. Since blood flow is less, this lactic acid also starts piling up.
 
+3. **Other external factors**: Factors such as blood pressure, metabolic demand of the body, body glucose content, anemia, and electrolytic content in the blood affect cell death in the brain through various pathways. Going into such details would be too in-depth for this overview.
+
+<h2 style="background-color:black; color:white">Diagnosis</h2>
+
+### Glasgow coma scale
+
+The Glasgow Coma Score (GCS) is a 15-point test used to grade a patient's level of consciousness. Doctors assess the patient's ability to 1) open his or her eyes, 2) ability to respond appropriately to orientation questions, (“What is your name? What is the date today?”), and 3) ability to follow commands (“Hold up two fingers, or give a thumbs up”). If unconscious or unable to follow commands, his or her response to painful stimulation is checked. A number is taken from each category and added together to get the total GCS score.
+The score ranges from 3 to 15 and helps doctors classify an injury as mild, moderate, or severe. Mild TBI has a score of 13-15. Moderate TBI has a score of 9-12, and severe TBI has a score of 8 and below.
 
 
 
@@ -55,3 +62,4 @@ Continuation of damage to the brain as a result of physiological effecits of pri
 2. Detailed explanation by Mayfield clinic: [here](https://mayfieldclinic.com/pe-tbi.htm)
 3. [here](https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Traumatic-Brain-Injury)
 4. Hematoma vs Haemorrhage: [here](https://www.emedicinehealth.com/hematoma_vs_hemorrhage/article_em.htm)
+5. Depolarization of axons: [here](https://en.wikipedia.org/wiki/Mechanism_of_anoxic_depolarization_in_the_brain)
