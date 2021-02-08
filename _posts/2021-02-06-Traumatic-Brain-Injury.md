@@ -7,7 +7,7 @@ _A quick summary of the clinical processes that go into diagnosing a traumatic b
 
 ## What is a traumatic brain injury?
 
-Traumatic brain injury (TBI) is a form of acquired brain injury. It occurs when a sudden trauma causes damage to the brain. TBI can result when the head suddenly and violently hits an object, or when an object pierces the skull and enters brain tissue [1](https://www.ninds.nih.gov/Disorders/All-Disorders/Traumatic-Brain-Injury-Information-Page). Typically a result of road accidents, sports injuries, or assaults. The impact that causes the head to jerk suddenly causes a **primary injury**. Symptoms of this can include confusion, dizziness, or loss of consciousness completely. This is not the end of the story, however. Due to the effects of the impact, certain **secondary injuries** can appear. eg. A traumatic injury to the head may cause the brain to shift to one side, causing a blockage in an artery, which can cause brain cells to slowly die due to **hypoxia** (lack of oxygen) in that region. 
+Traumatic brain injury (TBI) is a form of acquired brain injury. It occurs when a sudden trauma causes damage to the brain. TBI can result when the head suddenly and violently hits an object, or when an object pierces the skull and enters brain tissue [[1](https://www.ninds.nih.gov/Disorders/All-Disorders/Traumatic-Brain-Injury-Information-Page)]. Typically a result of road accidents, sports injuries, or assaults. The impact that causes the head to jerk suddenly causes a **primary injury**. Symptoms of this can include confusion, dizziness, or loss of consciousness completely. This is not the end of the story, however. Due to the effects of the impact, certain **secondary injuries** can appear. eg. A traumatic injury to the head may cause the brain to shift to one side, causing a blockage in an artery, which can cause brain cells to slowly die due to **hypoxia** (lack of oxygen) in that region. 
 
 Depending on the effect of the injury, it can be a **focal** if it is localised in only one area of the brain or **diffused** if it is more spread out all over the brain. According to the severity of the injury, TBIs are classified as:
 
@@ -23,7 +23,7 @@ When the head is injured, the immediate effect felt due to the mechanism of inju
   
   2. **Contusion**: This is the bruising of brain tissue. When examined under a microscope, cerebral contusions are comparable to bruises in other parts of the body. They consist of areas of injured or swollen brain mixed with blood that has leaked from arteries, veins, or capillaries.
   
-  3. **Hematomas**: These are blood clots within the brain (called **Intracerebral**), between the brain and its dura (lining) (called **epidural**) or between its dura and the skull (called **epidural**). These clots form due to some form of arterial bleeding. While small clots can be re-absorbed by the brain [2](https://mayfieldclinic.com/pe-tbi.htm), large ones apply pressure inside the brain and need to be surgically removed.
+  3. **Hematomas**: These are blood clots within the brain (called **Intracerebral**), between the brain and its dura (lining) (called **epidural**) or between its dura and the skull (called **epidural**). These clots form due to some form of arterial bleeding. While small clots can be re-absorbed by the brain [[2](https://mayfieldclinic.com/pe-tbi.htm)], large ones apply pressure inside the brain and need to be surgically removed.
   
   4. **Haemorrhages**: These represent more active bleeding scenarios where the blood does not clot that easily, usually due to the rupturing of an artery as opposed to a capillary or vein in hematomas. These can be either inside the brain tissue (**Intracerebral**) or inside the subarachnoid space (**Subarachnoid**) which is the space between the innermost lining of the brain (pia mater) and middle lining of the brain (arachnoid mater).
   
@@ -38,7 +38,7 @@ Continuation of damage to the brain as a result of physiological effects of prim
   ![flowchart]({{site.baseurl}}/images/ischemiagraph.png)
   <p style="text-align:center"><i> Graph showing the amount of time before cell death begins due to Ischemia (shortage of oxygen). You can see that if the brain gets a CBF of about 18 mL/100g/min for 4 hours, Infarction (or cell death) can begin. With a decrease in CBF, this cell death becomes even faster. Image authors: <a href="https://youtu.be/2JNTJKaz-aM?t=616">here</a> </i></p>
 
-  2. **Depolarization of axons**: The primary injury can cause localized regions of ischemia, which can cause depolarization of neurons in that area [4](https://youtu.be/dIBbSP9Q64c?t=220). Which leads to loss of potassium ions from the cells. This can ultimately lead to the absorption of water into these cells and cause edema (or cell swelling). Furthermore, this lack of oxygen can also start anaerobic respiration cycles in the cells, which makes a byproduct of lactic acid. Since blood flow is less, this lactic acid also starts piling up.
+  2. **Depolarization of axons**: The primary injury can cause localized regions of ischemia, which can cause depolarization of neurons in that area [[4](https://youtu.be/dIBbSP9Q64c?t=220)]. Which leads to loss of potassium ions from the cells. This can ultimately lead to the absorption of water into these cells and cause edema (or cell swelling). Furthermore, this lack of oxygen can also start anaerobic respiration cycles in the cells, which makes a byproduct of lactic acid. Since blood flow is less, this lactic acid also starts piling up.
 
   3. **Other external factors**: Factors such as blood pressure, metabolic demand of the body, body glucose content, anemia, and electrolytic content in the blood affect cell death in the brain through various pathways. Going into such details would be too in-depth for this overview.
 
@@ -46,7 +46,7 @@ Continuation of damage to the brain as a result of physiological effects of prim
 
 ### Preliminary tests
 
-When the patient first arrives. Blood pressure is assessed. Pupils are checked. If the intracranial pressure (ICP) is high, one or both pupils may be very wide. Brainstem reflexes including gag and corneal (blink) may also be tested [3](https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Traumatic-Brain-Injury)
+When the patient first arrives. Blood pressure is assessed. Pupils are checked. If the intracranial pressure (ICP) is high, one or both pupils may be very wide. Brainstem reflexes including gag and corneal (blink) may also be tested [[3](https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Traumatic-Brain-Injury)]
 
 **The Glasgow Coma Score (GCS)** is assessed. It is a 15-point test used to grade a patient's level of consciousness. Doctors assess the patient's ability to 1) open his or her eyes, 2) ability to respond appropriately to orientation questions, (“What is your name? What is the date today?”), and 3) ability to follow commands (“Hold up two fingers, or give a thumbs up”). If unconscious or unable to follow commands, his or her response to painful stimulation is checked. A number is taken from each category and added together to get the total GCS score.
 The score ranges from 3 to 15 and helps doctors classify an injury as mild, moderate, or severe. Mild TBI has a score of 13-15. Moderate TBI has a score of 9-12, and severe TBI has a score of 8 and below.
@@ -55,7 +55,7 @@ The score ranges from 3 to 15 and helps doctors classify an injury as mild, mode
 
 Diagnostic imaging tests are done in the same way as they are done for Strokes. That is, CT scans, CT angiograms, and MRI images are taken. Refer to [my post on stroke treatment](https://codeseeker99.github.io/how-is-a-stroke-treated/) for an overview of these. 
 
-Since most TBIs include a fracture, CT scans are an excellent test of diagnosis. Magnetic resonance imaging (MRI) is not commonly used for acute head injury since it takes longer to perform an MRI than a CT. Because it is difficult to transport an acutely-injured patient from the emergency room to an MRI scanner, the use of MRI is impractical. However, once a patient is stabilized, MRI may demonstrate the existence of lesions that were not detected on the CT scan. [3](https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Traumatic-Brain-Injury)
+Since most TBIs include a fracture, CT scans are an excellent test of diagnosis. Magnetic resonance imaging (MRI) is not commonly used for acute head injury since it takes longer to perform an MRI than a CT. Because it is difficult to transport an acutely-injured patient from the emergency room to an MRI scanner, the use of MRI is impractical. However, once a patient is stabilized, MRI may demonstrate the existence of lesions that were not detected on the CT scan. [[3](https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Traumatic-Brain-Injury)]
 
 <h2 style="background-color:black; color:white">Treatment</h2>
 
