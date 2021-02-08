@@ -70,7 +70,7 @@ Emergency surgery is often required to decompress the injured brain and minimise
 3. **Intracranial pressure (ICP) monitor**: A catheter is placed through a small hole in the skull and positioned inside the ventricle (a fluid-filled area deep within the brain) to measure the pressure inside the head (figure below). The ICP monitor allows the surgery team to intervene quickly if the pressure becomes too high. Typical intracranial pressure is less than 20 mmHg. However, there are times when a higher number is safe and acceptable.
 
   ![icp_monitor_image]({{site.baseurl}}/images/icpmonitor.jpg)
-  <p style="text-align:center"><i> A brain oxygen and cerebral blood flow monitor is inserted into the brain tissue and secured to the skull with a bolt. A catheter is inserted into the ventricle of the brain to monitor intracranial pressure (ICP). If pressure is too high, the CSF fluid can be drained from the ventricles. Image authors: <a href="https://mayfieldclinic.com/pe-tbi.htm">here</a> </i></p>
+  <p style="text-align:center"><i>  A brain oxygen and cerebral blood flow monitor is inserted into the brain tissue and secured to the skull with a bolt. A catheter is inserted into the ventricle of the brain to monitor intracranial pressure (ICP). If pressure is too high, the CSF fluid can be drained from the ventricles. Image authors: <a href="https://mayfieldclinic.com/pe-tbi.htm">here</a> </i></p>
   
 4. **Brain oxygen monitor (Licox)**: A catheter is placed through a small hole in the skull and positioned within the brain tissue. The Licox measures the oxygen level and temperature within the brain. Adjustments in the amount of oxygen given to the patient are often made to maximize the brain's oxygen level.
 
