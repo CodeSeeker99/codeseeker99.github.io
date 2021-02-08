@@ -15,6 +15,8 @@ Depending on the effect of the injury, it can be a **focal** if it is localised 
   2. **Moderate**: the person is lethargic; eyes open to stimulation. Loss of consciousness lasting 20 minutes to 6 hours. Some brain swelling or bleeding causing sleepiness, but still arousable.
   3. **Severe**: the person is unconscious; eyes do not open, even with stimulation. Loss of consciousness lasting more than 6 hours.
 
+### Primary brain injury
+
 When the head is injured, the immediate effect felt due to the mechanism of injury is called the **Primary injury**. These can be the following:
 
   1. **Concussion**: A mild injury to the brain. These can occur when the brain shifts rapidly and comes in contact with the skull but no profuse bleeding occurs. Can cause loss of consciousness. Typically heals without any permanent damage.
@@ -26,8 +28,10 @@ When the head is injured, the immediate effect felt due to the mechanism of inju
   4. **Haemorrhages**: These represent more active bleeding scenarios where the blood does not clot that easily, usually due to the rupturing of an artery as opposed to a capillary or vein in hematomas. These can be either inside the brain tissue (**Intracerebral**) or inside the subarachnoid space (**Subarachnoid**) which is the space between the innermost lining of the brain (pia mater) and middle lining of the brain (arachnoid mater).
   
   5. **Diffuse injury**: Injuries that produce microscopic changes that do not appear on CT scans and are scattered throughout the brain. A special type of this injury is called the **Diffuse axonal injury (DAI)**, which occurs due to shearing and stretching of the nerve cells at the cellular level. Axons are a part of the nerve cell which help in communication between cells. DAI can impair this ability to communicate between cells and severely impair the patient.
-  
-Continuation of damage to the brain as a result of physiological effects of primary injury is called the **secondary injury**. This can take from hours to days to occur. Most of the focus during the treatment of a TBI is to control the secondary injuries by balancing a variety of variables such as pressure, oxygen supply to the brain, preventing blockages, etc. [3](https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Traumatic-Brain-Injury). The main factors that affect secondary injury are:
+ 
+### Secondary brain injury
+
+Continuation of damage to the brain as a result of physiological effects of primary injury is called the **secondary injury**. This can take from hours to days to occur. Most of the focus during the treatment of a TBI is to control the secondary injuries by balancing a variety of variables such as pressure, oxygen supply to the brain, preventing blockages, etc. [[3](https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Traumatic-Brain-Injury)]. There are a multitude of secondary brain injuries that can occur. The main factors that affect secondary injury are:
 
 1. **Cerebral Profusion Pressure (CPP)**: This is the difference in pressure of the artery (**Mean arterial pressure (MAP)**) and the pressure already existing in the brain (**Intracranial pressure (ICP)**). The CPP dictates the amount of blood that goes into the brain, also called **Cerebral Blood Flow (CBF)**. Now, the brain has a fixed amount of space. This includes 80% of brain tissue, 10% of blood, and 10% of CSF (stated in the famous **Monro-Kellie doctrine**). During a bleed, blood inside the skull can increase, and since the volume is fixed, the pressure inside it increases as well. The body does have regulatory methods to handle this by draining CSF elsewhere, but this can only work to some extent. After that, the ICP starts rapidly increasing, which can cause other parts of the brain to get crushed or damaged. Another effect of ICP increasing is lower CPP and therefore lower CBF. And with lower blood flow, cells can start dying after some time. Here is a graph that explains this effect:
 
@@ -55,7 +59,8 @@ Since most TBIs include a fracture, CT scans are an excellent test of diagnosis.
 
 <h2 style="background-color:black; color:white">Treatment</h2>
 
-<h3 style="text-align:left">Surgical methods</h3>
+### Surgical treatment
+
 Emergency surgery is often required to decompress the injured brain and minimise damage. The following are surgical treatments done on the brain to either fix the injury or allow diagnosis and further treatment.
 
   1. **Craniotomy**: Surgery to remove the haematoma and thus reduce pressure on brain tissue. This involves cutting a hole in the skull to remove a bone flap so that the surgeon can access the brain. The surgeon then repairs the damage (e.g., skull fracture, bleeding vessel, remove large blood clots). The bone flap is replaced in its normal position and secured to the skull with plates and screws.
@@ -69,7 +74,8 @@ Emergency surgery is often required to decompress the injured brain and minimise
   
   4. **Brain oxygen monitor (Licox)**: A catheter is placed through a small hole in the skull and positioned within the brain tissue. The Licox measures the oxygen level and temperature within the brain. Adjustments in the amount of oxygen given to the patient are often made to maximize the brain's oxygen level.
 
-<h3 style="text-align:left">Medical treatments</h3>
+### Medical treatment
+
 Medications can help treat symptoms of TBI and lower the risk of some conditions associated with it. These may primarily include:
   
   1. **Coma-inducing medication**: This may be given, as a brain in a coma requires far less oxygen. This is therapeutic where oxygen and nutrient supply to the brain is restricted by compressed blood vessels and increased cerebral pressure. 
