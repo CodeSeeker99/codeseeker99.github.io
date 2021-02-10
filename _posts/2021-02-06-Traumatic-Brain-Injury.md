@@ -23,7 +23,7 @@ When the head is injured, the immediate effect felt due to the mechanism of inju
   
   2. **Contusion**: This is the bruising of brain tissue. When examined under a microscope, cerebral contusions are comparable to bruises in other parts of the body. They consist of areas of injured or swollen brain mixed with blood that has leaked from arteries, veins, or capillaries.
   
-  3. **Hematomas**: These are blood clots within the brain (called **Intracerebral**), between the brain and its dura (lining) (called **epidural**) or between its dura and the skull (called **epidural**). These clots form due to some form of arterial bleeding. While small clots can be re-absorbed by the brain [[2](https://mayfieldclinic.com/pe-tbi.htm)], large ones apply pressure inside the brain and need to be surgically removed.
+  3. **Hematomas**: These are blood clots within the brain \[called **Intracerebral**\], between the brain's arachnoid mater (middle lining) and its dura mater (outermost lining) \[called **subdural**\] or between its dura and the skull \[called **epidural**\]. These clots form due to some form of arterial bleeding. While small clots can be re-absorbed by the brain [[2](https://mayfieldclinic.com/pe-tbi.htm)], large ones apply pressure inside the brain and need to be surgically removed.
   
   4. **Haemorrhages**: These represent more active bleeding scenarios where the blood does not clot that easily, usually due to the rupturing of an artery as opposed to a capillary or vein in hematomas. These can be either inside the brain tissue (**Intracerebral**) or inside the subarachnoid space (**Subarachnoid**) which is the space between the innermost lining of the brain (pia mater) and middle lining of the brain (arachnoid mater).
   
