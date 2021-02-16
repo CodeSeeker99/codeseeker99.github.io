@@ -5,6 +5,7 @@ _A short article on the simpleITK library's handling of image data_
 
 ---
 
+## 
 ## What is SimpleITK?
 
 SimpleITK (SITK) is a simplified programming interface to the algorithms and data structures of the Insight Toolkit (ITK). This means its a library that helps you load images and perform transformations (which are mentioned in the ITK) on them. 
@@ -16,15 +17,7 @@ Images in SITK are different from those we are used to seeing everyday. Each pix
 
 
 
-This is a libra
-  - Load an image (single image)
-  - Image attributes
-    - Spacing
-    - Direction corsines
-    - other small attributes (size etc)
-  - Transforms
-    - Translation
-    - Affine types
+
    
 
 
