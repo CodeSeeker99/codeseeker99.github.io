@@ -10,9 +10,7 @@ _A short article on the simpleITK library's handling of image data_
   - What is SimpleITK
   - Images in SimpleITK
     - Loading an image
-    - Spacing
-    - Direction corsines
-    - other small attributes (size etc)
+    - Attributes
   - Transforms
     - Translation
     - Affine types
@@ -71,9 +69,26 @@ plt.imshow(nd_image, cmap='gray')
 print(f'Image shape {nd_image.shape}')
 ```
 
-Now, let's get into the details of each image. Starting with Spacing
+If you wish to access any particular pixel values, simply use:
 
-### Spacing
+```python
+
+## .. code to get image
+x = 10                        # X-coordinate of the pixel
+y = 10                        # Y-coordinate of the pixel
+value = image.GetPixel((x,y)) # May throw error if (x,y) is out of bounds of the physical space of the image.
+
+print(value)
+```
+### Image attributes
+![ImageDetails]({{site.baseurl}}/images/SITK_image_details.png)
+Now, let's get into the details of the attributes of these images
+
+**Origin**: This is the starting point of the image. Identified by the left-bottom corner of the image as shown in the figure. Use ```image.GetOrigin()``` to get the spacing of an SITK image. To change the origin of an image, read the transforms section.
+
+**Spacing**: This is the distance between pixels along each of the dimensions. The picture below showsUse ```image.GetSpacing()``` to get the spacing of an SITK image.
+
+
 
 
 
