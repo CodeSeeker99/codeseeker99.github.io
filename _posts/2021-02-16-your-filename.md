@@ -40,8 +40,6 @@ Let's start by loading a dicom image in SimpleITK.
 
 ```python
 image = sitk.ReadImage('/path/to/image/image.dcm')
-
-image = image_file_reader.Execute()
 print("Type:", type(image), "Image size:", size[0], size[1], size[2])
 ```
 
