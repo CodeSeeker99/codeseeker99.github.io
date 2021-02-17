@@ -76,19 +76,27 @@ If you wish to access any particular pixel values, simply use:
 ## .. code to get image
 x = 10                        # X-coordinate of the pixel
 y = 10                        # Y-coordinate of the pixel
-value = image.GetPixel((x,y)) # May throw error if (x,y) is out of bounds of the physical space of the image.
+value = image.GetPixel((x,y,0)) # May throw error if (x,y,0) is out of bounds of the physical space of the image.
 
 print(value)
 ```
+
 ### Image attributes
+
 ![ImageDetails]({{site.baseurl}}/images/SITK_image_details.png)
 Now, let's get into the details of the attributes of these images
 
-**Origin**: This is the starting point of the image. Identified by the left-bottom corner of the image as shown in the figure. Use ```image.GetOrigin()``` to get the spacing of an SITK image. To change the origin of an image, read the transforms section.
+**Origin**: This is the starting point of the image. Identified by the left-bottom corner of the image as shown in the figure. Use ```image.GetOrigin()``` to get the spacing of an SITK image. To change the origin of an image, read the transforms section. This attribute is crucial when composing 2 images on top of each other. If their origins do not match, SITK does not allow super-position of 2 images.
 
-**Spacing**: This is the distance between pixels along each of the dimensions. The picture below showsUse ```image.GetSpacing()``` to get the spacing of an SITK image.
+![OriginTransform]({{site.baseurl}}/images/Origin_transform.png)
 
+**Spacing**: This is the distance between pixels along each of the dimensions. The picture below shows two images with different spacing values. As you can see, image stretching can be performed by changing this value. Use ```image.GetSpacing()``` to get the spacing of an SITK image.
 
+![SpacingTransform]({{site.baseurl}}/images/Spacing_transform.png)
+
+**Direction Cosines**: A tuple containing 9 values, where first 3 represent the x-axis vector, the next 3 represent the y-axis vector and the last represent the z-axis vector.  Use ```image.GetDirection()``` to get the spacing of the SITK image.
+
+![DirectionTransform]({{site.baseurl}}/images/Spacing_transform.png)
 
 
 
