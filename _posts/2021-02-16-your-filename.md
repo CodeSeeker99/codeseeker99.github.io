@@ -33,9 +33,27 @@ Let's start by loading a dicom image in SimpleITK.
 ```python
 image_file_reader = sitk.ImageFileReader()
 image_file_reader.SetFileName('/path/to/image/image.dcm')
+
 image = image_file_reader.Execute()
+print("Type:", type(image), "Image size:", size[0], size[1], size[2])
 ```
 
+Or if you wish to load an entire series all at once
+
+```python
+reader = sitk.ImageSeriesReader()
+dicom_names = reader.GetGDCMSeriesFileNames("./1.2.276.0.7230010.3.1.2.8323329.1346.1548413739.945146/series")
+reader.SetFileNames(dicom_names)
+
+image_series = reader.Execute()
+size = image_series.GetSize()
+print("Type:", type(image_series), "Image size:", size[0], size[1], size[2])
+```
+
+This will give us an object of SITK Image class. 
+**Now how do we view it?**
+
+The recommended viewing library from SITK is [FIJI](https://fiji.sc/). This viewer is 
 
 
 
