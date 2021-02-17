@@ -29,8 +29,8 @@ Images in SITK are different from those we are used to seeing everyday. Each pix
 But what will happen if we use something like numpy to read the image data and directly plot it instead?
 
 ![Isotropic VS non-isotropic]({{site.baseurl}}/images/isotropic.svg)
-<p style="text-align:center"><i> Left. Image displayed with a viewer that is not aware of spatial meta-data (eg. matplotlib). Right. Image displayed with a viewer that is aware of spatial meta-
-data (eg. Fiji) Image authors: <a href="https://youtu.be/2JNTJKaz-aM?t=616">here</a> </i></p>
+<p style="text-align:center"><i> Left. Image displayed with a viewer that is not aware of spatial meta-data. Right. Image displayed with a viewer that is aware of spatial meta-
+data. Image authors: <a href="https://simpleitk.readthedocs.io/en/master/fundamentalConcepts.html#lbl-isotropy">here</a> </i></p>
 
 ### Loading an image
 
@@ -74,11 +74,14 @@ If you wish to access any particular pixel values, simply use:
 ```python
 
 ## .. code to get image
-x = 10                        # X-coordinate of the pixel
-y = 10                        # Y-coordinate of the pixel
-value = image.GetPixel((x,y,0)) # May throw error if (x,y,0) is out of bounds of the physical space of the image.
+x = 10                          # X-coordinate of the pixel
+y = 10                          # Y-coordinate of the pixel
+z = 0                           # Z-coordinate of the pixel
+value = image.GetPixel((x,y,z)) # May throw error if (x,y,z) is out of bounds of the physical space of the image.
+value2 = image[x,y,z]           # Another way of accessing value
 
 print(value)
+print(value2)
 ```
 
 ### Image attributes
@@ -88,15 +91,17 @@ Now, let's get into the details of the attributes of these images
 
 **Origin**: This is the starting point of the image. Identified by the left-bottom corner of the image as shown in the figure. Use ```image.GetOrigin()``` to get the spacing of an SITK image. To change the origin of an image, read the transforms section. This attribute is crucial when composing 2 images on top of each other. If their origins do not match, SITK does not allow super-position of 2 images.
 
-![OriginTransform]({{site.baseurl}}/images/Origin_transform.png)
-
 **Spacing**: This is the distance between pixels along each of the dimensions. The picture below shows two images with different spacing values. As you can see, image stretching can be performed by changing this value. Use ```image.GetSpacing()``` to get the spacing of an SITK image.
 
-![SpacingTransform]({{site.baseurl}}/images/Spacing_transform.png)
+**Size**: This defines the number of pixels in each dimension of the image. Use ```image.GetSize()``` to get the size of an SITK image.
 
 **Direction Cosines**: A tuple containing 9 values, where first 3 represent the x-axis vector, the next 3 represent the y-axis vector and the last represent the z-axis vector.  Use ```image.GetDirection()``` to get the spacing of the SITK image.
 
-![DirectionTransform]({{site.baseurl}}/images/Spacing_transform.png)
+![DimensionDifferences]({{site.baseurl}}/images/dimension_difference.png)
+
+## Transforms
+
+
 
 
 
