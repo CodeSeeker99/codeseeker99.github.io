@@ -12,8 +12,8 @@ _A short article on the simpleITK library's handling of image data_
     - Loading an image
     - Attributes
   - Transforms
-    - Translation
-    - Affine types
+    - Common transforms
+    - Resampling
 
 ## What is SimpleITK?
 
