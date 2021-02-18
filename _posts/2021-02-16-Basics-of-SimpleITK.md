@@ -132,11 +132,11 @@ print('original point: {}\ntransformed point: {}\nback to original: {}'.format(p
 ### Some common transforms 
 
 **Translation**: Simply moving a point from one place to another. y = x + t
-| ```translation = sitk.TranslationTransform(dimension, offset)```
+```translation = sitk.TranslationTransform(dimension, offset)```
 
 **Euler Transforms**: This transform applies a rotation and translation to the space given euler angles and a translation. May be 2D or 3D. Rotation is about a user specified center.
-| ```euler2d = sitk.Euler2DTransform(centre, angle, offset)```
-| ```euler3d = sitk.Euler3DTransform(centre, angleX, angleY, angleZ, translation)```
+```euler2d = sitk.Euler2DTransform(centre, angle, offset)```
+```euler3d = sitk.Euler3DTransform(centre, angleX, angleY, angleZ, translation)```
 
 **Affine Transforms**: An affine transformation is defined mathematically as a linear transformation plus a constant offset. If A is a constant n x n matrix and b is a constant n-vector, then y = Ax+b defines an affine transformation from the n-vector x to the n-vector y.
 ```affine = sitk.AffineTransform(matrix.flatten(), translation, centre)```
