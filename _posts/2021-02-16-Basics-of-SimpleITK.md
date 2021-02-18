@@ -27,9 +27,11 @@ But what will happen if we use something like numpy to read the image data and d
 <p style="text-align:center"><i> Left. Image displayed with a viewer that is not aware of spatial meta-data. Right. Image displayed with a viewer that is aware of spatial meta-
 data. Image authors: <a href="https://simpleitk.readthedocs.io/en/master/fundamentalConcepts.html#lbl-isotropy">here</a> </i></p>
 
+As visible, without spatial information, scans with anisotropic spacing between pixels as show above will seem distorted. Now that we've got a general idea of these images, let's jump into the specifics.
+
 ### Loading an image
 
-Let's start by loading a dicom image in SimpleITK.
+Before we can analyse an image, we need to load it into memory. 
 
 ```python
 image = sitk.ReadImage('/path/to/image/image.dcm')
@@ -64,7 +66,7 @@ print(value2)
 ```
 
 This will give us an object of SITK Image class. **Now how do we view it?**
-The recommended viewing library from SITK is [FIJI](https://fiji.sc/). You can however, also use [Matplotlib](https://matplotlib.org/stable/index.html) to view single images.
+The recommended viewing library from SITK is [FIJI](https://fiji.sc/). You can however, also use [Matplotlib](https://matplotlib.org/stable/index.html) to view 2D images.
 
 ```python
 ## .. code to get image
