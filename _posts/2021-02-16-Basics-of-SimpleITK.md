@@ -1,6 +1,6 @@
 ---
 published: true
-title: 'Basics of SimpleITK'
+title: Basics of SimpleITK
 ---
 _A short article on the simpleITK library's handling of image data_
 
