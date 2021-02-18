@@ -10,9 +10,9 @@ _A short article on the simpleITK library's handling of image data. After this, 
 
 SimpleITK (SITK) is a simplified programming interface to the algorithms and data structures of the **Insight Toolkit (ITK)**. It was developed at the [National Institutes of Health (NIH)](https://www.nih.gov/) as an open resource, its primary goal is to make the algorithms available in the ITK library accessible to the broadest range of scientists whose work includes image analysis. The library is available in a wide variety of languages, these are **C++, Python, R, Java, C#, Lua, Ruby, and Tcl**.
 
-
-
 ![SITK logo]({{site.baseurl}}/images/sitk.png)
+
+The toolkit is organized around a data-flow architecture. That is, data is represented using data objects which are in turn processed by process objects (filters). Data objects and process objects are connected together into pipelines. Pipelines are capable of processing the data in pieces according to a user-specified memory limit set on the pipeline. However, the toolkit does not address visualization or graphical user interface. These are left to other toolkits
 
 <h2 style="background-color:black; color:white">Images in SimpleITK</h2>
 
@@ -48,6 +48,21 @@ size = image_series.GetSize()
 print("Type:", type(image_series), "Image size:", size[0], size[1], size[2])
 ```
 
+A series will be loaded as a 3D image/array. If you wish to access any particular pixel values simply use the following format. For slicing, replace the indices accordingly in the general pythonic format.
+
+```python
+
+## .. code to get image
+x = 10                          # X-coordinate of the pixel
+y = 10                          # Y-coordinate of the pixel
+z = 0                           # Z-coordinate of the pixel
+value = image.GetPixel((x,y,z)) # May throw error if (x,y,z) is out of bounds of the physical space of the image.
+value2 = image[x,y,z]           # Another way of accessing value
+
+print(value)
+print(value2)
+```
+
 This will give us an object of SITK Image class. **Now how do we view it?**
 The recommended viewing library from SITK is [FIJI](https://fiji.sc/). You can however, also use [Matplotlib](https://matplotlib.org/stable/index.html) to view single images.
 
@@ -64,20 +79,7 @@ plt.imshow(nd_image, cmap='gray')
 print(f'Image shape {nd_image.shape}')
 ```
 
-If you wish to access any particular pixel values, simply use:
 
-```python
-
-## .. code to get image
-x = 10                          # X-coordinate of the pixel
-y = 10                          # Y-coordinate of the pixel
-z = 0                           # Z-coordinate of the pixel
-value = image.GetPixel((x,y,z)) # May throw error if (x,y,z) is out of bounds of the physical space of the image.
-value2 = image[x,y,z]           # Another way of accessing value
-
-print(value)
-print(value2)
-```
 
 ### Image attributes
 
