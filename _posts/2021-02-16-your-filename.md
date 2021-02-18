@@ -185,6 +185,7 @@ resampled = sitk.Resample(grid, euler2d)
 plt.imshow(sitk.GetArrayViewFromImage(grid), cmap='gray', origin ='lower')
 plt.show()
 plt.imshow(sitk.GetArrayViewFromImage(resampled), cmap='gray', origin ='lower')
+plt.show()
 ```
 
 In the example above we did not specify a separate reference image for our mapping. As a result, for many of the transformations the resulting image contained black pixels, pixels which were mapped outside the spatial domain of the original image and a partial view of the original image.
