@@ -19,6 +19,8 @@ _A short article on the simpleITK library's handling of image data_
 
 SimpleITK (SITK) is a simplified programming interface to the algorithms and data structures of the Insight Toolkit (ITK). This means its a library that helps you load images and perform transformations (which are mentioned in the ITK) on them. 
 
+![SITK logo]({{site.baseurl}}/images/sitk.png)
+
 ## Images in SimpleITK
 
 Images in SITK are different from those we are used to seeing everyday. Each pixel or [voxel](https://en.wikipedia.org/wiki/Voxel) \[3D pixel basically\] is not isotropically spaced. The image is defined as a physical entity in 3D space. That means, that not only does each pixel have coordinates, there are direction vectors for the axis as well. Simply put, this means,
@@ -101,8 +103,33 @@ Now, let's get into the details of the attributes of these images
 
 ## Transforms
 
+Spatial transformations in SITK convert a point x to T(x) in the following way (except for translation transform)
 
+#### T(x) = A(x-c) + t + c
 
+Here, 
+  - Matrix: the matrix A
+  - Center: the point c
+  - Translation: the vector t
+  - Offset: t + c - Ac
+  
+Translations can be applied directly to points in SITK. For eg:
+
+```python
+dimension = 3
+offset = [1,2,3]
+
+translation = sitk.TranslationTransform(dimension, offset)
+
+point = [10, 10, 10]
+transformed_point = translation.TransformPoint(point)
+translation_inverse = translation.GetInverse()
+
+print(translation)
+print('original point: ' + util.point2str(point) + '\n'
+      'transformed point: ' + util.point2str(transformed_point) + '\n'
+      'back to original: ' + util.point2str(translation_inverse.TransformPoint(transformed_point)))
+```
 
 
 
