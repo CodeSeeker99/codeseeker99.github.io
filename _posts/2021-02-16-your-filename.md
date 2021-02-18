@@ -135,7 +135,7 @@ Similarly, applying translation to an image:
 
 ```python
 dimension = 2
-offset = (3.1, 4.6)
+offset = (3, 4)
 translation = sitk.TranslationTransform(dimension, offset)
 
 ## Create a sample grid for demonstration
@@ -148,7 +148,7 @@ plt.imshow(sitk.GetArrayViewFromImage(resampled), cmap='gray', origin ='lower')
 ```
 
 ![TranslationDifferences]({{site.baseurl}}/images/translation_difference.png)
-
+<p style="text-align:center"><i> Left. Our original grid image. Right. Grid image after applying translation. Notice how our translation is positive (3.2</i></p>
 
 
 
