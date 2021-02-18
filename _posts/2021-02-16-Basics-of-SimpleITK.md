@@ -96,7 +96,7 @@ Now, let's get into the details of the attributes of these images
 
  - **Direction Cosines**: A tuple containing 9 values, where first 3 represent the x-axis vector, the next 3 represent the y-axis vector and the last represent the z-axis vector.  Use ```image.GetDirection()``` to get the spacing of the SITK image.
 
-![PointTranslation]({{site.baseurl}}/images/point_translation.png)
+![ImageDIfference]({{site.baseurl}}/images/image_difference.png)
 
 <h2 style="background-color:black; color:white">Transforms</h2>
 
