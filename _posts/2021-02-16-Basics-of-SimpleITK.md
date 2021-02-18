@@ -8,7 +8,9 @@ _A short article on the simpleITK library's handling of image data. After this, 
 
 <h2 style="background-color:black; color:white">What is SimpleITK?</h2>
 
-SimpleITK (SITK) is a simplified programming interface to the algorithms and data structures of the Insight Toolkit (ITK). This means its a library that helps you load images and perform transformations (which are mentioned in the ITK) on them. 
+SimpleITK (SITK) is a simplified programming interface to the algorithms and data structures of the **Insight Toolkit (ITK)**. It was developed at the [National Institutes of Health (NIH)](https://www.nih.gov/) as an open resource, its primary goal is to make the algorithms available in the ITK library accessible to the broadest range of scientists whose work includes image analysis. The library is available in a wide variety of languages, these are **C++, Python, R, Java, C#, Lua, Ruby, and Tcl**.
+
+
 
 ![SITK logo]({{site.baseurl}}/images/sitk.png)
 
