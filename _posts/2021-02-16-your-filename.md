@@ -113,7 +113,7 @@ Here,
   - Translation: the vector t
   - Offset: t + c - Ac
   
-Translations can be applied directly to points in SITK. For eg:
+Translations can be applied directly to points in SITK. The code below performs simple translation on a point in 3D space.
 
 ```python
 dimension = 3
@@ -131,6 +131,23 @@ print('original point: ' + util.point2str(point) + '\n'
       'back to original: ' + util.point2str(translation_inverse.TransformPoint(transformed_point)))
 ```
 
+Similarly, applying translation to an image:
+
+```python
+dimension = 2
+offset = (3.1, 4.6)
+translation = sitk.TranslationTransform(dimension, offset)
+
+## Create a sample grid for demonstration
+grid = sitk.GridSource(outputPixelType=sitk.sitkUInt16,size=(250, 250),sigma=(0.5, 0.5),gridSpacing=(5.0, 5.0),gridOffset=(0.0, 0.0),spacing=(0.2,0.2))
+
+plt.imshow(sitk.GetArrayViewFromImage(grid), cmap='gray', origin ='lower')
+
+resampled = sitk.Resample(grid, translation)
+plt.imshow(sitk.GetArrayViewFromImage(resampled), cmap='gray', origin ='lower')
+```
+
+![TranslationDifferences]({{site.baseurl}}/images/translation_difference.png)
 
 
 
