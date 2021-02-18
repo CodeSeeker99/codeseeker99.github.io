@@ -2,27 +2,17 @@
 published: true
 title: Basics of SimpleITK
 ---
-_A short article on the simpleITK library's handling of image data_
+_A short article on the simpleITK library's handling of image data. After this, you'd have a good general undersanding of the basic concepts regarding Image handling in SimpleITK_
 
 ---
 
-## Index
-
-  - What is SimpleITK
-  - Images in SimpleITK
-    - Loading an image
-    - Attributes
-  - Transforms
-    - Common transforms
-    - Resampling
-
-## What is SimpleITK?
+<h2 style="background-color:black; color:white">What is SimpleITK?</h2>
 
 SimpleITK (SITK) is a simplified programming interface to the algorithms and data structures of the Insight Toolkit (ITK). This means its a library that helps you load images and perform transformations (which are mentioned in the ITK) on them. 
 
 ![SITK logo]({{site.baseurl}}/images/sitk.png)
 
-## Images in SimpleITK
+<h2 style="background-color:black; color:white">Images in SimpleITK</h2>
 
 Images in SITK are different from those we are used to seeing everyday. Each pixel or [voxel](https://en.wikipedia.org/wiki/Voxel) \[3D pixel basically\] is not isotropically spaced. The image is defined as a physical entity in 3D space. That means, that not only does each pixel have coordinates, there are direction vectors for the axis as well. Simply put, this means,
 
@@ -92,17 +82,17 @@ print(value2)
 ![ImageDetails]({{site.baseurl}}/images/SITK_image_details.png)
 Now, let's get into the details of the attributes of these images
 
-**Origin**: This is the starting point of the image. Identified by the left-bottom corner of the image as shown in the figure. Use ```image.GetOrigin()``` to get the spacing of an SITK image. To change the origin of an image, read the transforms section. This attribute is crucial when composing 2 images on top of each other. If their origins do not match, SITK does not allow super-position of 2 images.
+ - **Origin**: This is the starting point of the image. Identified by the left-bottom corner of the image as shown in the figure. Use ```image.GetOrigin()``` to get the spacing of an SITK image. To change the origin of an image, read the transforms section. This attribute is crucial when composing 2 images on top of each other. If their origins do not match, SITK does not allow super-position of 2 images.
 
-**Spacing**: This is the distance between pixels along each of the dimensions. The picture below shows two images with different spacing values. As you can see, image stretching can be performed by changing this value. Use ```image.GetSpacing()``` to get the spacing of an SITK image.
+ - **Spacing**: This is the distance between pixels along each of the dimensions. The picture below shows two images with different spacing values. As you can see, image stretching can be performed by changing this value. Use ```image.GetSpacing()``` to get the spacing of an SITK image.
 
-**Size**: This defines the number of pixels in each dimension of the image. Use ```image.GetSize()``` to get the size of an SITK image.
+ - **Size**: This defines the number of pixels in each dimension of the image. Use ```image.GetSize()``` to get the size of an SITK image.
 
-**Direction Cosines**: A tuple containing 9 values, where first 3 represent the x-axis vector, the next 3 represent the y-axis vector and the last represent the z-axis vector.  Use ```image.GetDirection()``` to get the spacing of the SITK image.
+ - **Direction Cosines**: A tuple containing 9 values, where first 3 represent the x-axis vector, the next 3 represent the y-axis vector and the last represent the z-axis vector.  Use ```image.GetDirection()``` to get the spacing of the SITK image.
 
 ![DimensionDifferences]({{site.baseurl}}/images/dimension_difference.png)
 
-## Transforms
+<h2 style="background-color:black; color:white">Transforms</h2>
 
 Spatial transformations in SITK convert a point x to T(x) in the following way (except for translation transform)
 
