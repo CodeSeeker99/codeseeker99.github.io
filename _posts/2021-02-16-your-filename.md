@@ -131,6 +131,17 @@ print('original point: ' + util.point2str(point) + '\n'
       'back to original: ' + util.point2str(translation_inverse.TransformPoint(transformed_point)))
 ```
 
+### Some common transforms 
+
+**Translation**: Simply moving a point from one place to another. y = x + t
+Initialised as ```translation = sitk.TranslationTransform(dimension, offset)```
+
+**Euler Transforms**: This transform applies a rotation and translation to the space given euler angles and a translation. May be 2D or 3D. Rotation is about a user specified center.
+```euler2d = sitk.Euler2DTransform(ventre, angle, offset)```
+```euler3d = sitk.Euler3DTransform(centre, angleX, angleY, angleZ, translation)```
+
+**Affine Transforms**: 
+
 Similarly, applying translation to an image:
 
 ```python
@@ -148,7 +159,7 @@ plt.imshow(sitk.GetArrayViewFromImage(resampled), cmap='gray', origin ='lower')
 ```
 
 ![TranslationDifferences]({{site.baseurl}}/images/translation_difference.png)
-<p style="text-align:center"><i> Left. Our original grid image. Right. Grid image after applying translation. Notice how our translation is positive (3.2</i></p>
+<p style="text-align:center"><i> Left. Our original grid image. Right. Grid image after applying translation. Notice how our translation is positive (3,4) but our image moved towards the left and bottom. This is because, translation is defined from output points to input points. i.e (3,4) of output image is mapped to (0,0) of input image. Therefore, the </i></p>
 
 
 
