@@ -81,7 +81,7 @@ plt.imshow(nd_image, cmap='gray')
 print(f'Image shape {nd_image.shape}')
 ```
 
-Do **Note:** The array from ```sitk.GetArrayViewFromImage(image)```, has its shape in the **Channels first format**, this means, it is indexed as ```(z_index, y_index, x_index)``` while in the indexing example above, we've seen that an SITK image size is in **Channels last format**, which means it is indexed as ```(x_index, y_index, z_index)```
+Do **Note:** The array from ```sitk.GetArrayViewFromImage(image)```, has its shape in the **Channels first format**, this means it is indexed as ```(z_index, y_index, x_index)``` while in the indexing example above, we've seen that an SITK image size is in **Channels last format**, which means it is indexed as ```(x_index, y_index, z_index)```
 
 ### Image attributes
 
