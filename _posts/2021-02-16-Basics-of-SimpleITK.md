@@ -85,7 +85,7 @@ Do **Note:** The array from ```sitk.GetArrayViewFromImage(image)```, has its sha
 
 ### Image attributes
 
-![ImageDetails]({{site.baseurl}}/images/SITK_image_details.png)
+![ImageDetailsImageHere]({{site.baseurl}}/images/SITK_image_details.png)
 Now, let's get into the details of the attributes of these images
 
  - **Origin**: This is the starting point of the image. Identified by the left-bottom corner of the image as shown in the figure. Use ```image.GetOrigin()``` to get the spacing of an SITK image. To change the origin of an image, read the transforms section. This attribute is crucial when composing 2 images on top of each other. If their origins do not match, SITK does not allow super-position of 2 images.
