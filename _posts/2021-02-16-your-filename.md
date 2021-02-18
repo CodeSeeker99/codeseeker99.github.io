@@ -145,10 +145,9 @@ print('original point: {}\ntransformed point: {}\nback to original: {}'.format(p
 ```affine = sitk.AffineTransform(matrix.flatten(), translation, centre)```
 
 
+### Resampling
 
-
-
-Similarly, applying translation to an image:
+We have applied transforms to points. When we do the same for an entire image, it is termed as resampling in SITK. 
 
 ```python
 dimension = 2
@@ -167,8 +166,30 @@ plt.imshow(sitk.GetArrayViewFromImage(resampled), cmap='gray', origin ='lower')
 ![TranslationDifferences]({{site.baseurl}}/images/translation_difference.png)
 <p style="text-align:center"><i> Left. Our original grid image. Right. Grid image after applying translation. Notice how our translation is positive (3,4) but our image moved towards the left and bottom. This is because, translation is defined from output points to input points. i.e (3,4) of output image is mapped to (0,0) of input image. Therefore, the </i></p>
 
+Likewise, if we apply Euler transforms on an image
 
+```python
+## Define image to be transformed
+grid = sitk.GridSource(outputPixelType=sitk.sitkUInt16,size=(250, 250),sigma=(0.5, 0.5),gridSpacing=(5.0, 5.0),gridOffset=(0.0, 0.0),spacing=(0.2,0.2))
 
+## Define transform
+angle = np.pi/4
+offset = (0, 0)
+centre = grid.TransformContinuousIndexToPhysicalPoint(np.array(grid.GetSize())/2.0)
+euler2d = sitk.Euler2DTransform(centre, angle, offset)
+
+## Resample
+resampled = sitk.Resample(grid, euler2d)
+
+## Show
+plt.imshow(sitk.GetArrayViewFromImage(grid), cmap='gray', origin ='lower')
+plt.show()
+plt.imshow(sitk.GetArrayViewFromImage(resampled), cmap='gray', origin ='lower')
+```
+
+In the example above we did not specify a separate reference image for our mapping. As a result, for many of the transformations the resulting image contained black pixels, pixels which were mapped outside the spatial domain of the original image and a partial view of the original image.
+
+If we want the resulting image to contain all of the original image no matter the transformation, we will need to define the resampling grid using our knowledge of the original image's spatial domain and the inverse of the given transformation.
 
 
    
