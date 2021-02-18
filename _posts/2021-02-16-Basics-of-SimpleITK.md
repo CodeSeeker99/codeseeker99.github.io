@@ -126,7 +126,7 @@ print(translation)
 print('original point: {}\ntransformed point: {}\nback to original: {}'.format(point,transformed_point,translation_inverse.TransformPoint(transformed_point)))
 ```
 
-![TranslationPointsImage]({{site.baseurl}}/images/translation_difference.png)
+![PointTranslation]({{site.baseurl}}/images/point_translation.png)
 <p style="text-align:center"><i> Translation transform. Circle: Original point. Triangle: Shifted point</i></p>
 
 ### Some common transforms 
