@@ -116,31 +116,37 @@ Here,
 Translations can be applied directly to points in SITK. The code below performs simple translation on a point in 3D space.
 
 ```python
-dimension = 3
-offset = [1,2,3]
+dimension = 2
+offset = [1,2]
 
 translation = sitk.TranslationTransform(dimension, offset)
 
-point = [10, 10, 10]
+point = [10, 10]
 transformed_point = translation.TransformPoint(point)
 translation_inverse = translation.GetInverse()
 
 print(translation)
-print('original point: ' + util.point2str(point) + '\n'
-      'transformed point: ' + util.point2str(transformed_point) + '\n'
-      'back to original: ' + util.point2str(translation_inverse.TransformPoint(transformed_point)))
+print('original point: {}\ntransformed point: {}\nback to original: {}'.format(point,transformed_point,translation_inverse.TransformPoint(transformed_point)))
 ```
+
+![TranslationPointsImage]({{site.baseurl}}/images/translation_difference.png)
+<p style="text-align:center"><i> Translation transform. Circle: Original point. Triangle: Shifted point</i></p>
 
 ### Some common transforms 
 
 **Translation**: Simply moving a point from one place to another. y = x + t
-Initialised as ```translation = sitk.TranslationTransform(dimension, offset)```
+```translation = sitk.TranslationTransform(dimension, offset)```
 
 **Euler Transforms**: This transform applies a rotation and translation to the space given euler angles and a translation. May be 2D or 3D. Rotation is about a user specified center.
-```euler2d = sitk.Euler2DTransform(ventre, angle, offset)```
+```euler2d = sitk.Euler2DTransform(centre, angle, offset)```
 ```euler3d = sitk.Euler3DTransform(centre, angleX, angleY, angleZ, translation)```
 
-**Affine Transforms**: 
+**Affine Transforms**: An affine transformation is defined mathematically as a linear transformation plus a constant offset. If A is a constant n x n matrix and b is a constant n-vector, then y = Ax+b defines an affine transformation from the n-vector x to the n-vector y.
+```affine = sitk.AffineTransform(matrix.flatten(), translation, centre)```
+
+
+
+
 
 Similarly, applying translation to an image:
 
