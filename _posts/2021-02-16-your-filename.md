@@ -267,4 +267,7 @@ plt.show()
 
 This way, the code is smaller, and better encapsulated.
 
+### We've gone over the basics of SITK Images and how to perform transforms on them. For more information, refer [the official docs](https://simpleitk.readthedocs.io/en/master/) or [the official tutorial notebooks](https://github.com/SimpleITK/TUTORIAL)
+
+
 
