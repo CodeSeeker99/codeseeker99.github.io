@@ -164,7 +164,7 @@ plt.imshow(sitk.GetArrayViewFromImage(resampled), cmap='gray', origin ='lower')
 ```
 
 ![TranslationDifferences]({{site.baseurl}}/images/translation_difference.png)
-<p style="text-align:center"><i> Left. Our original grid image. Right. Grid image after applying translation. Notice how our translation is positive (3,4) but our image moved towards the left and bottom. This is because, translation is defined from output points to input points. i.e (3,4) of output image is mapped to (0,0) of input image. Therefore, the </i></p>
+<p style="text-align:center"><i> Left. Our original grid image. Right. Grid image after applying translation. Notice how our translation is positive (3,4) but our image moved towards the left and bottom. This is because, translation is defined from output points to input points. i.e (0,0) of output image is mapped to (3,4) of input image. Therefore, the image translates opposite to our expectation </i></p>
 
 Likewise, if we apply Euler transforms on an image
 
@@ -188,13 +188,58 @@ plt.imshow(sitk.GetArrayViewFromImage(resampled), cmap='gray', origin ='lower')
 plt.show()
 ```
 
-In the example above we did not specify a separate reference image for our mapping. As a result, for many of the transformations the resulting image contained black pixels, pixels which were mapped outside the spatial domain of the original image and a partial view of the original image.
+![RotationDifference]({{site.baseurl}}/images/rotation_difference.png)
+<p style="text-align:center"><i> Left. Our original grid image. Right. Grid image after applying rotation of pi/4</i></p>
+
+In the examples above we did not specify a separate reference image for our mapping. As a result, the resulting image contained black pixels for pixels which were mapped outside the spatial domain of the original image and a partial view of the original image.
 
 If we want the resulting image to contain all of the original image no matter the transformation, we will need to define the resampling grid using our knowledge of the original image's spatial domain and the inverse of the given transformation.
 
+```python
+## Get the grid
+grid = sitk.GridSource(outputPixelType=sitk.sitkUInt16,size=(250, 250),sigma=(0.5, 0.5),gridSpacing=(5.0, 5.0),gridOffset=(0.0, 0.0),spacing=(0.2,0.2))
 
-   
+## Define Euler transform and its inverse
+angle = np.pi/4
+offset = (0, 0)
+centre = grid.TransformContinuousIndexToPhysicalPoint(np.array(grid.GetSize())/2.0)
+euler2d = sitk.Euler2DTransform(centre, angle, offset)
+inv_euler2d = euler2d.GetInverse()
+
+## Make a list of extreme points of our grid
+extreme_points = [grid.TransformIndexToPhysicalPoint((0,0)), 
+                  grid.TransformIndexToPhysicalPoint((grid.GetWidth(),0)),
+                  grid.TransformIndexToPhysicalPoint((grid.GetWidth(),grid.GetHeight())),
+                  grid.TransformIndexToPhysicalPoint((0,grid.GetHeight()))]
+
+## Get a list of the transformed extreme points
+extreme_points_transformed = [inv_euler2d.TransformPoint(pnt) for pnt in extreme_points]
+
+## Since we know that the transformed grid's extreme points will also be 
+## the same as the original's (property of Euler Transform)
+## We can determine the extremities of the new image
+min_x = min(extreme_points_transformed)[0]
+max_x = max(extreme_points_transformed)[0]
+min_y = min(extreme_points_transformed, key=lambda p: p[1])[1]
+max_y = max(extreme_points_transformed, key=lambda p: p[1])[1]
+
+## Using these new extremities, we can essentially ask SITK to 
+## map the transform on a bigger canvas
+output_spacing   = grid.GetSpacing()
+output_direction = [1.0, 0.0, 0.0, 1.0]
+output_origin    = [min_x, min_y]
+output_size      = [int((max_x-min_x)/output_spacing[0]), int((max_y-min_y)/output_spacing[1])]
+
+## Create the resampled image. We use the sitkLinear function for interpolation. 
+resampled_image = sitk.Resample(grid, output_size, euler2d, sitk.sitkLinear, output_origin, output_spacing, output_direction)
+
+## Display new image
+plt.imshow(sitk.GetArrayViewFromImage(resampled_image), cmap='gray')
+plt.axis('off')  
+plt.show()
+```
+
+![ReferenceImage]({{site.baseurl}}/images/reference_image_transform.png)
+<p style="text-align:center"><i> Left. Our original grid image. Right. Grid image after applying translation. Notice how our translation is positive (3,4) but our image moved towards the left and bottom. This is because, translation is defined from output points to input points. i.e (3,4) of output image is mapped to (0,0) of input image. Therefore, the </i></p>
 
 
-
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
