@@ -240,6 +240,31 @@ plt.show()
 ```
 
 ![ReferenceImage]({{site.baseurl}}/images/reference_image_transform.png)
-<p style="text-align:center"><i> Left. Our original grid image. Right. Grid image after applying translation. Notice how our translation is positive (3,4) but our image moved towards the left and bottom. This is because, translation is defined from output points to input points. i.e (3,4) of output image is mapped to (0,0) of input image. Therefore, the </i></p>
+<p style="text-align:center"><i> Left. Our original grid image. Right. Grid image after applying rotation with output calculations to account for clipping of the image. </i></p>
+
+In the above example we used 4 parameters to define the output image dimensions. SITK provides an easy way for us to bundle all this information into one object called the *reference_image*
+
+```python
+
+## ..same code as above, till calculation of extremities
+
+## Defining the reference image
+reference_image = sitk.Image([int((max_x-min_x)/output_spacing[0]), int((max_y-min_y)/output_spacing[1])], grid.GetPixelIDValue())
+reference_image.SetOrigin([min_x, min_y])
+reference_image.SetSpacing(grid.GetSpacing())
+reference_image.SetDirection([1.0, 0.0, 0.0, 1.0])
+
+## rRsampling
+resampled_image = sitk.Resample(grid, reference_image, euler2d, sitk.sitkLinear)
+
+## Display
+plt.imshow(sitk.GetArrayViewFromImage(resampled_image), cmap='gray')
+plt.axis('off')  
+plt.show()
+
+## Reuse the reference_image in other places
+```
+
+This way, the code is smaller, and better encapsulated.
 
 
