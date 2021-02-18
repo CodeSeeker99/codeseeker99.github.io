@@ -97,7 +97,7 @@ Now, let's get into the details of the attributes of these images
  - **Direction Cosines**: A tuple containing 9 values, where first 3 represent the x-axis vector, the next 3 represent the y-axis vector and the last represent the z-axis vector.  Use ```image.GetDirection()``` to get the spacing of the SITK image.
 
 ![ImageDIfference]({{site.baseurl}}/images/image_difference.png)
-<p style="text-align:center"><i> While these two images look the same to our eye. For SITK these are not equivalent. Consider the marked middle point to be (0,0) in physical space. Then both these images have a different origin, and direction cosines. So even though they have the same spacing and size, they're not equivalent.</i></p>
+<p style="text-align:center"><i> While these two images look the same to our eye. For SITK these are not equivalent. Consider the marked middle point to be (0,0) in physical space. Then both these images have a different origin, and direction cosines. So even though they have the same spacing and size, contrary to general belief, they're not equivalent.</i></p>
 
 <h2 style="background-color:black; color:white">Transforms</h2>
 
