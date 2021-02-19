@@ -194,17 +194,29 @@ back to original: (10.0, 10.0)
 We have applied transforms to points. When we do the same for an entire image, it is termed as resampling in SITK. 
 
 ```python
+## Define translation transform
 dimension = 2
 offset = (3, 4)
 translation = sitk.TranslationTransform(dimension, offset)
 
 ## Create a sample grid for demonstration
-grid = sitk.GridSource(outputPixelType=sitk.sitkUInt16,size=(250, 250),sigma=(0.5, 0.5),gridSpacing=(5.0, 5.0),gridOffset=(0.0, 0.0),spacing=(0.2,0.2))
+grid = sitk.GridSource(
+    outputPixelType=sitk.sitkUInt16,
+    size=(250, 250),
+    sigma=(0.5, 0.5),
+    gridSpacing=(5.0, 5.0),
+    gridOffset=(0.0, 0.0),
+    spacing=(0.2, 0.2),
+)
 
-plt.imshow(sitk.GetArrayViewFromImage(grid), cmap='gray', origin ='lower')
+## Show the original image
+plt.imshow(sitk.GetArrayViewFromImage(grid), cmap="gray", origin="lower")
+plt.show()
 
+## Get resampled image and show
 resampled = sitk.Resample(grid, translation)
-plt.imshow(sitk.GetArrayViewFromImage(resampled), cmap='gray', origin ='lower')
+plt.imshow(sitk.GetArrayViewFromImage(resampled), cmap="gray", origin="lower")
+plt.show()
 ```
 
 ![TranslationDifferences]({{site.baseurl}}/images/translation_difference.png)
@@ -215,26 +227,27 @@ Likewise, if we apply Euler transforms on an image
 ```python
 ## Define image to be transformed
 grid = sitk.GridSource(
-		outputPixelType=sitk.sitkUInt16,size=(250, 250),
-        sigma=(0.5, 0.5),
-        gridSpacing=(5.0, 5.0),
-        gridOffset=(0.0, 0.0),
-        spacing=(0.2,0.2)
+    outputPixelType=sitk.sitkUInt16,
+    size=(250, 250),
+    sigma=(0.5, 0.5),
+    gridSpacing=(5.0, 5.0),
+    gridOffset=(0.0, 0.0),
+    spacing=(0.2, 0.2),
 )
 
 ## Define transform
-angle = np.pi/4
+angle = np.pi / 4
 offset = (0, 0)
-centre = grid.TransformContinuousIndexToPhysicalPoint(np.array(grid.GetSize())/2.0)
+centre = grid.TransformContinuousIndexToPhysicalPoint(np.array(grid.GetSize()) / 2.0)
 euler2d = sitk.Euler2DTransform(centre, angle, offset)
 
 ## Resample
 resampled = sitk.Resample(grid, euler2d)
 
 ## Show
-plt.imshow(sitk.GetArrayViewFromImage(grid), cmap='gray', origin ='lower')
+plt.imshow(sitk.GetArrayViewFromImage(grid), cmap="gray", origin="lower")
 plt.show()
-plt.imshow(sitk.GetArrayViewFromImage(resampled), cmap='gray', origin ='lower')
+plt.imshow(sitk.GetArrayViewFromImage(resampled), cmap="gray", origin="lower")
 plt.show()
 ```
 
@@ -253,26 +266,28 @@ grid = sitk.GridSource(
     sigma=(0.5, 0.5),
     gridSpacing=(5.0, 5.0),
     gridOffset=(0.0, 0.0),
-    spacing=(0.2,0.2)
+    spacing=(0.2, 0.2),
 )
 
 ## Define Euler transform and its inverse
-angle = np.pi/4
+angle = np.pi / 4
 offset = (0, 0)
-centre = grid.TransformContinuousIndexToPhysicalPoint(np.array(grid.GetSize())/2.0)
+centre = grid.TransformContinuousIndexToPhysicalPoint(np.array(grid.GetSize()) / 2.0)
 euler2d = sitk.Euler2DTransform(centre, angle, offset)
 inv_euler2d = euler2d.GetInverse()
 
 ## Make a list of extreme points of our grid
-extreme_points = [grid.TransformIndexToPhysicalPoint((0,0)), 
-                  grid.TransformIndexToPhysicalPoint((grid.GetWidth(),0)),
-                  grid.TransformIndexToPhysicalPoint((grid.GetWidth(),grid.GetHeight())),
-                  grid.TransformIndexToPhysicalPoint((0,grid.GetHeight()))]
+extreme_points = [
+    grid.TransformIndexToPhysicalPoint((0, 0)),
+    grid.TransformIndexToPhysicalPoint((grid.GetWidth(), 0)),
+    grid.TransformIndexToPhysicalPoint((grid.GetWidth(), grid.GetHeight())),
+    grid.TransformIndexToPhysicalPoint((0, grid.GetHeight())),
+]
 
 ## Get a list of the transformed extreme points
 extreme_points_transformed = [inv_euler2d.TransformPoint(pnt) for pnt in extreme_points]
 
-## Since we know that the transformed grid's extreme points will also be 
+## Since we know that the transformed grid's extreme points will also be
 ## the same as the original's (property of Euler Transform)
 ## We can determine the extremities of the new image
 min_x = min(extreme_points_transformed)[0]
@@ -280,19 +295,30 @@ max_x = max(extreme_points_transformed)[0]
 min_y = min(extreme_points_transformed, key=lambda p: p[1])[1]
 max_y = max(extreme_points_transformed, key=lambda p: p[1])[1]
 
-## Using these new extremities, we can essentially ask SITK to 
+## Using these new extremities, we can essentially ask SITK to
 ## map the transform on a bigger canvas
-output_spacing   = grid.GetSpacing()
+output_spacing = grid.GetSpacing()
 output_direction = [1.0, 0.0, 0.0, 1.0]
-output_origin    = [min_x, min_y]
-output_size      = [int((max_x-min_x)/output_spacing[0]), int((max_y-min_y)/output_spacing[1])]
+output_origin = [min_x, min_y]
+output_size = [
+    int((max_x - min_x) / output_spacing[0]),
+    int((max_y - min_y) / output_spacing[1]),
+]
 
-## Create the resampled image. We use the sitkLinear function for interpolation. 
-resampled_image = sitk.Resample(grid, output_size, euler2d, sitk.sitkLinear, output_origin, output_spacing, output_direction)
+## Create the resampled image. We use the sitkLinear function for interpolation.
+resampled_image = sitk.Resample(
+    grid,
+    output_size,
+    euler2d,
+    sitk.sitkLinear,
+    output_origin,
+    output_spacing,
+    output_direction,
+)
 
 ## Display new image
-plt.imshow(sitk.GetArrayViewFromImage(resampled_image), cmap='gray')
-plt.axis('off')  
+plt.imshow(sitk.GetArrayViewFromImage(resampled_image), cmap="gray")
+plt.axis("off")
 plt.show()
 ```
 
