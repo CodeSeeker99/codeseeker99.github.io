@@ -85,8 +85,10 @@ Do **Note:** The array from ```sitk.GetArrayViewFromImage(image)```, has its sha
 
 ### Image attributes
 
-![ImageDetailsImageHere]({{site.baseurl}}/images/SITK_image_details.png)
 Now, let's get into the details of the attributes of these images
+
+![ImageDetailsImageHere]({{site.baseurl}}/images/SITK_image_details.png)
+<p style="text-align:center"><i> Anatomy of an SITK image. Explanations for each attribute mentioned below </i></p>
 
  - **Origin**: This is the starting point of the image. Identified by the left-bottom corner of the image as shown in the figure. Use ```image.GetOrigin()``` to get the spacing of an SITK image. To change the origin of an image, read the transforms section. This attribute is crucial when composing 2 images on top of each other. If their origins do not match, SITK does not allow super-position of 2 images.
 
@@ -94,7 +96,7 @@ Now, let's get into the details of the attributes of these images
 
  - **Size**: This defines the number of pixels in each dimension of the image. Use ```image.GetSize()``` to get the size of an SITK image.
 
- - **Direction Cosines**: A tuple containing 9 values, where first 3 represent the x-axis vector, the next 3 represent the y-axis vector and the last represent the z-axis vector.  Use ```image.GetDirection()``` to get the spacing of the SITK image.
+ - **Direction Cosines**: The direction in which pixel intensities are mentioned in the image array. Direction cosines define the axis of the image beginning from the image origin. Defined by a tuple containing n*n flattened values of a n-dimensional vectors along each axis in a sequential order, where n is the dimensionality of the image. For eg. the 2D image above has direction cosines approximately (0.9805, -0.1961, -0.1961, 0.9805). Use ```image.GetDirection()``` to get the spacing of the SITK image.
 
 ![ImageDIfference]({{site.baseurl}}/images/image_difference.png)
 <p style="text-align:center"><i> While these two images look the same to our eye. For SITK these are not equivalent. Consider the marked middle point to be (0,0) in physical space. Then both these images have a different origin, and direction cosines. So even though they have the same spacing and size, contrary to general belief, they're not equivalent. Image authors: <a href="https://qure.ai/headct.html">here</a></i></p>
