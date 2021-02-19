@@ -34,7 +34,7 @@ As visible, without spatial information, scans with anisotropic spacing between 
 Before we can analyze an image, we need to load it into memory. 
 
 ```python
-image = sitk.ReadImage('/path/to/image/image.dcm')
+image = sitk.ReadImage("/path/to/image/image.dcm")
 print("Type:", type(image), "Image size:", size[0], size[1], size[2])
 
 """ Output
@@ -63,11 +63,14 @@ A series will be loaded as a 3D image/array. If you wish to access any particula
 ```python
 
 ## .. code to get image
-x = 10                          # X-coordinate of the pixel
-y = 10                          # Y-coordinate of the pixel
-z = 0                           # Z-coordinate of the pixel
-value = image.GetPixel((x,y,z)) # May throw error if (x,y,z) is out of bounds of the physical space of the image.
-value2 = image[x,y,z]           # Another way of accessing value
+## .. code to get image
+x = 10  # X-coordinate of the pixel
+y = 10  # Y-coordinate of the pixel
+z = 0   # Z-coordinate of the pixel
+value = image.GetPixel(
+    (x, y, z)
+)  # May throw error if (x,y,z) is out of bounds of the physical space of the image.
+value2 = image[x, y, z]  # Another way of accessing value
 
 print("image.GetPixel((x,y,z)) = ", value)
 print("image[x,y,z] = ", value2)
