@@ -199,7 +199,14 @@ If we want the resulting image to contain all of the original image no matter th
 
 ```python
 ## Get the grid
-grid = sitk.GridSource(outputPixelType=sitk.sitkUInt16,size=(250, 250),sigma=(0.5, 0.5),gridSpacing=(5.0, 5.0),gridOffset=(0.0, 0.0),spacing=(0.2,0.2))
+grid = sitk.GridSource(
+    outputPixelType=sitk.sitkUInt16,
+    size=(250, 250),
+    sigma=(0.5, 0.5),
+    gridSpacing=(5.0, 5.0),
+    gridOffset=(0.0, 0.0),
+    spacing=(0.2,0.2)
+)
 
 ## Define Euler transform and its inverse
 angle = np.pi/4
