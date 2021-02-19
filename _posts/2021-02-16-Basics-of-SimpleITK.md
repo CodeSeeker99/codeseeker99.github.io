@@ -92,9 +92,11 @@ sitk.show(image, "Title")
 
 ## Using matplotlib instead
 nd_image = sitk.GetArrayViewFromImage(image)
-nd_image = np.squeeze(nd_image)           # plt cannot plot (1,x,x) it needs to be (x,x) for a 2D image
-plt.imshow(nd_image, cmap='gray')
-print(f'Image shape {nd_image.shape}')
+nd_image = np.squeeze(
+    nd_image
+)  # plt cannot plot (1,x,x) it needs to be (x,x) for a 2D image
+plt.imshow(nd_image, cmap="gray")
+print(f"Image shape {nd_image.shape}")
 
 """ Output
 Image shape (512,512)
