@@ -139,7 +139,7 @@ Translations can be applied directly to points in SITK. The code below performs 
 
 ```python
 dimension = 2
-offset = [1,2]
+offset = [1, 2]
 
 translation = sitk.TranslationTransform(dimension, offset)
 
@@ -148,7 +148,11 @@ transformed_point = translation.TransformPoint(point)
 translation_inverse = translation.GetInverse()
 
 print(translation)
-print('original point: {}\ntransformed point: {}\nback to original: {}'.format(point,transformed_point,translation_inverse.TransformPoint(transformed_point)))
+print(
+    "original point: {}\ntransformed point: {}\nback to original: {}".format(
+        point, transformed_point, translation_inverse.TransformPoint(transformed_point)
+    )
+)
 
 """ Original
 itk::simple::TranslationTransform
