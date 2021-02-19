@@ -36,10 +36,11 @@ Before we can analyze an image, we need to load it into memory.
 ```python
 image = sitk.ReadImage("/path/to/image/image.dcm")
 print("Type:", type(image), "Image size:", size[0], size[1], size[2])
+```
 
-""" Output
+Outputs
+```
 Type: <class 'SimpleITK.SimpleITK.Image'> Image size: 512 512 3
-"""
 ```
 
 Or if you wish to load an entire series all at once
@@ -52,10 +53,11 @@ reader.SetFileNames(dicom_names)
 image_series = reader.Execute()
 size = image_series.GetSize()
 print("Type:", type(image_series), "Image size:", size[0], size[1], size[2])
+```
 
-""" Output
+Outputs
+```
 Type: <class 'SimpleITK.SimpleITK.Image'> Image size: 512 512 42
-"""
 ```
 
 A series will be loaded as a 3D image/array. If you wish to access any particular pixel values simply use the following format. For slicing, replace the indices accordingly in the general pythonic format.
@@ -73,11 +75,12 @@ value2 = image[x, y, z]  # Another way of accessing value
 
 print("image.GetPixel((x,y,z)) = ", value)
 print("image[x,y,z] = ", value2)
+```
 
-""" Output
+Outputs
+```
 image.GetPixel((x,y,z)) = 123
 image[x,y,z] = 123
-"""
 ```
 
 This will give us an object of SITK Image class. **Now how do we view it?**
@@ -96,10 +99,11 @@ nd_image = np.squeeze(
 )  # plt cannot plot (1,x,x) it needs to be (x,x) for a 2D image
 plt.imshow(nd_image, cmap="gray")
 print(f"Image shape {nd_image.shape}")
+```
 
-""" Output
+Outputs
+```
 Image shape (512,512)
-"""
 ```
 
 Do **Note:** The array from ```sitk.GetArrayViewFromImage(image)```, has its shape in the **Channels first format**, this means it is indexed as ```(z_index, y_index, x_index)``` while in the indexing example above, we've seen that an SITK image size is in **Channels last format**, which means it is indexed as ```(x_index, y_index, z_index)```
@@ -152,8 +156,10 @@ print(
         point, transformed_point, translation_inverse.TransformPoint(transformed_point)
     )
 )
+```
 
-""" Original
+Outputs
+```
 itk::simple::TranslationTransform
  TranslationTransform (0x2a4ed90)
    RTTI typeinfo:   itk::TranslationTransform<double, 2u>
@@ -167,7 +173,6 @@ itk::simple::TranslationTransform
 original point: [10, 10]
 transformed point: (11.0, 12.0)
 back to original: (10.0, 10.0)
-"""
 ```
 
 ![PointTranslation]({{site.baseurl}}/images/point_translation.png)
