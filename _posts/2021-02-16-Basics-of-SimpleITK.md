@@ -61,9 +61,8 @@ Type: <class 'SimpleITK.SimpleITK.Image'> Image size: 512 512 42
 A series will be loaded as a 3D image/array. If you wish to access any particular pixel values simply use the following format. For slicing, replace the indices accordingly in the general pythonic format.
 
 ```python
+## .. code to get image
 
-## .. code to get image
-## .. code to get image
 x = 10  # X-coordinate of the pixel
 y = 10  # Y-coordinate of the pixel
 z = 0   # Z-coordinate of the pixel
