@@ -11,21 +11,22 @@ published: true
 <div style="float: left">
     <span>
     <img src="/images/LocalGuide.jpg" alt="self pic" style="float: left;width:200px;height:200px;margin:10px">
-    I'm a B.E. Computer Science graduate from BITS-Pilani, K. K. Birla Goa Campus with experience in artificial intelligence (AI), 
-    biomedical signal processing and neuro-imaging research. I'm currently a lead software developer (SDE2) at Amazon within the 
-    Last Mile Delivery Technology organization. My research and work experiences can be best summarized on my 
+    I'm a B.E. Computer Science graduate from BITS-Pilani, K. K. Birla Goa Campus, with experience in artificial intelligence (AI), 
+    biomedical signal processing, and neuro-imaging research. I'm currently a lead software developer (SDE2) at Amazon within 
+    the Last Mile Delivery Technology org. My research and work experiences can be best summarized on my  
     <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user={{ site.footer-links.scholar }}"> Google Scholar </a> and 
-    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/{{ site.footer-links.linkedin }}"> LinkedIn profile </a>
+    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/{{ site.footer-links.linkedin }}"> LinkedIn </a>
+    profiles.
     </span>
 </div>
 
-While my current citations are limited to the field of deep learning and biomedical signal processing, in the future, 
-I plan to focus my research in the field of artificial general intelligence (AGI) and neuroscience. I find the use of foundational models 
-for medical imaging is very interesting and I'm looking to explore that as well. 
+While my current citations are limited to the fields of deep learning and biomedical signal processing, in the future, 
+I plan to focus my research in the fields of artificial general intelligence (AGI) and neuroscience. I find the use of 
+foundational models for medical imaging very interesting.
 
-Apart from the aforementioned, I'm passionate about video editing. I've covered various fests at my college and lead creative 
-video production for promotional purposes. I grew up watching and editing a lot of Anime Music Videos (AMVs). 
-I'm an enthusiast gamer as well, hit me up on Valorant. Finally, I love playing Ultimate Frisbee. 
+Apart from the aforementioned research interests, I'm passionate about video editing. I've covered various festivals at my 
+college and led creative video production for promotional purposes. I grew up watching and editing a lot of anime music videos (AMVs). 
+I'm an enthusiast gamer as well; hit me up on Valorant. Finally, I love playing Ultimate Frisbee. 
 Proud alumni of the BITS-UFC club at college. Maybe you caught me at Ahmedabad Ultimate?
 
 <!-- Slideshow container -->
@@ -54,8 +55,8 @@ Proud alumni of the BITS-UFC club at college. Maybe you caught me at Ahmedabad U
   <span class="dot" onclick="currentSlide(2)"></span>
 </div> 
 
-I started this blog in my 3rd year of engineering as a place to write about anything related to my interests until Covid 
-and some workload put a pause on it. Expect more to be posted as I enter into academia once again to pursue my research interests.
+I started this blog in my 3rd year of engineering as a place to write about anything related to my interests until COVID-19 
+and my full-time workload put a pause on it. Expect more to be posted as I enter into academia once again to pursue my research interests.
 
 <script>
 let slideIndex = 1;
